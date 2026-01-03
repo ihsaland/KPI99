@@ -1,30 +1,32 @@
 # GitHub Pages Deployment Guide
 
-## Quick Start
+## Option 1: Deploy from Branch (Recommended if GitHub Actions not available)
 
-1. **Push your code to GitHub:**
-   ```bash
-   git add .
-   git commit -m "Initial commit for GitHub Pages"
-   git push origin main
-   ```
+1. **Go to repository settings:**
+   - Navigate to: https://github.com/ihsaland/KPI99/settings/pages
 
-2. **Enable GitHub Pages:**
-   - Go to your repository: https://github.com/ihsaland/KPI99
-   - Click on **Settings**
-   - Scroll down to **Pages** in the left sidebar
-   - Under **Source**, select **GitHub Actions**
-   - Save the settings
+2. **Configure Pages:**
+   - Under **Source**, select **Deploy from a branch**
+   - Choose **Branch:** `main`
+   - Choose **Folder:** `/ (root)`
+   - Click **Save**
 
-3. **Deploy:**
-   - The GitHub Actions workflow will automatically run
-   - Go to the **Actions** tab to see the deployment progress
-   - Once complete, your site will be live at: `https://ihsaland.github.io/KPI99/`
+3. **Your site will be live at:**
+   - `https://ihsaland.github.io/KPI99/`
+
+## Option 2: GitHub Actions (If available)
+
+If GitHub Actions appears as an option:
+
+1. Go to repository settings
+2. Navigate to **Pages**
+3. Under **Source**, select **GitHub Actions**
+4. The workflow will automatically deploy on push
 
 ## Files Included
 
 - `.nojekyll` - Prevents Jekyll processing (required for static HTML)
-- `.github/workflows/deploy.yml` - Automated deployment workflow
+- `.github/workflows/deploy.yml` - Automated deployment workflow (if using Actions)
 - `index.html` - Main website file
 - `panAbstract.png` - Header background image
 
@@ -40,5 +42,5 @@ If you want to use a custom domain:
 
 - **Images not loading:** Ensure image files are in the same directory as `index.html`
 - **404 errors:** Make sure `.nojekyll` file exists in the root
-- **Deployment fails:** Check the Actions tab for error messages
-
+- **Deployment fails:** Check the Actions tab for error messages (if using Actions)
+- **GitHub Actions not showing:** Use "Deploy from a branch" method instead
