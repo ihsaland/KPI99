@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI99 - Enterprise Performance & Capacity Engineering Services</title>
+    
+    <!-- Google Fonts - Bodoni Moda -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Bodoni Moda', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: #3b82f6;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.6) 100%),
+                        url('panAbstract.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        header .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-top: 10px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            border-radius: 2px;
+        }
+
+        section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Who This Is For */
+        .who-section {
+            background: white;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .impact-item {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .impact-item:hover::before {
+            left: 100%;
+        }
+
+        .impact-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+            border-left-color: #60a5fa;
+        }
+
+        .impact-item h4 {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        /* What Makes This Different */
+        .different-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .approach-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .approach-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+            border-color: #3b82f6;
+        }
+
+        .approach-item h4 {
+            font-size: 1.2rem;
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Services */
+        .services-section {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.03), rgba(139, 92, 246, 0.03));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+
+        .service-card.health {
+            border-top-color: #10b981;
+        }
+
+        .service-card.optimization {
+            border-top-color: #3b82f6;
+        }
+
+        .service-card.retainer {
+            border-top-color: #8b5cf6;
+        }
+
+        .service-card.incident {
+            border-top-color: #ef4444;
+        }
+
+        .service-icon {
+            display: none;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+
+        .service-type {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #e0f2fe;
+            color: #0369a1;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .service-duration {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .service-investment {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+        }
+
+        .service-card h4 {
+            font-size: 1.1rem;
+            color: #334155;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .service-card ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #475569;
+        }
+
+        .service-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .service-card .best-for {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .service-card .best-for strong {
+            color: #1e3a8a;
+        }
+
+        /* Why Clients Engage */
+        .why-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
+
+        .why-section h2 {
+            color: white;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px) scale(1.05);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .benefit-item .check {
+            transition: transform 0.3s;
+        }
+
+        .benefit-item:hover .check {
+            transform: scale(1.3) rotate(360deg);
+        }
+
+        .benefit-item .check {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: bold;
+        }
+
+        .benefit-item .check::before {
+            content: "✓";
+        }
+
+        .benefit-item h4 {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 80px 0;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #334155;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #f8fafc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #94a3b8;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 2px solid #10b981;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #ef4444;
+            display: block;
+        }
+
+        .required {
+            color: #ef4444;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            margin: 20px auto 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-button:hover {
+            background: #20BA5A;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .whatsapp-divider {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .whatsapp-divider::before,
+        .whatsapp-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .whatsapp-divider::before {
+            left: 0;
+        }
+
+        .whatsapp-divider::after {
+            right: 0;
+        }
+
+        .whatsapp-divider span {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 0 20px;
+            color: #64748b;
+            position: relative;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* AI Chat Widget */
+        .ai-chat-widget {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            z-index: 1000;
+            font-family: inherit;
+        }
+
+        .ai-chat-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            position: relative;
+        }
+
+        .ai-chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(59, 130, 246, 0.5);
+        }
+
+        .ai-chat-button svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .ai-chat-button .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: #ef4444;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .ai-chat-container {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+        }
+
+        .ai-chat-container.active {
+            display: flex;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ai-chat-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ai-chat-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ai-chat-header .status {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .ai-chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        .ai-chat-close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .ai-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .ai-chat-message {
+            display: flex;
+            gap: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ai-chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .ai-chat-message-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .ai-chat-message.ai .ai-chat-message-avatar {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .ai-chat-message.user .ai-chat-message-avatar {
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+
+        .ai-chat-message-content {
+            max-width: 75%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .ai-chat-message.ai .ai-chat-message-content {
+            background: white;
+            color: #334155;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .ai-chat-message.user .ai-chat-message-content {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .ai-chat-input-container {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .ai-chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .ai-chat-input:focus {
+            border-color: #3b82f6;
+        }
+
+        .ai-chat-send {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .ai-chat-send:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .ai-chat-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .ai-chat-send svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .ai-typing-indicator {
+            display: flex;
+            gap: 5px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .ai-typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .ai-typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .ai-typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            30% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ai-chat-widget {
+                bottom: 90px;
+                right: 20px;
+            }
+
+            .ai-chat-button {
+                width: 55px;
+                height: 55px;
+            }
+
+            .ai-chat-button svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .ai-chat-container {
+                width: calc(100vw - 40px);
+                height: calc(100vh - 100px);
+                max-height: 500px;
+                right: 0;
+                left: auto;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            header {
+                padding: 100px 0 60px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .tagline {
+                font-size: 1.2rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.6s ease forwards;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        /* Technical Details Section */
+        .technical-section {
+            background: white;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tech-card {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+            background: white;
+        }
+
+        .tech-card h4 {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .tech-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .tech-card ul li {
+            padding: 6px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #475569;
+        }
+
+        .tech-card ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .methodology-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .process-step .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.2) rotate(360deg);
+            background: #60a5fa;
+        }
+
+        .process-step h4 {
+            font-size: 1.2rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .expertise-section {
+            background: white;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .expertise-tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .expertise-tag:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>KPI99</h1>
+            <p class="tagline">Performance. Scale. Reliability—Engineered.</p>
+        </div>
+    </header>
+
+    <section class="who-section">
+        <div class="container">
+            <h2>Who This Is For</h2>
+            <p class="intro-text">
+                Organizations running mission-critical systems where performance, scale, and reliability directly impact:
+            </p>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h4>Revenue</h4>
+                </div>
+                <div class="impact-item">
+                    <h4>Regulatory compliance</h4>
+                </div>
+                <div class="impact-item">
+                    <h4>Customer trust</h4>
+                </div>
+                <div class="impact-item">
+                    <h4>Cloud & infrastructure spend</h4>
+                </div>
+            </div>
+            <p class="intro-text" style="margin-top: 30px;">
+                We work with enterprise teams to identify and eliminate performance limits before they become outages or cost overruns.
+            </p>
+        </div>
+    </section>
+
+    <section class="different-section">
+        <div class="container">
+            <h2>What Makes This Different</h2>
+            <p class="intro-text" style="color: #334155;">
+                Most performance work is reactive.<br>
+                <strong>Our approach is predictive and preventative.</strong>
+            </p>
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <h4>Identifying true system limits</h4>
+                </div>
+                <div class="approach-item">
+                    <h4>Quantifying risk under peak load</h4>
+                </div>
+                <div class="approach-item">
+                    <h4>Reducing infrastructure waste</h4>
+                </div>
+                <div class="approach-item">
+                    <h4>Ensuring predictable scale</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodology-section">
+        <div class="container">
+            <h2>Methodology & Process</h2>
+            <p class="intro-text" style="color: #334155;">
+                A systematic, data-driven approach to performance engineering that delivers measurable results.
+            </p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Discovery & Assessment</h4>
+                    <p>Comprehensive system analysis using APM tools, profiling, and load testing to establish baseline performance metrics and identify constraints.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Bottleneck Analysis</h4>
+                    <p>Deep-dive investigation into application code, JVM tuning, database queries, network I/O, and infrastructure configuration to pinpoint root causes.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Capacity Modeling</h4>
+                    <p>Mathematical modeling of system capacity under various load scenarios, including peak traffic, growth projections, and failure modes.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Optimization & Tuning</h4>
+                    <p>Targeted improvements to code, configuration, and architecture with validation through controlled load testing and performance regression analysis.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>Validation & Monitoring</h4>
+                    <p>Production validation, establishment of performance SLAs/SLOs, and implementation of monitoring dashboards for ongoing visibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technical-section">
+        <div class="container">
+            <h2>Technical Expertise & Tools</h2>
+            <p class="intro-text">
+                Deep expertise across the full performance engineering stack, from application code to infrastructure.
+            </p>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>Application Performance</h4>
+                    <ul>
+                        <li>JVM tuning (GC, heap, threads)</li>
+                        <li>Memory leak detection & analysis</li>
+                        <li>Thread dump & stack trace analysis</li>
+                        <li>Code profiling (JProfiler, YourKit, async-profiler)</li>
+                        <li>Application-level bottleneck identification</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Infrastructure & Systems</h4>
+                    <ul>
+                        <li>CPU, memory, disk I/O analysis</li>
+                        <li>Network latency & throughput optimization</li>
+                        <li>Container orchestration (K8s) performance</li>
+                        <li>Cloud infrastructure cost optimization</li>
+                        <li>Autoscaling policy design & tuning</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Load Testing & Capacity</h4>
+                    <ul>
+                        <li>Distributed load testing (JMeter, Gatling, k6)</li>
+                        <li>Traffic pattern analysis & modeling</li>
+                        <li>Saturation point identification</li>
+                        <li>Capacity planning & forecasting</li>
+                        <li>Chaos engineering & failure testing</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Observability & Monitoring</h4>
+                    <ul>
+                        <li>APM tools (New Relic, Datadog, Dynatrace)</li>
+                        <li>Metrics, logs, and traces analysis</li>
+                        <li>Performance dashboard design</li>
+                        <li>SLA/SLO definition & tracking</li>
+                        <li>Alerting strategy & threshold tuning</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Distributed Systems</h4>
+                    <ul>
+                        <li>Microservices performance optimization</li>
+                        <li>Message queue tuning (Kafka, RabbitMQ)</li>
+                        <li>Database query optimization</li>
+                        <li>Cache strategy & implementation</li>
+                        <li>Service mesh performance (Istio, Linkerd)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Cloud Platforms</h4>
+                    <ul>
+                        <li>AWS, GCP, Azure performance optimization</li>
+                        <li>Serverless function tuning (Lambda, Cloud Functions)</li>
+                        <li>CDN & edge computing optimization</li>
+                        <li>Multi-region latency optimization</li>
+                        <li>Cloud cost analysis & optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expertise-section">
+        <div class="container">
+            <h2>Industry Expertise</h2>
+            <p class="intro-text">
+                Proven experience across industries where performance directly impacts business outcomes.
+            </p>
+            <div class="expertise-tags">
+                <span class="expertise-tag">Financial Services</span>
+                <span class="expertise-tag">E-commerce & Retail</span>
+                <span class="expertise-tag">Healthcare Systems</span>
+                <span class="expertise-tag">SaaS Platforms</span>
+                <span class="expertise-tag">Gaming & Media</span>
+                <span class="expertise-tag">Telecommunications</span>
+                <span class="expertise-tag">Regulated Industries</span>
+                <span class="expertise-tag">High-Traffic APIs</span>
+                <span class="expertise-tag">Real-Time Systems</span>
+                <span class="expertise-tag">Data Processing Pipelines</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <h2>Service Packages</h2>
+            
+            <div class="services-grid">
+                <!-- Performance Health Audit -->
+                <div class="service-card health">
+                    <h3>Performance Health Audit</h3>
+                    <span class="service-type">Entry Engagement | Low Risk | High Insight</span>
+                    <div class="service-duration">Duration: 2–3 weeks</div>
+                    <div class="service-investment">Investment: $10,000</div>
+                    
+                    <h4>What This Solves</h4>
+                    <ul>
+                        <li>Unexplained latency</li>
+                        <li>Capacity uncertainty</li>
+                        <li>Inefficient infrastructure usage</li>
+                        <li>Lack of performance visibility</li>
+                    </ul>
+
+                    <h4>Scope</h4>
+                    <ul>
+                        <li>JVM GC, heap, thread, and memory analysis</li>
+                        <li>CPU, memory, disk, and network utilization review</li>
+                        <li>Load test & traffic profile evaluation</li>
+                        <li>Bottleneck identification (application + infrastructure)</li>
+                        <li>Cost inefficiency & waste analysis</li>
+                        <li>APM tool configuration review</li>
+                        <li>Performance baseline establishment</li>
+                    </ul>
+
+                    <h4>Deliverables</h4>
+                    <ul>
+                        <li>Executive summary (non-technical)</li>
+                        <li>Detailed performance findings</li>
+                        <li>Identified system limits</li>
+                        <li>Prioritized remediation roadmap</li>
+                    </ul>
+
+                    <div class="best-for">
+                        <strong>Best For:</strong> New platforms, Legacy systems, Pre-scale or pre-migration environments
+                    </div>
+                </div>
+
+                <!-- Scale & Latency Optimization -->
+                <div class="service-card optimization">
+                    <h3>Scale & Latency Optimization</h3>
+                    <span class="service-type">Primary Engagement | High Impact</span>
+                    <div class="service-duration">Duration: 4–8 weeks</div>
+                    <div class="service-investment">Investment: $30,000–$50,000</div>
+                    
+                    <h4>What This Solves</h4>
+                    <ul>
+                        <li>Systems failing under peak load</li>
+                        <li>Latency impacting SLAs</li>
+                        <li>Over-provisioned or under-scaled infrastructure</li>
+                        <li>Performance risk during growth</li>
+                    </ul>
+
+                    <h4>Scope</h4>
+                    <ul>
+                        <li>Throughput & saturation modeling</li>
+                        <li>Distributed system bottleneck analysis</li>
+                        <li>JVM, messaging, and data pipeline optimization</li>
+                        <li>Autoscaling & capacity tuning</li>
+                        <li>SLA / SLO performance hardening</li>
+                        <li>Code-level performance improvements</li>
+                        <li>Database query & connection pool optimization</li>
+                        <li>Load testing validation & regression prevention</li>
+                    </ul>
+
+                    <h4>Deliverables</h4>
+                    <ul>
+                        <li>Optimized system configuration</li>
+                        <li>Capacity models & scaling thresholds</li>
+                        <li>Performance risk mitigation plan</li>
+                        <li>Executive-level impact summary</li>
+                    </ul>
+
+                    <div class="best-for">
+                        <strong>Best For:</strong> High-growth systems, Regulated environments, Customer-facing platforms, Cloud cost control initiatives
+                    </div>
+                </div>
+
+                <!-- Executive Performance Retainer -->
+                <div class="service-card retainer">
+                    <h3>Executive Performance Retainer</h3>
+                    <span class="service-type">Ongoing Advisory | Predictable Results</span>
+                    <div class="service-duration">Duration: Monthly</div>
+                    <div class="service-investment">Investment: $6,000–$12,000 per month</div>
+                    
+                    <h4>What This Solves</h4>
+                    <ul>
+                        <li>Recurring performance incidents</li>
+                        <li>Lack of capacity forecasting</li>
+                        <li>Reactive firefighting</li>
+                        <li>No senior performance authority</li>
+                    </ul>
+
+                    <h4>Scope</h4>
+                    <ul>
+                        <li>Monthly performance & capacity reviews</li>
+                        <li>Forecasting for growth and peak events</li>
+                        <li>Cloud cost efficiency oversight</li>
+                        <li>Incident escalation advisory</li>
+                        <li>Architecture & scale-readiness guidance</li>
+                        <li>Performance regression prevention</li>
+                        <li>Team training & knowledge transfer</li>
+                        <li>Strategic performance roadmap planning</li>
+                    </ul>
+
+                    <h4>Deliverables</h4>
+                    <ul>
+                        <li>Monthly performance report</li>
+                        <li>Risk & capacity outlook</li>
+                        <li>Executive recommendations</li>
+                        <li>Ongoing optimization guidance</li>
+                    </ul>
+
+                    <div class="best-for">
+                        <strong>Best For:</strong> Leadership teams, Platforms with strict SLAs, Systems scaling regionally or globally
+                    </div>
+                </div>
+
+                <!-- Incident & Emergency Support -->
+                <div class="service-card incident">
+                    <h3>Incident & Emergency Support</h3>
+                    <span class="service-type">On-Demand | Time-Critical</span>
+                    <div class="service-duration">Investment: $350–$500 per hour</div>
+                    
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li>Production latency spikes</li>
+                        <li>Capacity failures</li>
+                        <li>Major performance regressions</li>
+                        <li>High-risk launches or events</li>
+                    </ul>
+
+                    <h4>Engagement Model</h4>
+                    <ul>
+                        <li>Senior-level team execution</li>
+                        <li>Experienced consultants only</li>
+                        <li>Direct access throughout engagement</li>
+                        <li>Clear scope and outcomes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section">
+        <div class="container">
+            <h2>Why Clients Engage</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="check"></div>
+                    <h4>Reduced outage risk</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="check"></div>
+                    <h4>Predictable system scaling</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="check"></div>
+                    <h4>Lower cloud & infrastructure costs</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="check"></div>
+                    <h4>Executive-level clarity</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="check"></div>
+                    <h4>Faster, safer growth</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technical-section">
+        <div class="container">
+            <h2>Typical Outcomes & Results</h2>
+            <p class="intro-text">
+                Measurable improvements that directly impact business metrics and operational efficiency.
+            </p>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>Performance Improvements</h4>
+                    <ul>
+                        <li>50-90% latency reduction in critical paths</li>
+                        <li>2-5x throughput increases</li>
+                        <li>99.9%+ uptime during peak loads</li>
+                        <li>Sub-100ms p95 response times</li>
+                        <li>Elimination of performance-related incidents</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Cost Optimization</h4>
+                    <ul>
+                        <li>20-40% reduction in cloud infrastructure costs</li>
+                        <li>Right-sized capacity planning</li>
+                        <li>Elimination of over-provisioned resources</li>
+                        <li>Optimized autoscaling policies</li>
+                        <li>ROI-positive performance investments</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Risk Mitigation</h4>
+                    <ul>
+                        <li>Quantified capacity headroom</li>
+                        <li>Predictable scaling thresholds</li>
+                        <li>Proactive bottleneck identification</li>
+                        <li>Performance regression prevention</li>
+                        <li>Compliance-ready performance documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-form-container">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your company name">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="audit">Performance Health Audit</option>
+                                <option value="optimization">Scale & Latency Optimization</option>
+                                <option value="retainer">Executive Performance Retainer</option>
+                                <option value="incident">Incident & Emergency Support</option>
+                                <option value="other">Other / General Inquiry</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" placeholder="Tell us about your performance challenges and how we can help..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+            
+            <div class="whatsapp-divider">
+                <span>Or contact us directly</span>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-widget">
+        <button class="ai-chat-button" id="aiChatButton" aria-label="Open AI Chat">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+                <path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
+            </svg>
+        </button>
+        <div class="ai-chat-container" id="aiChatContainer">
+            <div class="ai-chat-header">
+                <div>
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle;">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        AI Assistant
+                    </h3>
+                    <div class="status">Online • Ready to help</div>
+                </div>
+                <button class="ai-chat-close" id="aiChatClose" aria-label="Close chat">×</button>
+            </div>
+            <div class="ai-chat-messages" id="aiChatMessages">
+                <div class="ai-chat-message ai">
+                    <div class="ai-chat-message-avatar">AI</div>
+                    <div class="ai-chat-message-content">
+                        Hello! I'm your AI assistant. How can I help you with performance engineering services today?
+                    </div>
+                </div>
+            </div>
+            <div class="ai-chat-input-container">
+                <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="Type your message..." autocomplete="off">
+                <button class="ai-chat-send" id="aiChatSend" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sisters Grove LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll and intersection observer for animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation scroll effect
+            const nav = document.createElement('nav');
+            nav.innerHTML = `
+                <div class="container">
+                    <div class="logo">KPI99</div>
+                    <ul>
+                        <li><a href="#who">Who</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#outcomes">Outcomes</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            `;
+            document.body.insertBefore(nav, document.body.firstChild);
+
+            // Add IDs to sections for navigation
+            const whoSection = document.querySelector('.who-section');
+            const servicesSection = document.querySelector('.services-section');
+            const expertiseSection = document.querySelector('.expertise-section');
+            const outcomesSection = document.querySelector('.technical-section:last-of-type');
+            const contactSection = document.querySelector('.contact-section');
+            
+            if (whoSection) whoSection.id = 'who';
+            if (servicesSection) servicesSection.id = 'services';
+            if (expertiseSection) expertiseSection.id = 'expertise';
+            if (outcomesSection) outcomesSection.id = 'outcomes';
+            if (contactSection) contactSection.id = 'contact';
+
+            // Nav scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Animate children with stagger
+                        const children = entry.target.querySelectorAll('.impact-item, .approach-item, .service-card, .benefit-item, .process-step, .tech-card, .expertise-tag');
+                        children.forEach((child, index) => {
+                            setTimeout(() => {
+                                child.style.opacity = '0';
+                                child.style.transform = 'translateY(20px)';
+                                child.style.transition = 'all 0.5s ease';
+                                
+                                setTimeout(() => {
+                                    child.style.opacity = '1';
+                                    child.style.transform = 'translateY(0)';
+                                }, 50);
+                            }, index * 100);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Parallax effect for header (optional - can be disabled if causing issues)
+            // window.addEventListener('scroll', function() {
+            //     const scrolled = window.pageYOffset;
+            //     const header = document.querySelector('header');
+            //     if (header) {
+            //         header.style.transform = `translateY(${scrolled * 0.5}px)`;
+            //         header.style.opacity = 1 - (scrolled / 500);
+            //     }
+            // });
+
+            // Interactive service cards - add click ripple effect
+            document.querySelectorAll('.service-card, .impact-item, .approach-item, .benefit-item').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Add ripple effect styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .ripple {
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(59, 130, 246, 0.3);
+                    transform: scale(0);
+                    animation: ripple-animation 0.6s ease-out;
+                    pointer-events: none;
+                }
+                
+                @keyframes ripple-animation {
+                    to {
+                        transform: scale(2);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Contact form handling
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitButton = contactForm.querySelector('.submit-button');
+                    const formData = new FormData(contactForm);
+                    
+                    // Disable submit button
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                    
+                    // Simulate form submission (replace with actual form handling)
+                    setTimeout(() => {
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Show success message
+                        formMessage.textContent = 'Thank you! Your message has been sent. We\'ll get back to you soon.';
+                        formMessage.className = 'form-message success';
+                        
+                        // Re-enable submit button
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            formMessage.className = 'form-message';
+                        }, 5000);
+                        
+                        // Scroll to message
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 1000);
+                });
+
+                // Add input validation styling
+                const inputs = contactForm.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                    input.addEventListener('blur', function() {
+                        if (this.hasAttribute('required') && !this.value.trim()) {
+                            this.style.borderColor = '#ef4444';
+                        } else {
+                            this.style.borderColor = '#e2e8f0';
+                        }
+                    });
+
+                    input.addEventListener('input', function() {
+                        if (this.style.borderColor === 'rgb(239, 68, 68)') {
+                            if (this.value.trim()) {
+                                this.style.borderColor = '#e2e8f0';
+                            }
+                        }
+                    });
+                });
+            }
+
+            // AI Chat Widget Functionality
+            const aiChatButton = document.getElementById('aiChatButton');
+            const aiChatContainer = document.getElementById('aiChatContainer');
+            const aiChatClose = document.getElementById('aiChatClose');
+            const aiChatInput = document.getElementById('aiChatInput');
+            const aiChatSend = document.getElementById('aiChatSend');
+            const aiChatMessages = document.getElementById('aiChatMessages');
+
+            // Function to open chat
+            function openChat() {
+                if (aiChatContainer && !aiChatContainer.classList.contains('active')) {
+                    aiChatContainer.classList.add('active');
+                    if (aiChatInput) {
+                        aiChatInput.focus();
+                    }
+                }
+            }
+
+            // Toggle chat
+            if (aiChatButton && aiChatContainer) {
+                aiChatButton.addEventListener('click', function() {
+                    aiChatContainer.classList.toggle('active');
+                    if (aiChatContainer.classList.contains('active')) {
+                        aiChatInput.focus();
+                        // Mark that user has interacted with chat
+                        localStorage.setItem('aiChatUserInteracted', 'true');
+                    }
+                });
+
+                aiChatClose.addEventListener('click', function() {
+                    aiChatContainer.classList.remove('active');
+                    // Mark that user closed the chat
+                    localStorage.setItem('aiChatClosed', 'true');
+                });
+
+                // Auto-open chat after delay
+                // Check if user has previously closed it or interacted
+                const chatClosed = localStorage.getItem('aiChatClosed');
+                const userInteracted = localStorage.getItem('aiChatUserInteracted');
+                
+                // Only auto-open if user hasn't closed it before
+                if (!chatClosed && !userInteracted) {
+                    // Wait for page to fully load, then wait additional time
+                    let autoOpenTimer;
+                    
+                    // Open after user has been on page for 5 seconds
+                    // and has scrolled at least a bit (showing engagement)
+                    let hasScrolled = false;
+                    let scrollTimer;
+                    
+                    window.addEventListener('scroll', function() {
+                        if (!hasScrolled && window.scrollY > 100) {
+                            hasScrolled = true;
+                            clearTimeout(scrollTimer);
+                            
+                            // Open chat 3 seconds after user starts scrolling
+                            scrollTimer = setTimeout(function() {
+                                if (!aiChatContainer.classList.contains('active')) {
+                                    openChat();
+                                }
+                            }, 3000);
+                        }
+                    }, { once: false });
+                    
+                    // Also open after 8 seconds regardless of scroll (fallback)
+                    autoOpenTimer = setTimeout(function() {
+                        if (!hasScrolled && !aiChatContainer.classList.contains('active')) {
+                            openChat();
+                        }
+                    }, 8000);
+                    
+                    // Clear timer if user manually opens chat
+                    aiChatButton.addEventListener('click', function() {
+                        clearTimeout(autoOpenTimer);
+                        clearTimeout(scrollTimer);
+                    }, { once: true });
+                }
+
+                // Send message function
+                function sendMessage() {
+                    const message = aiChatInput.value.trim();
+                    if (!message) return;
+
+                    // Add user message
+                    addMessage(message, 'user');
+                    aiChatInput.value = '';
+                    aiChatSend.disabled = true;
+
+                    // Show typing indicator
+                    showTypingIndicator();
+
+                    // Simulate AI response (replace with actual AI API call)
+                    setTimeout(() => {
+                        hideTypingIndicator();
+                        const response = generateAIResponse(message);
+                        addMessage(response, 'ai');
+                        aiChatSend.disabled = false;
+                        aiChatInput.focus();
+                    }, 1000 + Math.random() * 1000);
+                }
+
+                // Add message to chat
+                function addMessage(text, sender) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `ai-chat-message ${sender}`;
+                    
+                    const avatar = document.createElement('div');
+                    avatar.className = 'ai-chat-message-avatar';
+                    avatar.textContent = sender === 'ai' ? 'AI' : 'You';
+                    
+                    const content = document.createElement('div');
+                    content.className = 'ai-chat-message-content';
+                    content.textContent = text;
+                    
+                    messageDiv.appendChild(avatar);
+                    messageDiv.appendChild(content);
+                    aiChatMessages.appendChild(messageDiv);
+                    
+                    // Scroll to bottom
+                    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                }
+
+                // Show typing indicator
+                function showTypingIndicator() {
+                    const typingDiv = document.createElement('div');
+                    typingDiv.className = 'ai-chat-message ai';
+                    typingDiv.id = 'typingIndicator';
+                    
+                    const avatar = document.createElement('div');
+                    avatar.className = 'ai-chat-message-avatar';
+                    avatar.textContent = 'AI';
+                    
+                    const typing = document.createElement('div');
+                    typing.className = 'ai-typing-indicator';
+                    typing.innerHTML = '<span></span><span></span><span></span>';
+                    
+                    typingDiv.appendChild(avatar);
+                    typingDiv.appendChild(typing);
+                    aiChatMessages.appendChild(typingDiv);
+                    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                }
+
+                // Hide typing indicator
+                function hideTypingIndicator() {
+                    const indicator = document.getElementById('typingIndicator');
+                    if (indicator) {
+                        indicator.remove();
+                    }
+                }
+
+                // Generate AI response (replace with actual AI API integration)
+                function generateAIResponse(userMessage) {
+                    const message = userMessage.toLowerCase();
+                    
+                    // Simple keyword-based responses (replace with actual AI API)
+                    if (message.includes('service') || message.includes('package') || message.includes('pricing')) {
+                        return "We offer several service packages: Performance Health Audit ($10,000), Scale & Latency Optimization ($30,000-$50,000), Executive Performance Retainer ($6,000-$12,000/month), and Incident & Emergency Support ($350-$500/hour). Which one interests you?";
+                    } else if (message.includes('performance') || message.includes('optimization')) {
+                        return "Our performance engineering services focus on predictive and preventative approaches. We identify system limits, quantify risk, reduce infrastructure waste, and ensure predictable scaling. What specific performance challenges are you facing?";
+                    } else if (message.includes('contact') || message.includes('reach') || message.includes('email')) {
+                        return "You can reach us through the contact form on this page, or via WhatsApp using the button in the bottom right. We typically respond within 24 hours.";
+                    } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                        return "Hello! I'm here to help you learn about our performance engineering services. What would you like to know?";
+                    } else if (message.includes('help')) {
+                        return "I can help you learn about our services, pricing, technical expertise, or connect you with our team. What would you like to know more about?";
+                    } else {
+                        return "That's a great question! Our performance engineering services help organizations optimize their systems for scale, reliability, and cost efficiency. Would you like to know more about our service packages, or do you have a specific performance challenge you're facing?";
+                    }
+                }
+
+                // Send button click
+                aiChatSend.addEventListener('click', sendMessage);
+
+                // Enter key to send
+                aiChatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+
+                // Enable/disable send button based on input
+                aiChatInput.addEventListener('input', function() {
+                    aiChatSend.disabled = !this.value.trim();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
