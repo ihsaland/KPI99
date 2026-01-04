@@ -12,7 +12,7 @@
    - Click **Save**
 
 3. **Your site will be live at:**
-   - `https://ihsaland.github.io/KPI99/`
+   - `https://kpi99.co/`
 
 ## Option 2: GitHub Actions (If available)
 
@@ -30,13 +30,22 @@ If GitHub Actions appears as an option:
 - `index.html` - Main website file
 - `panAbstract.png` - Header background image
 
-## Custom Domain (Optional)
+## Custom Domain Setup
 
-If you want to use a custom domain:
+The site is configured to use the custom domain `kpi99.co`:
 
-1. Add a `CNAME` file in the root with your domain name
-2. Configure DNS settings with your domain provider
-3. Update the domain in GitHub Pages settings
+1. **CNAME file:** Already created in the repository root with `kpi99.co`
+2. **DNS Configuration:** Configure your DNS settings with your domain provider:
+   - Add a CNAME record pointing `kpi99.co` to `ihsaland.github.io`
+   - Or add A records pointing to GitHub Pages IP addresses:
+     - 185.199.108.153
+     - 185.199.109.153
+     - 185.199.110.153
+     - 185.199.111.153
+3. **GitHub Pages Settings:** 
+   - Go to repository settings → Pages
+   - The custom domain should appear automatically
+   - Enable "Enforce HTTPS" once DNS propagates (may take up to 24 hours)
 
 ## Troubleshooting
 

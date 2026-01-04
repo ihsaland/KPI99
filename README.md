@@ -15,7 +15,7 @@ This site is configured to deploy automatically to GitHub Pages when changes are
 1. Go to your repository settings on GitHub
 2. Navigate to **Pages** in the left sidebar
 3. Under **Source**, select **GitHub Actions**
-4. The site will be available at: `https://ihsaland.github.io/KPI99/`
+4. The site will be available at: `https://kpi99.co/`
 
 ### Local Development
 
