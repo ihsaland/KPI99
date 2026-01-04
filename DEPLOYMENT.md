@@ -46,6 +46,27 @@ The site is configured to use the custom domain `kpi99.co`:
    - Go to repository settings → Pages
    - The custom domain should appear automatically
    - Enable "Enforce HTTPS" once DNS propagates (may take up to 24 hours)
+   - GitHub Pages automatically provides SSL/TLS certificates via Let's Encrypt
+
+## HTTPS Configuration
+
+The site is fully configured for HTTPS:
+
+1. **Security Headers:** Added to `index.html`:
+   - `Content-Security-Policy: upgrade-insecure-requests` - Automatically upgrades HTTP requests to HTTPS
+   - `Referrer-Policy: strict-origin-when-cross-origin` - Secure referrer handling
+   - Canonical URL with HTTPS
+
+2. **External Resources:** All external resources use HTTPS:
+   - Google Fonts (HTTPS)
+   - Google Analytics (HTTPS)
+   - WhatsApp links (HTTPS)
+
+3. **GitHub Pages HTTPS:**
+   - Once DNS is configured and domain is verified, GitHub Pages automatically enables HTTPS
+   - SSL certificate is provided and renewed automatically
+   - "Enforce HTTPS" option will appear in Pages settings after domain verification
+   - All HTTP traffic will be automatically redirected to HTTPS
 
 ## Troubleshooting
 
