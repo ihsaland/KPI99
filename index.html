@@ -160,6 +160,97 @@
             animation: fadeInUp 0.8s ease 0.2s both;
         }
 
+        .consultation-button-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .consultation-button-header:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .consultation-button-header svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Calendly Overlay */
+        .calendly-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .calendly-overlay.active {
+            display: flex;
+        }
+
+        .calendly-container {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            height: 90%;
+            max-height: 700px;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .calendly-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f1f5f9;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: #334155;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10001;
+        }
+
+        .calendly-close:hover {
+            background: #e2e8f0;
+            transform: scale(1.1);
+        }
+
+        .calendly-inline-widget {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -638,6 +729,53 @@
 
         .required {
             color: #ef4444;
+        }
+
+        /* PDF Download Button */
+        .pdf-download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+            margin: 20px 0 40px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pdf-download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .pdf-download-button svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .services-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
 
         /* WhatsApp Button */
@@ -1298,16 +1436,25 @@
         <div class="container">
             <h1>KPI99</h1>
             <p class="tagline">Performance. Scale. Reliability—Engineered.</p>
+            <a href="#" class="consultation-button-header" id="consultationButtonHeader">
+                <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/>
+                </svg>
+                Book a Free 15-minute Consultation
+            </a>
         </div>
     </header>
 
     <section class="who-section">
         <div class="container">
-            <h2>Who This Is For</h2>
+            <h2>Enterprise-Grade Performance Engineering Team</h2>
             <p class="intro-text">
-                Organizations running mission-critical systems where performance, scale, and reliability directly impact:
+                KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.
             </p>
-            <div class="impact-grid">
+            <p class="intro-text" style="margin-top: 20px;">
+                Our team applies proven enterprise methodologies to identify performance limits, reduce latency, prevent outages, and improve infrastructure efficiency before issues impact customers or regulators.
+            </p>
+            <div class="impact-grid" style="margin-top: 40px;">
                 <div class="impact-item">
                     <h4>Revenue</h4>
                 </div>
@@ -1321,20 +1468,31 @@
                     <h4>Cloud & infrastructure spend</h4>
                 </div>
             </div>
-            <p class="intro-text" style="margin-top: 30px;">
-                We work with enterprise teams to identify and eliminate performance limits before they become outages or cost overruns.
-            </p>
         </div>
     </section>
 
     <section class="different-section">
         <div class="container">
-            <h2>What Makes This Different</h2>
+            <h2>Our Experience</h2>
             <p class="intro-text" style="color: #334155;">
-                Most performance work is reactive.<br>
-                <strong>Our approach is predictive and preventative.</strong>
+                Our team brings deep experience supporting large-scale, regulated platforms where performance, reliability, and predictability are business-critical.
             </p>
-            <div class="approach-grid">
+            <p class="intro-text" style="color: #334155; margin-top: 20px;">
+                We have worked across environments including financial services, large data platforms, event-driven architectures, and cloud-based enterprise systems operating under strict SLA requirements.
+            </p>
+        </div>
+    </section>
+
+    <section class="methodology-section">
+        <div class="container">
+            <h2>Our Approach</h2>
+            <p class="intro-text" style="color: #334155;">
+                KPI99 follows a structured, evidence-driven performance engineering methodology refined in large enterprise environments.
+            </p>
+            <p class="intro-text" style="color: #334155; margin-top: 20px;">
+                Each engagement combines application-level analysis, infrastructure saturation modeling, and capacity forecasting to provide clear, actionable insight for technical and executive stakeholders.
+            </p>
+            <div class="approach-grid" style="margin-top: 40px;">
                 <div class="approach-item">
                     <h4>Identifying true system limits</h4>
                 </div>
@@ -1481,7 +1639,15 @@
 
     <section class="services-section">
         <div class="container">
-            <h2>Service Packages</h2>
+            <div class="services-header">
+                <h2>Service Packages</h2>
+                <a href="KPI99_Services.pdf" class="pdf-download-button" download>
+                    <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Services PDF
+                </a>
+            </div>
             
             <div class="services-grid">
                 <!-- Performance Health Audit -->
@@ -1659,48 +1825,69 @@
 
     <section class="technical-section">
         <div class="container">
-            <h2>Typical Outcomes & Results</h2>
+            <h2>Representative Outcomes</h2>
             <p class="intro-text">
-                Measurable improvements that directly impact business metrics and operational efficiency.
+                Our team has delivered measurable improvements across enterprise environments.
             </p>
             <div class="tech-grid">
                 <div class="tech-card">
                     <h4>Performance Improvements</h4>
                     <ul>
-                        <li>50-90% latency reduction in critical paths</li>
-                        <li>2-5x throughput increases</li>
-                        <li>99.9%+ uptime during peak loads</li>
-                        <li>Sub-100ms p95 response times</li>
-                        <li>Elimination of performance-related incidents</li>
+                        <li>Reduced peak-load latency by 40–70% in enterprise environments</li>
+                        <li>Improved throughput and stability without increasing infrastructure footprint</li>
+                        <li>Prevented scale-related incidents during high-risk growth and demand events</li>
                     </ul>
                 </div>
                 <div class="tech-card">
-                    <h4>Cost Optimization</h4>
+                    <h4>Infrastructure Efficiency</h4>
                     <ul>
-                        <li>20-40% reduction in cloud infrastructure costs</li>
-                        <li>Right-sized capacity planning</li>
-                        <li>Elimination of over-provisioned resources</li>
-                        <li>Optimized autoscaling policies</li>
-                        <li>ROI-positive performance investments</li>
+                        <li>Identified 30%+ infrastructure inefficiency in hybrid cloud systems</li>
+                        <li>Right-sized capacity planning and resource allocation</li>
+                        <li>Optimized autoscaling policies for predictable costs</li>
                     </ul>
                 </div>
                 <div class="tech-card">
                     <h4>Risk Mitigation</h4>
                     <ul>
-                        <li>Quantified capacity headroom</li>
-                        <li>Predictable scaling thresholds</li>
-                        <li>Proactive bottleneck identification</li>
-                        <li>Performance regression prevention</li>
-                        <li>Compliance-ready performance documentation</li>
+                        <li>Quantified capacity headroom for growth planning</li>
+                        <li>Predictable scaling thresholds and performance baselines</li>
+                        <li>Proactive bottleneck identification and resolution</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="technical-section">
+        <div class="container">
+            <h2>About the Team</h2>
+            <p class="intro-text">
+                KPI99 operates as a focused consulting practice delivering senior-level performance engineering expertise.
+            </p>
+            <p class="intro-text" style="margin-top: 20px;">
+                Engagements are led by experienced engineers with enterprise backgrounds, ensuring direct access to deep technical capability without the overhead of large consulting teams.
+            </p>
+        </div>
+    </section>
+
+    <section class="different-section">
+        <div class="container">
+            <h2>Partner-Ready Delivery Model</h2>
+            <p class="intro-text" style="color: #334155;">
+                KPI99 regularly supports delivery partners by providing specialized performance and capacity expertise during high-impact initiatives.
+            </p>
+            <p class="intro-text" style="color: #334155; margin-top: 20px;">
+                Our role is to reduce delivery risk, strengthen outcomes, and increase confidence during migrations, scale events, and performance-sensitive programs.
+            </p>
+        </div>
+    </section>
+
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2>Request an Assessment</h2>
+            <p class="intro-text" style="text-align: center; margin-bottom: 30px; color: #475569;">
+                Get in touch to discuss your performance engineering needs. Our team will review your requirements and provide a tailored assessment of how we can help optimize your systems.
+            </p>
             <div class="contact-form-container">
                 <form id="contactForm">
                     <div class="form-row">
@@ -1732,9 +1919,9 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message <span class="required">*</span></label>
-                        <textarea id="message" name="message" placeholder="Tell us about your performance challenges and how we can help..." required></textarea>
+                        <textarea id="message" name="message" placeholder="Tell us about your performance challenges, current system constraints, or specific areas where you'd like an assessment..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <button type="submit" class="submit-button">Request Assessment</button>
                     <div class="form-message" id="formMessage"></div>
                 </form>
             </div>
@@ -1801,8 +1988,20 @@
         </svg>
     </a>
 
+    <!-- Calendly Overlay -->
+    <div class="calendly-overlay" id="calendlyOverlay">
+        <div class="calendly-container">
+            <button class="calendly-close" id="calendlyClose" aria-label="Close calendar">×</button>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_USERNAME/15min" style="min-width:320px;height:100%;"></div>
+        </div>
+    </div>
+
+    <!-- Calendly script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
     <footer>
         <div class="container">
+            <p style="margin-bottom: 15px; font-style: italic; opacity: 0.9;">Enterprise performance engineering delivered with rigor, discretion, and senior-level accountability.</p>
             <p>&copy; 2026 Sisters Grove LLC. All rights reserved.</p>
         </div>
     </footer>
@@ -1950,6 +2149,42 @@
             `;
             document.head.appendChild(style);
 
+            // Calendly consultation booking
+            const consultationButtonHeader = document.getElementById('consultationButtonHeader');
+            const calendlyOverlay = document.getElementById('calendlyOverlay');
+            const calendlyClose = document.getElementById('calendlyClose');
+
+            if (consultationButtonHeader && calendlyOverlay) {
+                consultationButtonHeader.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    calendlyOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+
+                if (calendlyClose) {
+                    calendlyClose.addEventListener('click', function() {
+                        calendlyOverlay.classList.remove('active');
+                        document.body.style.overflow = ''; // Restore scrolling
+                    });
+                }
+
+                // Close when clicking outside the calendar
+                calendlyOverlay.addEventListener('click', function(e) {
+                    if (e.target === calendlyOverlay) {
+                        calendlyOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Close on Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && calendlyOverlay.classList.contains('active')) {
+                        calendlyOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
             // Contact form handling
             const contactForm = document.getElementById('contactForm');
             const formMessage = document.getElementById('formMessage');
@@ -1971,12 +2206,12 @@
                         contactForm.reset();
                         
                         // Show success message
-                        formMessage.textContent = 'Thank you! Your message has been sent. We\'ll get back to you soon.';
+                        formMessage.textContent = 'Thank you! Your assessment request has been received. Our team will review your information and get back to you soon.';
                         formMessage.className = 'form-message success';
                         
                         // Re-enable submit button
                         submitButton.disabled = false;
-                        submitButton.textContent = 'Send Message';
+                        submitButton.textContent = 'Request Assessment';
                         
                         // Hide message after 5 seconds
                         setTimeout(() => {
