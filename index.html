@@ -82,9 +82,17 @@
         }
 
         nav .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        nav .logo img {
+            height: 40px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+            display: block;
         }
 
         nav ul {
@@ -1193,6 +1201,15 @@
         }
 
         @media (max-width: 768px) {
+            nav .logo img {
+                height: 32px;
+                max-width: 120px;
+            }
+
+            nav .container {
+                padding: 15px 20px;
+            }
+
             .ai-chat-widget {
                 bottom: 90px;
                 right: 20px;
@@ -2019,7 +2036,9 @@
             const nav = document.createElement('nav');
             nav.innerHTML = `
                 <div class="container">
-                    <div class="logo">KPI99</div>
+                    <div class="logo">
+                        <img src="menu_logo.png" alt="KPI99" />
+                    </div>
                     <ul>
                         <li><a href="#who">Who</a></li>
                         <li><a href="#services">Services</a></li>
