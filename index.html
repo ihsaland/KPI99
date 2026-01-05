@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com; frame-src https://assets.calendly.com;">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -23,6 +23,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+        })();
+    </script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -99,6 +107,54 @@
             display: flex;
             list-style: none;
             gap: 30px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #334155;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                gap: 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
         }
 
         nav ul li a {
@@ -1201,15 +1257,132 @@
         }
 
         @media (max-width: 768px) {
+            /* Navigation */
             nav .logo img {
                 height: 32px;
                 max-width: 120px;
             }
 
             nav .container {
-                padding: 15px 20px;
+                padding: 12px 15px;
             }
 
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            /* Header */
+            header {
+                padding: 100px 0 60px;
+                background-attachment: scroll;
+            }
+
+            header .tagline {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+
+            .consultation-button-header {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+                margin-top: 20px;
+            }
+
+            /* Typography */
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            section h3 {
+                font-size: 1.4rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            /* Sections */
+            section {
+                padding: 50px 0;
+            }
+
+            /* Grids */
+            .impact-grid,
+            .approach-grid,
+            .tech-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Cards */
+            .service-card {
+                padding: 25px;
+            }
+
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .tech-card,
+            .approach-item,
+            .impact-item {
+                padding: 20px;
+            }
+
+            /* Process Steps */
+            .process-step {
+                padding: 20px;
+            }
+
+            /* Contact Form */
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            /* Buttons */
+            .whatsapp-button {
+                padding: 14px 30px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .pdf-download-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Expertise Tags */
+            .expertise-tags {
+                gap: 10px;
+            }
+
+            .expertise-tag {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            /* AI Chat Widget */
             .ai-chat-widget {
                 bottom: 90px;
                 right: 20px;
@@ -1232,6 +1405,69 @@
                 right: 0;
                 left: auto;
             }
+
+            /* WhatsApp Float */
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px 0;
+                font-size: 0.9rem;
+            }
+
+            /* Calendly */
+            .calendly-container {
+                width: 95%;
+                height: 95%;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small devices */
+            header {
+                padding: 80px 0 50px;
+            }
+
+            header .tagline {
+                font-size: 1rem;
+            }
+
+            .consultation-button-header {
+                padding: 10px 18px;
+                font-size: 0.8rem;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 0.85rem;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .contact-form-container {
+                padding: 25px 15px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
         }
 
         /* Footer */
@@ -1244,28 +1480,250 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Navigation */
+            nav .logo img {
+                height: 32px;
+                max-width: 120px;
+            }
+
+            nav .container {
+                padding: 12px 15px;
+            }
+
             nav ul {
                 display: none;
             }
 
+            /* Header */
             header {
                 padding: 100px 0 60px;
-            }
-
-            header h1 {
-                font-size: 2rem;
+                background-attachment: scroll;
             }
 
             header .tagline {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                padding: 0 20px;
             }
 
+            .consultation-button-header {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+                margin-top: 20px;
+            }
+
+            /* Typography */
             section h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            section h3 {
+                font-size: 1.4rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            /* Sections */
+            section {
+                padding: 50px 0;
+            }
+
+            /* Grids */
+            .impact-grid,
+            .approach-grid,
+            .tech-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Cards */
+            .service-card {
+                padding: 25px;
+            }
+
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .tech-card,
+            .approach-item,
+            .impact-item {
+                padding: 20px;
+            }
+
+            /* Process Steps */
+            .process-step {
+                padding: 20px;
+            }
+
+            /* Contact Form */
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            /* Buttons */
+            .whatsapp-button {
+                padding: 14px 30px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .pdf-download-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Expertise Tags */
+            .expertise-tags {
+                gap: 10px;
+            }
+
+            .expertise-tag {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            /* AI Chat Widget */
+            .ai-chat-widget {
+                bottom: 90px;
+                right: 20px;
+            }
+
+            .ai-chat-button {
+                width: 55px;
+                height: 55px;
+            }
+
+            .ai-chat-button svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .ai-chat-container {
+                width: calc(100vw - 40px);
+                height: calc(100vh - 100px);
+                max-height: 500px;
+                right: 0;
+                left: auto;
+            }
+
+            /* WhatsApp Float */
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px 0;
+                font-size: 0.9rem;
+            }
+
+            /* Calendly */
+            .calendly-container {
+                width: 95%;
+                height: 95%;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small devices */
+            header {
+                padding: 80px 0 50px;
+            }
+
+            header .tagline {
+                font-size: 1rem;
+            }
+
+            .consultation-button-header {
+                padding: 10px 18px;
+                font-size: 0.8rem;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 0.85rem;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .contact-form-container {
+                padding: 25px 15px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Touch-friendly targets */
+            button,
+            .submit-button,
+            .whatsapp-button,
+            .pdf-download-button,
+            .consultation-button-header {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            /* Better spacing for small screens */
+            .services-header {
+                gap: 15px;
+            }
+
+            .whatsapp-divider {
+                margin: 30px 0;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            /* Remove hover effects on touch devices */
+            .service-card:hover,
+            .impact-item:hover,
+            .approach-item:hover,
+            .tech-card:hover {
+                transform: none;
+            }
+
+            /* Larger touch targets */
+            nav ul li a {
+                padding: 10px 0;
             }
         }
 
@@ -2038,7 +2496,8 @@
                     <div class="logo">
                         <img src="menu_logo.png" alt="KPI99" />
                     </div>
-                    <ul>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+                    <ul id="navMenu">
                         <li><a href="#who">Who</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#expertise">Expertise</a></li>
@@ -2070,6 +2529,33 @@
                     nav.classList.remove('scrolled');
                 }
             });
+
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+                });
+
+                // Close menu when clicking on a link
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.textContent = '☰';
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!nav.contains(e.target) && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.textContent = '☰';
+                    }
+                });
+            }
 
             // Intersection Observer for scroll animations
             const observerOptions = {
@@ -2209,7 +2695,7 @@
                 });
             }
 
-            // Contact form handling
+            // Contact form handling with EmailJS
             const contactForm = document.getElementById('contactForm');
             const formMessage = document.getElementById('formMessage');
 
@@ -2218,33 +2704,54 @@
                     e.preventDefault();
                     
                     const submitButton = contactForm.querySelector('.submit-button');
-                    const formData = new FormData(contactForm);
                     
                     // Disable submit button
                     submitButton.disabled = true;
                     submitButton.textContent = 'Sending...';
                     
-                    // Simulate form submission (replace with actual form handling)
-                    setTimeout(() => {
-                        // Reset form
-                        contactForm.reset();
-                        
-                        // Show success message
-                        formMessage.textContent = 'Thank you! Your assessment request has been received. Our team will review your information and get back to you soon.';
-                        formMessage.className = 'form-message success';
-                        
-                        // Re-enable submit button
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Request Assessment';
-                        
-                        // Hide message after 5 seconds
-                        setTimeout(() => {
-                            formMessage.className = 'form-message';
-                        }, 5000);
-                        
-                        // Scroll to message
-                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 1000);
+                    // Prepare email parameters
+                    const templateParams = {
+                        from_name: contactForm.querySelector('#name').value,
+                        from_email: contactForm.querySelector('#email').value,
+                        company: contactForm.querySelector('#company').value || 'Not provided',
+                        service_interest: contactForm.querySelector('#service').value || 'Not specified',
+                        message: contactForm.querySelector('#message').value,
+                        to_name: 'KPI99 Team'
+                    };
+                    
+                    // Send email using EmailJS
+                    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                        .then(function(response) {
+                            // Success
+                            contactForm.reset();
+                            
+                            formMessage.textContent = 'Thank you! Your assessment request has been received. Our team will review your information and get back to you soon.';
+                            formMessage.className = 'form-message success';
+                            
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Request Assessment';
+                            
+                            setTimeout(() => {
+                                formMessage.className = 'form-message';
+                            }, 5000);
+                            
+                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, function(error) {
+                            // Error
+                            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+                            formMessage.className = 'form-message error';
+                            
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Request Assessment';
+                            
+                            setTimeout(() => {
+                                formMessage.className = 'form-message';
+                            }, 5000);
+                            
+                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            
+                            console.error('EmailJS error:', error);
+                        });
                 });
 
                 // Add input validation styling
