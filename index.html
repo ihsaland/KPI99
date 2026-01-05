@@ -27,20 +27,25 @@
     <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-        // Initialize EmailJS when the library is loaded
-        (function initEmailJS() {
-            if (typeof emailjs !== 'undefined') {
-                try {
-                    emailjs.init("C72iqShn4JvJqqQpb");
-                    console.log('EmailJS initialized successfully');
-                } catch (error) {
-                    console.error('EmailJS initialization error:', error);
+        // Initialize EmailJS when DOM and library are ready
+        document.addEventListener('DOMContentLoaded', function() {
+            function initEmailJS() {
+                if (typeof emailjs !== 'undefined') {
+                    try {
+                        emailjs.init("C72iqShn4JvJqqQpb");
+                        console.log('EmailJS initialized successfully');
+                        window.emailjsReady = true;
+                    } catch (error) {
+                        console.error('EmailJS initialization error:', error);
+                        window.emailjsReady = false;
+                    }
+                } else {
+                    // Retry after a short delay if not loaded yet
+                    setTimeout(initEmailJS, 100);
                 }
-            } else {
-                // Retry after a short delay if not loaded yet
-                setTimeout(initEmailJS, 100);
             }
-        })();
+            initEmailJS();
+        });
     </script>
     
     <!-- Google tag (gtag.js) -->
@@ -2714,17 +2719,24 @@
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Check if EmailJS is loaded
-                    if (typeof emailjs === 'undefined') {
-                        console.error('EmailJS is not loaded');
+                    const submitButton = contactForm.querySelector('.submit-button');
+                    
+                    // Check if EmailJS is loaded and initialized
+                    if (typeof emailjs === 'undefined' || !window.emailjsReady) {
+                        console.error('EmailJS is not loaded or not initialized');
+                        console.log('emailjs type:', typeof emailjs);
+                        console.log('emailjsReady:', window.emailjsReady);
+                        
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Request Assessment';
+                        
                         if (formMessage) {
                             formMessage.textContent = 'Email service is not available. Please refresh the page and try again.';
                             formMessage.className = 'form-message error';
+                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                         }
                         return;
                     }
-                    
-                    const submitButton = contactForm.querySelector('.submit-button');
                     
                     // Disable submit button
                     submitButton.disabled = true;
@@ -2736,15 +2748,34 @@
                         formMessage.className = 'form-message';
                     }
                     
+                    // Validate required fields
+                    const nameField = contactForm.querySelector('#name');
+                    const emailField = contactForm.querySelector('#email');
+                    const messageField = contactForm.querySelector('#message');
+                    
+                    if (!nameField.value.trim() || !emailField.value.trim() || !messageField.value.trim()) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Request Assessment';
+                        if (formMessage) {
+                            formMessage.textContent = 'Please fill in all required fields.';
+                            formMessage.className = 'form-message error';
+                        }
+                        return;
+                    }
+                    
                     // Prepare email parameters
                     const templateParams = {
-                        from_name: contactForm.querySelector('#name').value,
-                        from_email: contactForm.querySelector('#email').value,
-                        company: contactForm.querySelector('#company').value || 'Not provided',
+                        from_name: nameField.value.trim(),
+                        from_email: emailField.value.trim(),
+                        company: contactForm.querySelector('#company').value.trim() || 'Not provided',
                         service_interest: contactForm.querySelector('#service').value || 'Not specified',
-                        message: contactForm.querySelector('#message').value,
+                        message: messageField.value.trim(),
                         to_name: 'KPI99 Team'
                     };
+                    
+                    console.log('Sending email with params:', templateParams);
+                    console.log('EmailJS service ID: service_0q089fj');
+                    console.log('EmailJS template ID: template_mzvfeg7');
                     
                     // Set a timeout to prevent infinite "sending" state
                     const timeoutId = setTimeout(function() {
@@ -2763,6 +2794,8 @@
                         .then(function(response) {
                             clearTimeout(timeoutId);
                             
+                            console.log('EmailJS success response:', response);
+                            
                             // Success
                             contactForm.reset();
                             
@@ -2779,15 +2812,26 @@
                             
                             submitButton.disabled = false;
                             submitButton.textContent = 'Request Assessment';
-                            
-                            console.log('EmailJS success:', response);
                         })
                         .catch(function(error) {
                             clearTimeout(timeoutId);
                             
+                            console.error('EmailJS error:', error);
+                            console.error('Error status:', error?.status);
+                            console.error('Error text:', error?.text);
+                            console.error('Full error object:', JSON.stringify(error, null, 2));
+                            
                             // Error
+                            let errorMessage = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+                            
+                            if (error?.text) {
+                                errorMessage += ' Error: ' + error.text;
+                            } else if (error?.message) {
+                                errorMessage += ' Error: ' + error.message;
+                            }
+                            
                             if (formMessage) {
-                                formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+                                formMessage.textContent = errorMessage;
                                 formMessage.className = 'form-message error';
                                 
                                 setTimeout(() => {
@@ -2799,9 +2843,6 @@
                             
                             submitButton.disabled = false;
                             submitButton.textContent = 'Request Assessment';
-                            
-                            console.error('EmailJS error:', error);
-                            console.error('Error details:', JSON.stringify(error, null, 2));
                         });
                 });
 
