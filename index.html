@@ -27,8 +27,19 @@
     <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function(){
-            emailjs.init("C72iqShn4JvJqqQpb");
+        // Initialize EmailJS when the library is loaded
+        (function initEmailJS() {
+            if (typeof emailjs !== 'undefined') {
+                try {
+                    emailjs.init("C72iqShn4JvJqqQpb");
+                    console.log('EmailJS initialized successfully');
+                } catch (error) {
+                    console.error('EmailJS initialization error:', error);
+                }
+            } else {
+                // Retry after a short delay if not loaded yet
+                setTimeout(initEmailJS, 100);
+            }
         })();
     </script>
     
@@ -2703,11 +2714,27 @@
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
+                    // Check if EmailJS is loaded
+                    if (typeof emailjs === 'undefined') {
+                        console.error('EmailJS is not loaded');
+                        if (formMessage) {
+                            formMessage.textContent = 'Email service is not available. Please refresh the page and try again.';
+                            formMessage.className = 'form-message error';
+                        }
+                        return;
+                    }
+                    
                     const submitButton = contactForm.querySelector('.submit-button');
                     
                     // Disable submit button
                     submitButton.disabled = true;
                     submitButton.textContent = 'Sending...';
+                    
+                    // Clear any previous messages
+                    if (formMessage) {
+                        formMessage.textContent = '';
+                        formMessage.className = 'form-message';
+                    }
                     
                     // Prepare email parameters
                     const templateParams = {
@@ -2719,38 +2746,62 @@
                         to_name: 'KPI99 Team'
                     };
                     
+                    // Set a timeout to prevent infinite "sending" state
+                    const timeoutId = setTimeout(function() {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Request Assessment';
+                        if (formMessage) {
+                            formMessage.textContent = 'Request timed out. Please check your connection and try again.';
+                            formMessage.className = 'form-message error';
+                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                        console.error('EmailJS request timed out');
+                    }, 30000); // 30 second timeout
+                    
                     // Send email using EmailJS
                     emailjs.send('service_0q089fj', 'template_mzvfeg7', templateParams)
                         .then(function(response) {
+                            clearTimeout(timeoutId);
+                            
                             // Success
                             contactForm.reset();
                             
-                            formMessage.textContent = 'Thank you! Your assessment request has been received. Our team will review your information and get back to you soon.';
-                            formMessage.className = 'form-message success';
+                            if (formMessage) {
+                                formMessage.textContent = 'Thank you! Your assessment request has been received. Our team will review your information and get back to you soon.';
+                                formMessage.className = 'form-message success';
+                                
+                                setTimeout(() => {
+                                    formMessage.className = 'form-message';
+                                }, 5000);
+                                
+                                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }
                             
                             submitButton.disabled = false;
                             submitButton.textContent = 'Request Assessment';
                             
-                            setTimeout(() => {
-                                formMessage.className = 'form-message';
-                            }, 5000);
+                            console.log('EmailJS success:', response);
+                        })
+                        .catch(function(error) {
+                            clearTimeout(timeoutId);
                             
-                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                        }, function(error) {
                             // Error
-                            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
-                            formMessage.className = 'form-message error';
+                            if (formMessage) {
+                                formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+                                formMessage.className = 'form-message error';
+                                
+                                setTimeout(() => {
+                                    formMessage.className = 'form-message';
+                                }, 5000);
+                                
+                                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }
                             
                             submitButton.disabled = false;
                             submitButton.textContent = 'Request Assessment';
-                            
-                            setTimeout(() => {
-                                formMessage.className = 'form-message';
-                            }, 5000);
-                            
-                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                             
                             console.error('EmailJS error:', error);
+                            console.error('Error details:', JSON.stringify(error, null, 2));
                         });
                 });
 
