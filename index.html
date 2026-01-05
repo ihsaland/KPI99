@@ -2348,7 +2348,7 @@
         </div>
     </section>
 
-    <section class="technical-section">
+    <section class="technical-section" id="outcomes">
         <div class="container">
             <h2>Representative Outcomes</h2>
             <p class="intro-text">
@@ -2556,18 +2556,23 @@
             `;
             document.body.insertBefore(nav, document.body.firstChild);
 
-            // Add IDs to sections for navigation
+            // Add IDs to sections for navigation (if not already set in HTML)
             const whoSection = document.querySelector('.who-section');
             const servicesSection = document.querySelector('.services-section');
             const expertiseSection = document.querySelector('.expertise-section');
-            const outcomesSection = document.querySelector('.technical-section:last-of-type');
+            // Find outcomes section by heading text if ID not already set
+            let outcomesSection = document.querySelector('#outcomes');
+            if (!outcomesSection) {
+                const outcomesHeading = Array.from(document.querySelectorAll('h2')).find(h2 => h2.textContent.includes('Representative Outcomes'));
+                outcomesSection = outcomesHeading ? outcomesHeading.closest('.technical-section') : null;
+            }
             const contactSection = document.querySelector('.contact-section');
             
-            if (whoSection) whoSection.id = 'who';
-            if (servicesSection) servicesSection.id = 'services';
-            if (expertiseSection) expertiseSection.id = 'expertise';
-            if (outcomesSection) outcomesSection.id = 'outcomes';
-            if (contactSection) contactSection.id = 'contact';
+            if (whoSection && !whoSection.id) whoSection.id = 'who';
+            if (servicesSection && !servicesSection.id) servicesSection.id = 'services';
+            if (expertiseSection && !expertiseSection.id) expertiseSection.id = 'expertise';
+            if (outcomesSection && !outcomesSection.id) outcomesSection.id = 'outcomes';
+            if (contactSection && !contactSection.id) contactSection.id = 'contact';
 
             // Nav scroll effect
             window.addEventListener('scroll', function() {
