@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com; frame-src https://assets.calendly.com;">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com https://calendly.com https://api.emailjs.com https://cdn.jsdelivr.net; frame-src https://assets.calendly.com https://calendly.com;">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="canonical" href="https://kpi99.co/">
@@ -25,26 +25,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
     <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" onload="window.emailjsScriptLoaded = true;" onerror="console.error('Failed to load EmailJS script'); window.emailjsScriptLoaded = false;"></script>
     <script type="text/javascript">
-        // Initialize EmailJS when DOM and library are ready
-        document.addEventListener('DOMContentLoaded', function() {
-            function initEmailJS() {
-                if (typeof emailjs !== 'undefined') {
-                    try {
-                        emailjs.init("C72iqShn4JvJqqQpb");
-                        console.log('EmailJS initialized successfully');
-                        window.emailjsReady = true;
-                    } catch (error) {
-                        console.error('EmailJS initialization error:', error);
-                        window.emailjsReady = false;
-                    }
-                } else {
-                    // Retry after a short delay if not loaded yet
-                    setTimeout(initEmailJS, 100);
+        // Initialize EmailJS when script loads
+        function initializeEmailJS() {
+            if (typeof emailjs !== 'undefined') {
+                try {
+                    emailjs.init("C72iqShn4JvJqqQpb");
+                    console.log('EmailJS initialized successfully');
+                    window.emailjsReady = true;
+                    return true;
+                } catch (error) {
+                    console.error('EmailJS initialization error:', error);
+                    window.emailjsReady = false;
+                    return false;
                 }
             }
-            initEmailJS();
+            return false;
+        }
+        
+        // Try to initialize immediately
+        if (initializeEmailJS()) {
+            // Already initialized
+        } else {
+            // Wait for script to load
+            var checkEmailJS = setInterval(function() {
+                if (typeof emailjs !== 'undefined') {
+                    clearInterval(checkEmailJS);
+                    initializeEmailJS();
+                }
+            }, 100);
+            
+            // Stop checking after 10 seconds
+            setTimeout(function() {
+                clearInterval(checkEmailJS);
+                if (typeof emailjs === 'undefined') {
+                    console.error('EmailJS script failed to load');
+                    window.emailjsReady = false;
+                } else if (!window.emailjsReady) {
+                    // Try one more time
+                    initializeEmailJS();
+                }
+            }, 10000);
+        }
+        
+        // Also try on window load as a fallback
+        window.addEventListener('load', function() {
+            if (typeof emailjs !== 'undefined' && !window.emailjsReady) {
+                initializeEmailJS();
+            }
         });
     </script>
     
@@ -1936,7 +1965,7 @@
                 <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
                     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/>
                 </svg>
-                Book a Free 15-minute Consultation
+                Book a Free 30-minute Consultation
             </a>
         </div>
     </header>
@@ -2386,14 +2415,17 @@
             </p>
             <div class="contact-form-container">
                 <form id="contactForm">
+                    <!-- Hidden field for recipient email -->
+                    <input type="hidden" name="to_email" value="admin@kpi99.co">
+                    <input type="hidden" name="to_name" value="KPI99 Team">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            <input type="text" id="name" name="from_name" placeholder="Your full name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <input type="email" id="email" name="from_email" placeholder="your.email@example.com" required>
                         </div>
                     </div>
                     <div class="form-row">
@@ -2403,7 +2435,7 @@
                         </div>
                         <div class="form-group">
                             <label for="service">Service Interest</label>
-                            <select id="service" name="service">
+                            <select id="service" name="service_interest">
                                 <option value="">Select a service...</option>
                                 <option value="audit">Performance Health Audit</option>
                                 <option value="optimization">Scale & Latency Optimization</option>
@@ -2488,7 +2520,7 @@
     <div class="calendly-overlay" id="calendlyOverlay">
         <div class="calendly-container">
             <button class="calendly-close" id="calendlyClose" aria-label="Close calendar">×</button>
-            <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_USERNAME/15min" style="min-width:320px;height:100%;"></div>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/admin-kpi99/30min" style="min-width:320px;height:100%;"></div>
         </div>
     </div>
 
@@ -2721,22 +2753,54 @@
                     
                     const submitButton = contactForm.querySelector('.submit-button');
                     
-                    // Check if EmailJS is loaded and initialized
-                    if (typeof emailjs === 'undefined' || !window.emailjsReady) {
-                        console.error('EmailJS is not loaded or not initialized');
-                        console.log('emailjs type:', typeof emailjs);
-                        console.log('emailjsReady:', window.emailjsReady);
+                    // Check if EmailJS is loaded, and try to initialize if not
+                    console.log('Checking EmailJS availability...');
+                    console.log('typeof emailjs:', typeof emailjs);
+                    console.log('window.emailjsReady:', window.emailjsReady);
+                    
+                    if (typeof emailjs === 'undefined') {
+                        console.error('EmailJS library is not loaded');
+                        console.log('Attempting to wait for EmailJS...');
                         
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Request Assessment';
-                        
-                        if (formMessage) {
-                            formMessage.textContent = 'Email service is not available. Please refresh the page and try again.';
-                            formMessage.className = 'form-message error';
-                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                        }
+                        // Wait a bit and try again
+                        setTimeout(function() {
+                            if (typeof emailjs === 'undefined') {
+                                submitButton.disabled = false;
+                                submitButton.textContent = 'Request Assessment';
+                                if (formMessage) {
+                                    formMessage.textContent = 'Email service is not available. Please refresh the page and try again.';
+                                    formMessage.className = 'form-message error';
+                                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                }
+                            } else {
+                                // Retry submission
+                                contactForm.dispatchEvent(new Event('submit'));
+                            }
+                        }, 500);
                         return;
                     }
+                    
+                    // Try to initialize if not already initialized
+                    if (!window.emailjsReady) {
+                        try {
+                            console.log('Initializing EmailJS on form submit...');
+                            emailjs.init("C72iqShn4JvJqqQpb");
+                            window.emailjsReady = true;
+                            console.log('EmailJS initialized on form submit');
+                        } catch (error) {
+                            console.error('EmailJS initialization failed:', error);
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Request Assessment';
+                            if (formMessage) {
+                                formMessage.textContent = 'Email service initialization failed. Please refresh the page and try again.';
+                                formMessage.className = 'form-message error';
+                                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }
+                            return;
+                        }
+                    }
+                    
+                    console.log('EmailJS is ready, proceeding with form submission');
                     
                     // Disable submit button
                     submitButton.disabled = true;
@@ -2770,11 +2834,12 @@
                         company: contactForm.querySelector('#company').value.trim() || 'Not provided',
                         service_interest: contactForm.querySelector('#service').value || 'Not specified',
                         message: messageField.value.trim(),
-                        to_name: 'KPI99 Team'
+                        to_name: 'KPI99 Team',
+                        to_email: 'admin@kpi99.co'
                     };
                     
                     console.log('Sending email with params:', templateParams);
-                    console.log('EmailJS service ID: service_0q089fj');
+                    console.log('EmailJS service ID: service_i1lgkqf');
                     console.log('EmailJS template ID: template_mzvfeg7');
                     
                     // Set a timeout to prevent infinite "sending" state
@@ -2789,8 +2854,13 @@
                         console.error('EmailJS request timed out');
                     }, 30000); // 30 second timeout
                     
-                    // Send email using EmailJS
-                    emailjs.send('service_0q089fj', 'template_mzvfeg7', templateParams)
+                    // Send email using EmailJS - try sendForm first (works better with Gmail API)
+                    // Make sure form field names match your EmailJS template variables
+                    const sendPromise = (typeof emailjs.sendForm !== 'undefined') 
+                        ? emailjs.sendForm('service_i1lgkqf', 'template_mzvfeg7', contactForm)
+                        : emailjs.send('service_i1lgkqf', 'template_mzvfeg7', templateParams);
+                    
+                    sendPromise
                         .then(function(response) {
                             clearTimeout(timeoutId);
                             
