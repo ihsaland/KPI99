@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kpi99.co/sitemap.xml
+
