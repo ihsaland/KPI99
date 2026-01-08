@@ -2208,11 +2208,11 @@
         <div class="container">
             <div class="services-header">
                 <h2>Service Packages</h2>
-                <a href="KPI99_Services.pdf" class="pdf-download-button" download>
+                <a href="KPI99_Services.pdf" class="pdf-download-button" id="servicesPdfLink" download>
                     <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
                         <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
                     </svg>
-                    Download Services PDF
+                    <span data-i18n="services.pdf">Download Services PDF</span>
                 </a>
             </div>
             
@@ -3202,6 +3202,7 @@
                 'approach.text1': 'KPI99 follows a structured, evidence-driven performance engineering methodology refined in large enterprise environments.',
                 'approach.text2': 'Each engagement combines application-level analysis, infrastructure saturation modeling, and capacity forecasting to provide clear, actionable insight for technical and executive stakeholders.',
                 'services.title': 'Services',
+                'services.pdf': 'Download Services PDF',
                 'contact.title': 'Request an Assessment',
                 'contact.text': 'Get in touch to discuss your performance engineering needs. Our team will review your requirements and provide a tailored assessment of how we can help optimize your systems.',
                 'contact.submit': 'Request Assessment',
@@ -3229,6 +3230,7 @@
                 'approach.text1': 'KPI99 sigue una metodología estructurada y basada en evidencia de ingeniería de rendimiento refinada en entornos empresariales grandes.',
                 'approach.text2': 'Cada compromiso combina análisis a nivel de aplicación, modelado de saturación de infraestructura y pronóstico de capacidad para proporcionar información clara y accionable para las partes interesadas técnicas y ejecutivas.',
                 'services.title': 'Servicios',
+                'services.pdf': 'Descargar PDF de Servicios',
                 'contact.title': 'Solicitar una Evaluación',
                 'contact.text': 'Póngase en contacto para discutir sus necesidades de ingeniería de rendimiento. Nuestro equipo revisará sus requisitos y proporcionará una evaluación personalizada de cómo podemos ayudar a optimizar sus sistemas.',
                 'contact.submit': 'Solicitar Evaluación',
@@ -3265,6 +3267,16 @@
                 } else {
                     langEs.classList.add('active');
                     langEn.classList.remove('active');
+                }
+            }
+            
+            // Update PDF download link based on language
+            const pdfLink = document.getElementById('servicesPdfLink');
+            if (pdfLink) {
+                if (lang === 'es') {
+                    pdfLink.href = 'KPI99_Services_ES.pdf';
+                } else {
+                    pdfLink.href = 'KPI99_Services.pdf';
                 }
             }
             
