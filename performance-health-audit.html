@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com https://calendly.com https://api.emailjs.com https://cdn.jsdelivr.net; frame-src https://assets.calendly.com https://calendly.com;">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://kpi99.co/performance-health-audit.html">
+    <title>Performance Health Audit - KPI99</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png?v=2">
+    <link rel="shortcut icon" type="image/png" href="favicon.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=2">
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <link rel="icon" type="image/png" href="https://kpi99.co/favicon.png?v=2">
+    
+    <!-- Google Fonts - Bodoni Moda -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7MQY2WJ67"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M7MQY2WJ67');
+    </script>
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" onload="window.emailjsScriptLoaded = true;" onerror="console.error('Failed to load EmailJS script'); window.emailjsScriptLoaded = false;"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS when script loads
+        function initializeEmailJS() {
+            if (typeof emailjs !== 'undefined') {
+                try {
+                    emailjs.init("C72iqShn4JvJqqQpb");
+                    console.log('EmailJS initialized successfully');
+                    window.emailjsReady = true;
+                    return true;
+                } catch (error) {
+                    console.error('EmailJS initialization error:', error);
+                    window.emailjsReady = false;
+                    return false;
+                }
+            }
+            return false;
+        }
+        
+        // Try to initialize immediately
+        if (initializeEmailJS()) {
+            // Already initialized
+        } else {
+            // Wait for script to load
+            var checkEmailJS = setInterval(function() {
+                if (typeof emailjs !== 'undefined') {
+                    clearInterval(checkEmailJS);
+                    initializeEmailJS();
+                }
+            }, 100);
+            
+            // Stop checking after 10 seconds
+            setTimeout(function() {
+                clearInterval(checkEmailJS);
+                if (typeof emailjs === 'undefined') {
+                    console.error('EmailJS script failed to load');
+                    window.emailjsReady = false;
+                } else if (!window.emailjsReady) {
+                    // Try one more time
+                    initializeEmailJS();
+                }
+            }, 10000);
+        }
+        
+        // Also try on window load as a fallback
+        window.addEventListener('load', function() {
+            if (typeof emailjs !== 'undefined' && !window.emailjsReady) {
+                initializeEmailJS();
+            }
+        });
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Bodoni Moda', serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        nav .back-link {
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        nav .back-link:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 15px;
+        }
+
+        .language-toggle button {
+            background: transparent;
+            border: 2px solid #0f172a;
+            color: #0f172a;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            min-width: 40px;
+        }
+
+        .language-toggle button:hover {
+            background: #0f172a;
+            color: white;
+        }
+
+        .language-toggle button.active {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .language-toggle {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        header .tagline {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 15px;
+        }
+
+        section h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 30px 0 20px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #475569;
+        }
+
+        section strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        section ul, section ol {
+            margin: 20px 0 20px 30px;
+        }
+
+        section li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #475569;
+        }
+
+        section hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 40px 0;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-left: 4px solid #3b82f6;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            color: #0f172a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-section > .container > p {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 40px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 1rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Bodoni Moda', serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Bodoni Moda', serif;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .submit-button:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 2px solid #10b981;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #ef4444;
+            display: block;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            color: #475569;
+        }
+
+        .contact-info a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .tagline {
+                font-size: 1.2rem;
+            }
+
+            header .subtitle {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            section h3 {
+                font-size: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="menu_logo.png" alt="KPI99" /></a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="language-toggle">
+                    <button id="langEn" class="active" data-lang="en">EN</button>
+                    <button id="langEs" data-lang="es">ES</button>
+                </div>
+                <a href="index.html" class="back-link" data-i18n="nav.back">← Back to Main Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1 data-i18n="header.title">Performance Health Audit for Mission-Critical Systems</h1>
+            <p class="tagline" data-i18n="header.tagline">Performance. Scale. Reliability — Engineered.</p>
+            <p class="subtitle">
+                <span data-i18n="header.subtitle1">Enterprise systems rarely fail because of missing features. They fail because</span> <strong data-i18n="header.subtitle2">performance limits, capacity constraints, and cost inefficiencies</strong> <span data-i18n="header.subtitle3">go undiscovered until peak load exposes them.</span>
+            </p>
+            <p class="subtitle">
+                <strong data-i18n="header.subtitle4">KPI99 helps organizations identify and eliminate these risks early</strong> <span data-i18n="header.subtitle5">through a focused, evidence-driven Performance Health Audit.</span>
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2 data-i18n="who.title">Who This Is For</h2>
+                <p>
+                    <span data-i18n="who.text1">This service is designed for organizations operating</span> <strong data-i18n="who.text2">mission-critical systems</strong> <span data-i18n="who.text3">where performance directly impacts:</span>
+                </p>
+                <ul>
+                    <li>Customer experience and revenue</li>
+                    <li>Regulatory and SLA compliance</li>
+                    <li>Operational stability</li>
+                    <li>Cloud and infrastructure costs</li>
+                </ul>
+                <p data-i18n="who.text4">
+                    Typical environments include financial services, energy and utilities, telecom, government platforms, logistics, and enterprise SaaS.
+                </p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 data-i18n="delivers.title">What the Performance Health Audit Delivers</h2>
+                <p>
+                    <span data-i18n="delivers.text">The Performance Health Audit provides</span> <strong data-i18n="delivers.text2">clear visibility into how your systems behave under real-world load</strong> <span data-i18n="delivers.text3">— not assumptions.</span>
+                </p>
+                
+                <div class="highlight-box">
+                    <h3>Key Areas of Analysis</h3>
+                    <ul>
+                        <li>Application-level performance (latency, throughput, contention)</li>
+                        <li>JVM, memory, garbage collection, and thread behavior</li>
+                        <li>Infrastructure utilization (CPU, memory, disk, network)</li>
+                        <li>Load patterns, peak demand behavior, and saturation points</li>
+                        <li>Capacity limits and scale risk</li>
+                        <li>Cloud and infrastructure inefficiencies</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 data-i18n="receive.title">What You Receive</h2>
+                <p data-i18n="receive.text">At the end of the engagement, you receive:</p>
+                <ul>
+                    <li><strong>Executive Summary</strong> – clear, non-technical overview of findings and risk</li>
+                    <li><strong>Performance Findings Report</strong> – detailed technical analysis</li>
+                    <li><strong>Identified System Limits</strong> – where and why performance degrades</li>
+                    <li><strong>Risk Prioritization</strong> – what will fail first under growth or peak load</li>
+                    <li><strong>Actionable Remediation Roadmap</strong> – concrete next steps</li>
+                </ul>
+                <p data-i18n="receive.text2">
+                    No generic recommendations. No vendor bias. Only evidence-based conclusions.
+                </p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 data-i18n="engagement.title">Engagement Details</h2>
+                <ul>
+                    <li><strong>Duration:</strong> 2–3 weeks</li>
+                    <li><strong>Delivery:</strong> Remote</li>
+                    <li><strong>Investment:</strong> $10,000</li>
+                </ul>
+                <p>
+                    <span data-i18n="engagement.text">This engagement is intentionally scoped to provide</span> <strong data-i18n="engagement.text2">maximum clarity with minimal disruption</strong><span data-i18n="engagement.text3">.</span>
+                </p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 data-i18n="why.title">Why Organizations Engage KPI99</h2>
+                <ul>
+                    <li>To prevent outages before they occur</li>
+                    <li>To understand true capacity limits</li>
+                    <li>To reduce unnecessary cloud spend</li>
+                    <li>To support upcoming growth, migrations, or peak events</li>
+                    <li>To gain executive-level confidence in system readiness</li>
+                </ul>
+                <p>
+                    <span data-i18n="why.text">Our work applies</span> <strong data-i18n="why.text2">enterprise-grade performance engineering methodologies</strong> <span data-i18n="why.text3">refined in large-scale, regulated environments.</span>
+                </p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 data-i18n="used.title">How This Is Typically Used</h2>
+                <p>The Performance Health Audit is often used as:</p>
+                <ul>
+                    <li>A pre-scale or pre-migration validation</li>
+                    <li>An independent performance risk assessment</li>
+                    <li>A precursor to targeted optimization or advisory support</li>
+                    <li>An executive-level decision aid for infrastructure investment</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 data-i18n="about.title">About KPI99</h2>
+                <p data-i18n="about.text1">
+                    KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.
+                </p>
+                <p data-i18n="about.text2">
+                    Our engagements are delivered with senior-level accountability, clear scope, and a focus on measurable outcomes.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <section class="form-section">
+        <div class="container">
+            <h2 data-i18n="request.title">Request an Assessment</h2>
+            <p data-i18n="request.text1">
+                If performance, scale, or reliability is a concern, the next step is a short introductory discussion to confirm scope and fit.
+            </p>
+            <p data-i18n="request.text2">
+                To get started, please complete the short intake form below. This helps us ensure the conversation is focused and productive.
+            </p>
+            
+            <div class="form-container">
+                <h3 style="margin-bottom: 30px; color: #0f172a;">Short Intake Form</h3>
+                <form id="intakeForm">
+                    <input type="hidden" name="to_email" value="admin@kpi99.co">
+                    <input type="hidden" name="to_name" value="KPI99 Team">
+                    <input type="hidden" name="service_interest" value="Performance Health Audit">
+                    
+                    <div class="form-group">
+                        <label for="orgName">1. Organization Name <span style="color: #ef4444;">*</span></label>
+                        <input type="text" id="orgName" name="organization_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">2. Your Role <span style="color: #ef4444;">*</span></label>
+                        <input type="text" id="role" name="role" placeholder="e.g., CTO, CIO, Head of Infrastructure, Engineering Lead" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="industry">3. Industry <span style="color: #ef4444;">*</span></label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select an industry...</option>
+                            <option value="Financial Services">Financial Services</option>
+                            <option value="Energy / Utilities">Energy / Utilities</option>
+                            <option value="Telecom">Telecom</option>
+                            <option value="Government">Government</option>
+                            <option value="Logistics">Logistics</option>
+                            <option value="SaaS">SaaS</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="systemScope">4. System or Platform in Scope <span style="color: #ef4444;">*</span></label>
+                        <textarea id="systemScope" name="system_scope" placeholder="Brief description of the application, platform, or environment" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>5. Primary Concern <span style="color: #ef4444;">*</span> (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="concern1" name="primary_concern" value="Performance / latency issues">
+                                <label for="concern1">Performance / latency issues</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="concern2" name="primary_concern" value="Capacity or scale uncertainty">
+                                <label for="concern2">Capacity or scale uncertainty</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="concern3" name="primary_concern" value="Rising cloud or infrastructure costs">
+                                <label for="concern3">Rising cloud or infrastructure costs</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="concern4" name="primary_concern" value="Upcoming growth, migration, or peak event">
+                                <label for="concern4">Upcoming growth, migration, or peak event</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="concern5" name="primary_concern" value="Incident or reliability concerns">
+                                <label for="concern5">Incident or reliability concerns</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeline">6. Timeline / Urgency <span style="color: #ef4444;">*</span></label>
+                        <select id="timeline" name="timeline" required>
+                            <option value="">Select timeline...</option>
+                            <option value="Immediate">Immediate</option>
+                            <option value="Next 30 days">Next 30 days</option>
+                            <option value="Next 90 days">Next 90 days</option>
+                            <option value="Exploratory">Exploratory</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">7. Contact Email <span style="color: #ef4444;">*</span></label>
+                        <input type="email" id="contactEmail" name="from_email" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Submit Intake Form</button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+                
+                <div class="contact-info">
+                    <p><strong>After submission, a member of the KPI99 team will review the information and follow up to coordinate next steps.</strong></p>
+                    <p>
+                        <a href="mailto:contact@kpi99.co">📧 contact@kpi99.co</a>
+                        <a href="https://kpi99.co">🌐 https://kpi99.co</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><em data-i18n="footer.text">Performance failures are business risks — until they are engineered.</em></p>
+            <p style="margin-top: 20px;" data-i18n="footer.copyright">© 2026 Sisters Grove LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle intake form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const intakeForm = document.getElementById('intakeForm');
+            const formMessage = document.getElementById('formMessage');
+
+            if (intakeForm) {
+                intakeForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validate checkboxes
+                    const checkboxes = intakeForm.querySelectorAll('input[name="primary_concern"]:checked');
+                    if (checkboxes.length === 0) {
+                        formMessage.textContent = 'Please select at least one primary concern.';
+                        formMessage.className = 'form-message error';
+                        return;
+                    }
+                    
+                    const submitButton = intakeForm.querySelector('.submit-button');
+                    
+                    // Check if EmailJS is loaded
+                    if (typeof emailjs === 'undefined' || !window.emailjsReady) {
+                        if (typeof emailjs !== 'undefined') {
+                            try {
+                                emailjs.init("C72iqShn4JvJqqQpb");
+                                window.emailjsReady = true;
+                            } catch (error) {
+                                console.error('EmailJS initialization failed:', error);
+                                formMessage.textContent = 'Email service is not available. Please refresh the page and try again.';
+                                formMessage.className = 'form-message error';
+                                return;
+                            }
+                        } else {
+                            formMessage.textContent = 'Email service is not available. Please refresh the page and try again.';
+                            formMessage.className = 'form-message error';
+                            return;
+                        }
+                    }
+                    
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    
+                    if (formMessage) {
+                        formMessage.textContent = '';
+                        formMessage.className = 'form-message';
+                    }
+                    
+                    // Collect form data
+                    const formData = new FormData(intakeForm);
+                    const concerns = Array.from(checkboxes).map(cb => cb.value).join(', ');
+                    
+                    const templateParams = {
+                        from_email: formData.get('from_email'),
+                        organization_name: formData.get('organization_name'),
+                        role: formData.get('role'),
+                        industry: formData.get('industry'),
+                        system_scope: formData.get('system_scope'),
+                        primary_concern: concerns,
+                        timeline: formData.get('timeline'),
+                        service_interest: 'Performance Health Audit',
+                        to_name: 'KPI99 Team',
+                        to_email: 'admin@kpi99.co',
+                        message: `Performance Health Audit Intake Form Submission:\n\nOrganization: ${formData.get('organization_name')}\nRole: ${formData.get('role')}\nIndustry: ${formData.get('industry')}\nSystem Scope: ${formData.get('system_scope')}\nPrimary Concerns: ${concerns}\nTimeline: ${formData.get('timeline')}`
+                    };
+                    
+                    const timeoutId = setTimeout(function() {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit Intake Form';
+                        if (formMessage) {
+                            formMessage.textContent = 'Request timed out. Please check your connection and try again.';
+                            formMessage.className = 'form-message error';
+                        }
+                    }, 30000);
+                    
+                    // Send email using EmailJS
+                    emailjs.send('service_i1lgkqf', 'template_mzvfeg7', templateParams)
+                        .then(function(response) {
+                            clearTimeout(timeoutId);
+                            intakeForm.reset();
+                            
+                            if (formMessage) {
+                                formMessage.textContent = 'Thank you! Your intake form has been submitted. A member of the KPI99 team will review the information and follow up to coordinate next steps.';
+                                formMessage.className = 'form-message success';
+                            }
+                            
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Submit Intake Form';
+                            
+                            // Scroll to message
+                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        })
+                        .catch(function(error) {
+                            clearTimeout(timeoutId);
+                            
+                            let errorMessage = 'Sorry, there was an error submitting your form. Please try again or contact us directly.';
+                            if (error?.text) {
+                                errorMessage += ' Error: ' + error.text;
+                            }
+                            
+                            if (formMessage) {
+                                formMessage.textContent = errorMessage;
+                                formMessage.className = 'form-message error';
+                                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }
+                            
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Submit Intake Form';
+                            
+                            console.error('EmailJS error:', error);
+                        });
+                });
+            }
+
+            // Language Toggle System
+            const translations = {
+                en: {
+                    'nav.back': '← Back to Main Site',
+                    'header.title': 'Performance Health Audit for Mission-Critical Systems',
+                    'header.tagline': 'Performance. Scale. Reliability — Engineered.',
+                    'header.subtitle1': 'Enterprise systems rarely fail because of missing features. They fail because',
+                    'header.subtitle2': 'performance limits, capacity constraints, and cost inefficiencies',
+                    'header.subtitle3': 'go undiscovered until peak load exposes them.',
+                    'header.subtitle4': 'KPI99 helps organizations identify and eliminate these risks early',
+                    'header.subtitle5': 'through a focused, evidence-driven Performance Health Audit.',
+                    'who.title': 'Who This Is For',
+                    'who.text1': 'This service is designed for organizations operating',
+                    'who.text2': 'mission-critical systems',
+                    'who.text3': 'where performance directly impacts:',
+                    'who.text4': 'Typical environments include financial services, energy and utilities, telecom, government platforms, logistics, and enterprise SaaS.',
+                    'delivers.title': 'What the Performance Health Audit Delivers',
+                    'delivers.text': 'The Performance Health Audit provides',
+                    'delivers.text2': 'clear visibility into how your systems behave under real-world load',
+                    'delivers.text3': '— not assumptions.',
+                    'receive.title': 'What You Receive',
+                    'receive.text': 'At the end of the engagement, you receive:',
+                    'receive.text2': 'No generic recommendations. No vendor bias. Only evidence-based conclusions.',
+                    'engagement.title': 'Engagement Details',
+                    'engagement.text': 'This engagement is intentionally scoped to provide',
+                    'engagement.text2': 'maximum clarity with minimal disruption',
+                    'engagement.text3': '.',
+                    'why.title': 'Why Organizations Engage KPI99',
+                    'why.text': 'Our work applies',
+                    'why.text2': 'enterprise-grade performance engineering methodologies',
+                    'why.text3': 'refined in large-scale, regulated environments.',
+                    'used.title': 'How This Is Typically Used',
+                    'about.title': 'About KPI99',
+                    'about.text1': 'KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.',
+                    'about.text2': 'Our engagements are delivered with senior-level accountability, clear scope, and a focus on measurable outcomes.',
+                    'request.title': 'Request an Assessment',
+                    'request.text1': 'If performance, scale, or reliability is a concern, the next step is a short introductory discussion to confirm scope and fit.',
+                    'request.text2': 'To get started, please complete the short intake form below. This helps us ensure the conversation is focused and productive.',
+                    'footer.text': 'Performance failures are business risks — until they are engineered.',
+                    'footer.copyright': '© 2026 Sisters Grove LLC. All rights reserved.'
+                },
+                es: {
+                    'nav.back': '← Volver al Sitio Principal',
+                    'header.title': 'Auditoría de Salud de Rendimiento para Sistemas Críticos',
+                    'header.tagline': 'Rendimiento. Escala. Confiabilidad — Diseñado.',
+                    'header.subtitle1': 'Los sistemas empresariales rara vez fallan por falta de funciones. Fallan porque',
+                    'header.subtitle2': 'los límites de rendimiento, las restricciones de capacidad y las ineficiencias de costos',
+                    'header.subtitle3': 'permanecen sin descubrir hasta que la carga máxima los expone.',
+                    'header.subtitle4': 'KPI99 ayuda a las organizaciones a identificar y eliminar estos riesgos temprano',
+                    'header.subtitle5': 'a través de una Auditoría de Salud de Rendimiento enfocada y basada en evidencia.',
+                    'who.title': 'Para Quién Es Esto',
+                    'who.text1': 'Este servicio está diseñado para organizaciones que operan',
+                    'who.text2': 'sistemas críticos',
+                    'who.text3': 'donde el rendimiento impacta directamente:',
+                    'who.text4': 'Los entornos típicos incluyen servicios financieros, energía y servicios públicos, telecomunicaciones, plataformas gubernamentales, logística y SaaS empresarial.',
+                    'delivers.title': 'Lo Que Proporciona la Auditoría de Salud de Rendimiento',
+                    'delivers.text': 'La Auditoría de Salud de Rendimiento proporciona',
+                    'delivers.text2': 'visibilidad clara de cómo se comportan sus sistemas bajo carga del mundo real',
+                    'delivers.text3': '— no suposiciones.',
+                    'receive.title': 'Lo Que Recibe',
+                    'receive.text': 'Al final del compromiso, recibe:',
+                    'receive.text2': 'Sin recomendaciones genéricas. Sin sesgo del proveedor. Solo conclusiones basadas en evidencia.',
+                    'engagement.title': 'Detalles del Compromiso',
+                    'engagement.text': 'Este compromiso está intencionalmente delimitado para proporcionar',
+                    'engagement.text2': 'máxima claridad con mínima interrupción',
+                    'engagement.text3': '.',
+                    'why.title': 'Por Qué las Organizaciones Contratan a KPI99',
+                    'why.text': 'Nuestro trabajo aplica',
+                    'why.text2': 'metodologías de ingeniería de rendimiento de nivel empresarial',
+                    'why.text3': 'refinadas en entornos regulados a gran escala.',
+                    'used.title': 'Cómo Se Usa Típicamente Esto',
+                    'about.title': 'Acerca de KPI99',
+                    'about.text1': 'KPI99 es una consultoría de ingeniería de rendimiento y capacidad que apoya sistemas críticos en entornos críticos de escala.',
+                    'about.text2': 'Nuestros compromisos se entregan con responsabilidad de nivel senior, alcance claro y un enfoque en resultados medibles.',
+                    'request.title': 'Solicitar una Evaluación',
+                    'request.text1': 'Si el rendimiento, la escala o la confiabilidad son una preocupación, el siguiente paso es una breve discusión introductoria para confirmar el alcance y el ajuste.',
+                    'request.text2': 'Para comenzar, complete el breve formulario de admisión a continuación. Esto nos ayuda a asegurar que la conversación sea enfocada y productiva.',
+                    'footer.text': 'Las fallas de rendimiento son riesgos comerciales — hasta que se diseñan.',
+                    'footer.copyright': '© 2026 Sisters Grove LLC. Todos los derechos reservados.'
+                }
+            };
+
+            function initLanguageToggle() {
+                const langEn = document.getElementById('langEn');
+                const langEs = document.getElementById('langEs');
+                
+                let currentLang = localStorage.getItem('kpi99_lang') || 'en';
+                setLanguage(currentLang);
+                
+                if (langEn && langEs) {
+                    langEn.addEventListener('click', () => setLanguage('en'));
+                    langEs.addEventListener('click', () => setLanguage('es'));
+                }
+            }
+
+            function setLanguage(lang) {
+                const langEn = document.getElementById('langEn');
+                const langEs = document.getElementById('langEs');
+                
+                if (langEn && langEs) {
+                    if (lang === 'en') {
+                        langEn.classList.add('active');
+                        langEs.classList.remove('active');
+                    } else {
+                        langEs.classList.add('active');
+                        langEn.classList.remove('active');
+                    }
+                }
+                
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.textContent = translations[lang][key];
+                    }
+                });
+                
+                document.documentElement.lang = lang;
+                localStorage.setItem('kpi99_lang', lang);
+            }
+
+            initLanguageToggle();
+        });
+    </script>
+</body>
+</html>
+

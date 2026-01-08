@@ -229,6 +229,48 @@
             width: 100%;
         }
 
+        /* Language Toggle */
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 20px;
+        }
+
+        .language-toggle button {
+            background: transparent;
+            border: 2px solid #334155;
+            color: #334155;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            min-width: 40px;
+        }
+
+        .language-toggle button:hover {
+            background: #334155;
+            color: white;
+        }
+
+        .language-toggle button.active {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .language-toggle {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+
         /* Header */
         header {
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.6) 100%),
@@ -1960,37 +2002,37 @@
 <body>
     <header>
         <div class="container">
-            <p class="tagline">Performance. Scale. Reliability—Engineered.</p>
+            <p class="tagline" data-i18n="header.tagline">Performance. Scale. Reliability—Engineered.</p>
             <a href="#" class="consultation-button-header" id="consultationButtonHeader">
                 <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
                     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/>
                 </svg>
-                Book a Free 30-minute Consultation
+                <span data-i18n="header.consultation">Book a Free 30-minute Consultation</span>
             </a>
         </div>
     </header>
 
     <section class="who-section">
         <div class="container">
-            <h2>Enterprise-Grade Performance Engineering Team</h2>
-            <p class="intro-text">
+            <h2 data-i18n="who.title">Enterprise-Grade Performance Engineering Team</h2>
+            <p class="intro-text" data-i18n="who.text1">
                 KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.
             </p>
-            <p class="intro-text" style="margin-top: 20px;">
+            <p class="intro-text" style="margin-top: 20px;" data-i18n="who.text2">
                 Our team applies proven enterprise methodologies to identify performance limits, reduce latency, prevent outages, and improve infrastructure efficiency before issues impact customers or regulators.
             </p>
             <div class="impact-grid" style="margin-top: 40px;">
                 <div class="impact-item">
-                    <h4>Revenue</h4>
+                    <h4 data-i18n="who.revenue">Revenue</h4>
                 </div>
                 <div class="impact-item">
-                    <h4>Regulatory compliance</h4>
+                    <h4 data-i18n="who.regulatory">Regulatory compliance</h4>
                 </div>
                 <div class="impact-item">
-                    <h4>Customer trust</h4>
+                    <h4 data-i18n="who.trust">Customer trust</h4>
                 </div>
                 <div class="impact-item">
-                    <h4>Cloud & infrastructure spend</h4>
+                    <h4 data-i18n="who.spend">Cloud & infrastructure spend</h4>
                 </div>
             </div>
         </div>
@@ -1998,11 +2040,11 @@
 
     <section class="different-section">
         <div class="container">
-            <h2>Our Experience</h2>
-            <p class="intro-text" style="color: #334155;">
+            <h2 data-i18n="experience.title">Our Experience</h2>
+            <p class="intro-text" style="color: #334155;" data-i18n="experience.text1">
                 Our team brings deep experience supporting large-scale, regulated platforms where performance, reliability, and predictability are business-critical.
             </p>
-            <p class="intro-text" style="color: #334155; margin-top: 20px;">
+            <p class="intro-text" style="color: #334155; margin-top: 20px;" data-i18n="experience.text2">
                 We have worked across environments including financial services, large data platforms, event-driven architectures, and cloud-based enterprise systems operating under strict SLA requirements.
             </p>
         </div>
@@ -2010,11 +2052,11 @@
 
     <section class="methodology-section">
         <div class="container">
-            <h2>Our Approach</h2>
-            <p class="intro-text" style="color: #334155;">
+            <h2 data-i18n="approach.title">Our Approach</h2>
+            <p class="intro-text" style="color: #334155;" data-i18n="approach.text1">
                 KPI99 follows a structured, evidence-driven performance engineering methodology refined in large enterprise environments.
             </p>
-            <p class="intro-text" style="color: #334155; margin-top: 20px;">
+            <p class="intro-text" style="color: #334155; margin-top: 20px;" data-i18n="approach.text2">
                 Each engagement combines application-level analysis, infrastructure saturation modeling, and capacity forecasting to provide clear, actionable insight for technical and executive stakeholders.
             </p>
             <div class="approach-grid" style="margin-top: 40px;">
@@ -2409,8 +2451,8 @@
 
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2>Request an Assessment</h2>
-            <p class="intro-text" style="text-align: center; margin-bottom: 30px; color: #475569;">
+            <h2 data-i18n="contact.title">Request an Assessment</h2>
+            <p class="intro-text" style="text-align: center; margin-bottom: 30px; color: #475569;" data-i18n="contact.text">
                 Get in touch to discuss your performance engineering needs. Our team will review your requirements and provide a tailored assessment of how we can help optimize your systems.
             </p>
             <div class="contact-form-container">
@@ -2449,7 +2491,7 @@
                         <label for="message">Message <span class="required">*</span></label>
                         <textarea id="message" name="message" placeholder="Tell us about your performance challenges, current system constraints, or specific areas where you'd like an assessment..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Request Assessment</button>
+                    <button type="submit" class="submit-button" data-i18n="contact.submit">Request Assessment</button>
                     <div class="form-message" id="formMessage"></div>
                 </form>
             </div>
@@ -2530,7 +2572,7 @@
     <footer>
         <div class="container">
             <p style="margin-bottom: 15px; font-style: italic; opacity: 0.9;">Enterprise performance engineering delivered with rigor, discretion, and senior-level accountability.</p>
-            <p>&copy; 2026 Sisters Grove LLC. All rights reserved.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Sisters Grove LLC. All rights reserved.</p>
         </div>
     </footer>
 
@@ -2544,13 +2586,19 @@
                     <div class="logo">
                         <img src="menu_logo.png" alt="KPI99" />
                     </div>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div class="language-toggle">
+                            <button id="langEn" class="active" data-lang="en">EN</button>
+                            <button id="langEs" data-lang="es">ES</button>
+                        </div>
+                        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+                    </div>
                     <ul id="navMenu">
-                        <li><a href="#who">Who</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#expertise">Expertise</a></li>
-                        <li><a href="#outcomes">Outcomes</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#who" data-i18n="nav.who">Who</a></li>
+                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+                        <li><a href="#outcomes" data-i18n="nav.outcomes">Outcomes</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
             `;
@@ -3128,6 +3176,116 @@
                     aiChatSend.disabled = !this.value.trim();
                 });
             }
+        });
+
+        // Language Toggle System
+        const translations = {
+            en: {
+                'nav.who': 'Who',
+                'nav.services': 'Services',
+                'nav.expertise': 'Expertise',
+                'nav.outcomes': 'Outcomes',
+                'nav.contact': 'Contact',
+                'header.tagline': 'Performance. Scale. Reliability—Engineered.',
+                'header.consultation': 'Book a Free 30-minute Consultation',
+                'who.title': 'Enterprise-Grade Performance Engineering Team',
+                'who.text1': 'KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.',
+                'who.text2': 'Our team applies proven enterprise methodologies to identify performance limits, reduce latency, prevent outages, and improve infrastructure efficiency before issues impact customers or regulators.',
+                'who.revenue': 'Revenue',
+                'who.regulatory': 'Regulatory compliance',
+                'who.trust': 'Customer trust',
+                'who.spend': 'Cloud & infrastructure spend',
+                'experience.title': 'Our Experience',
+                'experience.text1': 'Our team brings deep experience supporting large-scale, regulated platforms where performance, reliability, and predictability are business-critical.',
+                'experience.text2': 'We have worked across environments including financial services, large data platforms, event-driven architectures, and cloud-based enterprise systems operating under strict SLA requirements.',
+                'approach.title': 'Our Approach',
+                'approach.text1': 'KPI99 follows a structured, evidence-driven performance engineering methodology refined in large enterprise environments.',
+                'approach.text2': 'Each engagement combines application-level analysis, infrastructure saturation modeling, and capacity forecasting to provide clear, actionable insight for technical and executive stakeholders.',
+                'services.title': 'Services',
+                'contact.title': 'Request an Assessment',
+                'contact.text': 'Get in touch to discuss your performance engineering needs. Our team will review your requirements and provide a tailored assessment of how we can help optimize your systems.',
+                'contact.submit': 'Request Assessment',
+                'footer.copyright': '© 2026 Sisters Grove LLC. All rights reserved.'
+            },
+            es: {
+                'nav.who': 'Quiénes Somos',
+                'nav.services': 'Servicios',
+                'nav.expertise': 'Experiencia',
+                'nav.outcomes': 'Resultados',
+                'nav.contact': 'Contacto',
+                'header.tagline': 'Rendimiento. Escala. Confiabilidad — Diseñado.',
+                'header.consultation': 'Reserve una Consulta Gratuita de 30 Minutos',
+                'who.title': 'Equipo de Ingeniería de Rendimiento de Nivel Empresarial',
+                'who.text1': 'KPI99 es una consultoría de ingeniería de rendimiento y capacidad que apoya sistemas críticos en entornos críticos de escala.',
+                'who.text2': 'Nuestro equipo aplica metodologías empresariales probadas para identificar límites de rendimiento, reducir la latencia, prevenir interrupciones y mejorar la eficiencia de la infraestructura antes de que los problemas afecten a los clientes o reguladores.',
+                'who.revenue': 'Ingresos',
+                'who.regulatory': 'Cumplimiento regulatorio',
+                'who.trust': 'Confianza del cliente',
+                'who.spend': 'Gasto en nube e infraestructura',
+                'experience.title': 'Nuestra Experiencia',
+                'experience.text1': 'Nuestro equipo aporta una amplia experiencia apoyando plataformas reguladas a gran escala donde el rendimiento, la confiabilidad y la previsibilidad son críticos para el negocio.',
+                'experience.text2': 'Hemos trabajado en entornos que incluyen servicios financieros, plataformas de datos grandes, arquitecturas orientadas a eventos y sistemas empresariales basados en la nube que operan bajo requisitos estrictos de SLA.',
+                'approach.title': 'Nuestro Enfoque',
+                'approach.text1': 'KPI99 sigue una metodología estructurada y basada en evidencia de ingeniería de rendimiento refinada en entornos empresariales grandes.',
+                'approach.text2': 'Cada compromiso combina análisis a nivel de aplicación, modelado de saturación de infraestructura y pronóstico de capacidad para proporcionar información clara y accionable para las partes interesadas técnicas y ejecutivas.',
+                'services.title': 'Servicios',
+                'contact.title': 'Solicitar una Evaluación',
+                'contact.text': 'Póngase en contacto para discutir sus necesidades de ingeniería de rendimiento. Nuestro equipo revisará sus requisitos y proporcionará una evaluación personalizada de cómo podemos ayudar a optimizar sus sistemas.',
+                'contact.submit': 'Solicitar Evaluación',
+                'footer.copyright': '© 2026 Sisters Grove LLC. Todos los derechos reservados.'
+            }
+        };
+
+        // Language toggle functionality
+        function initLanguageToggle() {
+            const langEn = document.getElementById('langEn');
+            const langEs = document.getElementById('langEs');
+            
+            // Get saved language preference or default to English
+            let currentLang = localStorage.getItem('kpi99_lang') || 'en';
+            
+            // Set initial language
+            setLanguage(currentLang);
+            
+            if (langEn && langEs) {
+                langEn.addEventListener('click', () => setLanguage('en'));
+                langEs.addEventListener('click', () => setLanguage('es'));
+            }
+        }
+
+        function setLanguage(lang) {
+            // Update active button
+            const langEn = document.getElementById('langEn');
+            const langEs = document.getElementById('langEs');
+            
+            if (langEn && langEs) {
+                if (lang === 'en') {
+                    langEn.classList.add('active');
+                    langEs.classList.remove('active');
+                } else {
+                    langEs.classList.add('active');
+                    langEn.classList.remove('active');
+                }
+            }
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Save preference
+            localStorage.setItem('kpi99_lang', lang);
+        }
+
+        // Initialize language toggle when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguageToggle();
         });
     </script>
 </body>
