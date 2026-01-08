@@ -139,48 +139,6 @@
             background-color: #f1f5f9;
         }
 
-        /* Language Toggle */
-        .language-toggle {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-right: 15px;
-        }
-
-        .language-toggle button {
-            background: transparent;
-            border: 2px solid #0f172a;
-            color: #0f172a;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            min-width: 40px;
-        }
-
-        .language-toggle button:hover {
-            background: #0f172a;
-            color: white;
-        }
-
-        .language-toggle button.active {
-            background: #3b82f6;
-            border-color: #3b82f6;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .language-toggle {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
-
         /* Header */
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -496,25 +454,19 @@
             <div class="logo">
                 <a href="index.html"><img src="menu_logo.png" alt="KPI99" /></a>
             </div>
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <div class="language-toggle">
-                    <button id="langEn" class="active" data-lang="en">EN</button>
-                    <button id="langEs" data-lang="es">ES</button>
-                </div>
-                <a href="index.html" class="back-link" data-i18n="nav.back">← Back to Main Site</a>
-            </div>
+            <a href="index.html" class="back-link">← Back to Main Site</a>
         </div>
     </nav>
 
     <header>
         <div class="container">
-            <h1 data-i18n="header.title">Performance Health Audit for Mission-Critical Systems</h1>
-            <p class="tagline" data-i18n="header.tagline">Performance. Scale. Reliability — Engineered.</p>
+            <h1>Performance Health Audit for Mission-Critical Systems</h1>
+            <p class="tagline">Performance. Scale. Reliability — Engineered.</p>
             <p class="subtitle">
-                <span data-i18n="header.subtitle1">Enterprise systems rarely fail because of missing features. They fail because</span> <strong data-i18n="header.subtitle2">performance limits, capacity constraints, and cost inefficiencies</strong> <span data-i18n="header.subtitle3">go undiscovered until peak load exposes them.</span>
+                Enterprise systems rarely fail because of missing features. They fail because <strong>performance limits, capacity constraints, and cost inefficiencies</strong> go undiscovered until peak load exposes them.
             </p>
             <p class="subtitle">
-                <strong data-i18n="header.subtitle4">KPI99 helps organizations identify and eliminate these risks early</strong> <span data-i18n="header.subtitle5">through a focused, evidence-driven Performance Health Audit.</span>
+                <strong>KPI99 helps organizations identify and eliminate these risks early</strong> through a focused, evidence-driven Performance Health Audit.
             </p>
         </div>
     </header>
@@ -522,9 +474,9 @@
     <main>
         <div class="container">
             <section>
-                <h2 data-i18n="who.title">Who This Is For</h2>
+                <h2>Who This Is For</h2>
                 <p>
-                    <span data-i18n="who.text1">This service is designed for organizations operating</span> <strong data-i18n="who.text2">mission-critical systems</strong> <span data-i18n="who.text3">where performance directly impacts:</span>
+                    This service is designed for organizations operating <strong>mission-critical systems</strong> where performance directly impacts:
                 </p>
                 <ul>
                     <li>Customer experience and revenue</li>
@@ -532,7 +484,7 @@
                     <li>Operational stability</li>
                     <li>Cloud and infrastructure costs</li>
                 </ul>
-                <p data-i18n="who.text4">
+                <p>
                     Typical environments include financial services, energy and utilities, telecom, government platforms, logistics, and enterprise SaaS.
                 </p>
             </section>
@@ -540,9 +492,9 @@
             <hr>
 
             <section>
-                <h2 data-i18n="delivers.title">What the Performance Health Audit Delivers</h2>
+                <h2>What the Performance Health Audit Delivers</h2>
                 <p>
-                    <span data-i18n="delivers.text">The Performance Health Audit provides</span> <strong data-i18n="delivers.text2">clear visibility into how your systems behave under real-world load</strong> <span data-i18n="delivers.text3">— not assumptions.</span>
+                    The Performance Health Audit provides <strong>clear visibility into how your systems behave under real-world load</strong> — not assumptions.
                 </p>
                 
                 <div class="highlight-box">
@@ -561,8 +513,8 @@
             <hr>
 
             <section>
-                <h2 data-i18n="receive.title">What You Receive</h2>
-                <p data-i18n="receive.text">At the end of the engagement, you receive:</p>
+                <h2>What You Receive</h2>
+                <p>At the end of the engagement, you receive:</p>
                 <ul>
                     <li><strong>Executive Summary</strong> – clear, non-technical overview of findings and risk</li>
                     <li><strong>Performance Findings Report</strong> – detailed technical analysis</li>
@@ -570,7 +522,7 @@
                     <li><strong>Risk Prioritization</strong> – what will fail first under growth or peak load</li>
                     <li><strong>Actionable Remediation Roadmap</strong> – concrete next steps</li>
                 </ul>
-                <p data-i18n="receive.text2">
+                <p>
                     No generic recommendations. No vendor bias. Only evidence-based conclusions.
                 </p>
             </section>
@@ -578,21 +530,21 @@
             <hr>
 
             <section>
-                <h2 data-i18n="engagement.title">Engagement Details</h2>
+                <h2>Engagement Details</h2>
                 <ul>
                     <li><strong>Duration:</strong> 2–3 weeks</li>
                     <li><strong>Delivery:</strong> Remote</li>
                     <li><strong>Investment:</strong> $10,000</li>
                 </ul>
                 <p>
-                    <span data-i18n="engagement.text">This engagement is intentionally scoped to provide</span> <strong data-i18n="engagement.text2">maximum clarity with minimal disruption</strong><span data-i18n="engagement.text3">.</span>
+                    This engagement is intentionally scoped to provide <strong>maximum clarity with minimal disruption</strong>.
                 </p>
             </section>
 
             <hr>
 
             <section>
-                <h2 data-i18n="why.title">Why Organizations Engage KPI99</h2>
+                <h2>Why Organizations Engage KPI99</h2>
                 <ul>
                     <li>To prevent outages before they occur</li>
                     <li>To understand true capacity limits</li>
@@ -601,14 +553,14 @@
                     <li>To gain executive-level confidence in system readiness</li>
                 </ul>
                 <p>
-                    <span data-i18n="why.text">Our work applies</span> <strong data-i18n="why.text2">enterprise-grade performance engineering methodologies</strong> <span data-i18n="why.text3">refined in large-scale, regulated environments.</span>
+                    Our work applies <strong>enterprise-grade performance engineering methodologies</strong> refined in large-scale, regulated environments.
                 </p>
             </section>
 
             <hr>
 
             <section>
-                <h2 data-i18n="used.title">How This Is Typically Used</h2>
+                <h2>How This Is Typically Used</h2>
                 <p>The Performance Health Audit is often used as:</p>
                 <ul>
                     <li>A pre-scale or pre-migration validation</li>
@@ -621,11 +573,11 @@
             <hr>
 
             <section>
-                <h2 data-i18n="about.title">About KPI99</h2>
-                <p data-i18n="about.text1">
+                <h2>About KPI99</h2>
+                <p>
                     KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.
                 </p>
-                <p data-i18n="about.text2">
+                <p>
                     Our engagements are delivered with senior-level accountability, clear scope, and a focus on measurable outcomes.
                 </p>
             </section>
@@ -634,11 +586,11 @@
 
     <section class="form-section">
         <div class="container">
-            <h2 data-i18n="request.title">Request an Assessment</h2>
-            <p data-i18n="request.text1">
+            <h2>Request an Assessment</h2>
+            <p>
                 If performance, scale, or reliability is a concern, the next step is a short introductory discussion to confirm scope and fit.
             </p>
-            <p data-i18n="request.text2">
+            <p>
                 To get started, please complete the short intake form below. This helps us ensure the conversation is focused and productive.
             </p>
             
@@ -737,8 +689,8 @@
 
     <footer>
         <div class="container">
-            <p><em data-i18n="footer.text">Performance failures are business risks — until they are engineered.</em></p>
-            <p style="margin-top: 20px;" data-i18n="footer.copyright">© 2026 Sisters Grove LLC. All rights reserved.</p>
+            <p><em>Performance failures are business risks — until they are engineered.</em></p>
+            <p style="margin-top: 20px;">© 2026 Sisters Grove LLC. All rights reserved.</p>
         </div>
     </footer>
 
@@ -854,128 +806,6 @@
                         });
                 });
             }
-
-            // Language Toggle System
-            const translations = {
-                en: {
-                    'nav.back': '← Back to Main Site',
-                    'header.title': 'Performance Health Audit for Mission-Critical Systems',
-                    'header.tagline': 'Performance. Scale. Reliability — Engineered.',
-                    'header.subtitle1': 'Enterprise systems rarely fail because of missing features. They fail because',
-                    'header.subtitle2': 'performance limits, capacity constraints, and cost inefficiencies',
-                    'header.subtitle3': 'go undiscovered until peak load exposes them.',
-                    'header.subtitle4': 'KPI99 helps organizations identify and eliminate these risks early',
-                    'header.subtitle5': 'through a focused, evidence-driven Performance Health Audit.',
-                    'who.title': 'Who This Is For',
-                    'who.text1': 'This service is designed for organizations operating',
-                    'who.text2': 'mission-critical systems',
-                    'who.text3': 'where performance directly impacts:',
-                    'who.text4': 'Typical environments include financial services, energy and utilities, telecom, government platforms, logistics, and enterprise SaaS.',
-                    'delivers.title': 'What the Performance Health Audit Delivers',
-                    'delivers.text': 'The Performance Health Audit provides',
-                    'delivers.text2': 'clear visibility into how your systems behave under real-world load',
-                    'delivers.text3': '— not assumptions.',
-                    'receive.title': 'What You Receive',
-                    'receive.text': 'At the end of the engagement, you receive:',
-                    'receive.text2': 'No generic recommendations. No vendor bias. Only evidence-based conclusions.',
-                    'engagement.title': 'Engagement Details',
-                    'engagement.text': 'This engagement is intentionally scoped to provide',
-                    'engagement.text2': 'maximum clarity with minimal disruption',
-                    'engagement.text3': '.',
-                    'why.title': 'Why Organizations Engage KPI99',
-                    'why.text': 'Our work applies',
-                    'why.text2': 'enterprise-grade performance engineering methodologies',
-                    'why.text3': 'refined in large-scale, regulated environments.',
-                    'used.title': 'How This Is Typically Used',
-                    'about.title': 'About KPI99',
-                    'about.text1': 'KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.',
-                    'about.text2': 'Our engagements are delivered with senior-level accountability, clear scope, and a focus on measurable outcomes.',
-                    'request.title': 'Request an Assessment',
-                    'request.text1': 'If performance, scale, or reliability is a concern, the next step is a short introductory discussion to confirm scope and fit.',
-                    'request.text2': 'To get started, please complete the short intake form below. This helps us ensure the conversation is focused and productive.',
-                    'footer.text': 'Performance failures are business risks — until they are engineered.',
-                    'footer.copyright': '© 2026 Sisters Grove LLC. All rights reserved.'
-                },
-                es: {
-                    'nav.back': '← Volver al Sitio Principal',
-                    'header.title': 'Auditoría de Salud de Rendimiento para Sistemas Críticos',
-                    'header.tagline': 'Rendimiento. Escala. Confiabilidad — Diseñado.',
-                    'header.subtitle1': 'Los sistemas empresariales rara vez fallan por falta de funciones. Fallan porque',
-                    'header.subtitle2': 'los límites de rendimiento, las restricciones de capacidad y las ineficiencias de costos',
-                    'header.subtitle3': 'permanecen sin descubrir hasta que la carga máxima los expone.',
-                    'header.subtitle4': 'KPI99 ayuda a las organizaciones a identificar y eliminar estos riesgos temprano',
-                    'header.subtitle5': 'a través de una Auditoría de Salud de Rendimiento enfocada y basada en evidencia.',
-                    'who.title': 'Para Quién Es Esto',
-                    'who.text1': 'Este servicio está diseñado para organizaciones que operan',
-                    'who.text2': 'sistemas críticos',
-                    'who.text3': 'donde el rendimiento impacta directamente:',
-                    'who.text4': 'Los entornos típicos incluyen servicios financieros, energía y servicios públicos, telecomunicaciones, plataformas gubernamentales, logística y SaaS empresarial.',
-                    'delivers.title': 'Lo Que Proporciona la Auditoría de Salud de Rendimiento',
-                    'delivers.text': 'La Auditoría de Salud de Rendimiento proporciona',
-                    'delivers.text2': 'visibilidad clara de cómo se comportan sus sistemas bajo carga del mundo real',
-                    'delivers.text3': '— no suposiciones.',
-                    'receive.title': 'Lo Que Recibe',
-                    'receive.text': 'Al final del compromiso, recibe:',
-                    'receive.text2': 'Sin recomendaciones genéricas. Sin sesgo del proveedor. Solo conclusiones basadas en evidencia.',
-                    'engagement.title': 'Detalles del Compromiso',
-                    'engagement.text': 'Este compromiso está intencionalmente delimitado para proporcionar',
-                    'engagement.text2': 'máxima claridad con mínima interrupción',
-                    'engagement.text3': '.',
-                    'why.title': 'Por Qué las Organizaciones Contratan a KPI99',
-                    'why.text': 'Nuestro trabajo aplica',
-                    'why.text2': 'metodologías de ingeniería de rendimiento de nivel empresarial',
-                    'why.text3': 'refinadas en entornos regulados a gran escala.',
-                    'used.title': 'Cómo Se Usa Típicamente Esto',
-                    'about.title': 'Acerca de KPI99',
-                    'about.text1': 'KPI99 es una consultoría de ingeniería de rendimiento y capacidad que apoya sistemas críticos en entornos críticos de escala.',
-                    'about.text2': 'Nuestros compromisos se entregan con responsabilidad de nivel senior, alcance claro y un enfoque en resultados medibles.',
-                    'request.title': 'Solicitar una Evaluación',
-                    'request.text1': 'Si el rendimiento, la escala o la confiabilidad son una preocupación, el siguiente paso es una breve discusión introductoria para confirmar el alcance y el ajuste.',
-                    'request.text2': 'Para comenzar, complete el breve formulario de admisión a continuación. Esto nos ayuda a asegurar que la conversación sea enfocada y productiva.',
-                    'footer.text': 'Las fallas de rendimiento son riesgos comerciales — hasta que se diseñan.',
-                    'footer.copyright': '© 2026 Sisters Grove LLC. Todos los derechos reservados.'
-                }
-            };
-
-            function initLanguageToggle() {
-                const langEn = document.getElementById('langEn');
-                const langEs = document.getElementById('langEs');
-                
-                let currentLang = localStorage.getItem('kpi99_lang') || 'en';
-                setLanguage(currentLang);
-                
-                if (langEn && langEs) {
-                    langEn.addEventListener('click', () => setLanguage('en'));
-                    langEs.addEventListener('click', () => setLanguage('es'));
-                }
-            }
-
-            function setLanguage(lang) {
-                const langEn = document.getElementById('langEn');
-                const langEs = document.getElementById('langEs');
-                
-                if (langEn && langEs) {
-                    if (lang === 'en') {
-                        langEn.classList.add('active');
-                        langEs.classList.remove('active');
-                    } else {
-                        langEs.classList.add('active');
-                        langEn.classList.remove('active');
-                    }
-                }
-                
-                document.querySelectorAll('[data-i18n]').forEach(element => {
-                    const key = element.getAttribute('data-i18n');
-                    if (translations[lang] && translations[lang][key]) {
-                        element.textContent = translations[lang][key];
-                    }
-                });
-                
-                document.documentElement.lang = lang;
-                localStorage.setItem('kpi99_lang', lang);
-            }
-
-            initLanguageToggle();
         });
     </script>
 </body>

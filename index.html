@@ -229,48 +229,6 @@
             width: 100%;
         }
 
-        /* Language Toggle */
-        .language-toggle {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-left: 20px;
-        }
-
-        .language-toggle button {
-            background: transparent;
-            border: 2px solid #334155;
-            color: #334155;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            min-width: 40px;
-        }
-
-        .language-toggle button:hover {
-            background: #334155;
-            color: white;
-        }
-
-        .language-toggle button.active {
-            background: #3b82f6;
-            border-color: #3b82f6;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .language-toggle {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-        }
-
         /* Header */
         header {
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.6) 100%),
@@ -2002,37 +1960,37 @@
 <body>
     <header>
         <div class="container">
-            <p class="tagline" data-i18n="header.tagline">Performance. Scale. Reliability—Engineered.</p>
+            <p class="tagline">Performance. Scale. Reliability—Engineered.</p>
             <a href="#" class="consultation-button-header" id="consultationButtonHeader">
                 <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
                     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/>
                 </svg>
-                <span data-i18n="header.consultation">Book a Free 30-minute Consultation</span>
+                Book a Free 30-minute Consultation
             </a>
         </div>
     </header>
 
     <section class="who-section">
         <div class="container">
-            <h2 data-i18n="who.title">Enterprise-Grade Performance Engineering Team</h2>
-            <p class="intro-text" data-i18n="who.text1">
+            <h2>Enterprise-Grade Performance Engineering Team</h2>
+            <p class="intro-text">
                 KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.
             </p>
-            <p class="intro-text" style="margin-top: 20px;" data-i18n="who.text2">
+            <p class="intro-text" style="margin-top: 20px;">
                 Our team applies proven enterprise methodologies to identify performance limits, reduce latency, prevent outages, and improve infrastructure efficiency before issues impact customers or regulators.
             </p>
             <div class="impact-grid" style="margin-top: 40px;">
                 <div class="impact-item">
-                    <h4 data-i18n="who.revenue">Revenue</h4>
+                    <h4>Revenue</h4>
                 </div>
                 <div class="impact-item">
-                    <h4 data-i18n="who.regulatory">Regulatory compliance</h4>
+                    <h4>Regulatory compliance</h4>
                 </div>
                 <div class="impact-item">
-                    <h4 data-i18n="who.trust">Customer trust</h4>
+                    <h4>Customer trust</h4>
                 </div>
                 <div class="impact-item">
-                    <h4 data-i18n="who.spend">Cloud & infrastructure spend</h4>
+                    <h4>Cloud & infrastructure spend</h4>
                 </div>
             </div>
         </div>
@@ -2040,11 +1998,11 @@
 
     <section class="different-section">
         <div class="container">
-            <h2 data-i18n="experience.title">Our Experience</h2>
-            <p class="intro-text" style="color: #334155;" data-i18n="experience.text1">
+            <h2>Our Experience</h2>
+            <p class="intro-text" style="color: #334155;">
                 Our team brings deep experience supporting large-scale, regulated platforms where performance, reliability, and predictability are business-critical.
             </p>
-            <p class="intro-text" style="color: #334155; margin-top: 20px;" data-i18n="experience.text2">
+            <p class="intro-text" style="color: #334155; margin-top: 20px;">
                 We have worked across environments including financial services, large data platforms, event-driven architectures, and cloud-based enterprise systems operating under strict SLA requirements.
             </p>
         </div>
@@ -2052,11 +2010,11 @@
 
     <section class="methodology-section">
         <div class="container">
-            <h2 data-i18n="approach.title">Our Approach</h2>
-            <p class="intro-text" style="color: #334155;" data-i18n="approach.text1">
+            <h2>Our Approach</h2>
+            <p class="intro-text" style="color: #334155;">
                 KPI99 follows a structured, evidence-driven performance engineering methodology refined in large enterprise environments.
             </p>
-            <p class="intro-text" style="color: #334155; margin-top: 20px;" data-i18n="approach.text2">
+            <p class="intro-text" style="color: #334155; margin-top: 20px;">
                 Each engagement combines application-level analysis, infrastructure saturation modeling, and capacity forecasting to provide clear, actionable insight for technical and executive stakeholders.
             </p>
             <div class="approach-grid" style="margin-top: 40px;">
@@ -2078,35 +2036,35 @@
 
     <section class="methodology-section">
         <div class="container">
-            <h2 data-i18n="methodology.title">Methodology & Process</h2>
-            <p class="intro-text" style="color: #334155;" data-i18n="methodology.text">
+            <h2>Methodology & Process</h2>
+            <p class="intro-text" style="color: #334155;">
                 A systematic, data-driven approach to performance engineering that delivers measurable results.
             </p>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h4 data-i18n="process.step1.title">Discovery & Assessment</h4>
-                    <p data-i18n="process.step1.text">Comprehensive system analysis using APM tools, profiling, and load testing to establish baseline performance metrics and identify constraints.</p>
+                    <h4>Discovery & Assessment</h4>
+                    <p>Comprehensive system analysis using APM tools, profiling, and load testing to establish baseline performance metrics and identify constraints.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h4 data-i18n="process.step2.title">Bottleneck Analysis</h4>
-                    <p data-i18n="process.step2.text">Deep-dive investigation into application code, JVM tuning, database queries, network I/O, and infrastructure configuration to pinpoint root causes.</p>
+                    <h4>Bottleneck Analysis</h4>
+                    <p>Deep-dive investigation into application code, JVM tuning, database queries, network I/O, and infrastructure configuration to pinpoint root causes.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h4 data-i18n="process.step3.title">Capacity Modeling</h4>
-                    <p data-i18n="process.step3.text">Mathematical modeling of system capacity under various load scenarios, including peak traffic, growth projections, and failure modes.</p>
+                    <h4>Capacity Modeling</h4>
+                    <p>Mathematical modeling of system capacity under various load scenarios, including peak traffic, growth projections, and failure modes.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h4 data-i18n="process.step4.title">Optimization & Tuning</h4>
-                    <p data-i18n="process.step4.text">Targeted improvements to code, configuration, and architecture with validation through controlled load testing and performance regression analysis.</p>
+                    <h4>Optimization & Tuning</h4>
+                    <p>Targeted improvements to code, configuration, and architecture with validation through controlled load testing and performance regression analysis.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">5</div>
-                    <h4 data-i18n="process.step5.title">Validation & Monitoring</h4>
-                    <p data-i18n="process.step5.text">Production validation, establishment of performance SLAs/SLOs, and implementation of monitoring dashboards for ongoing visibility.</p>
+                    <h4>Validation & Monitoring</h4>
+                    <p>Production validation, establishment of performance SLAs/SLOs, and implementation of monitoring dashboards for ongoing visibility.</p>
                 </div>
             </div>
         </div>
@@ -2114,69 +2072,69 @@
 
     <section class="technical-section">
         <div class="container">
-            <h2 data-i18n="expertise.title">Technical Expertise & Tools</h2>
-            <p class="intro-text" data-i18n="expertise.text">
+            <h2>Technical Expertise & Tools</h2>
+            <p class="intro-text">
                 Deep expertise across the full performance engineering stack, from application code to infrastructure.
             </p>
             <div class="tech-grid">
                 <div class="tech-card">
-                    <h4 data-i18n="expertise.app.title">Application Performance</h4>
+                    <h4>Application Performance</h4>
                     <ul>
-                        <li data-i18n="expertise.app.item1">JVM tuning (GC, heap, threads)</li>
-                        <li data-i18n="expertise.app.item2">Memory leak detection & analysis</li>
-                        <li data-i18n="expertise.app.item3">Thread dump & stack trace analysis</li>
-                        <li data-i18n="expertise.app.item4">Code profiling (JProfiler, YourKit, async-profiler)</li>
-                        <li data-i18n="expertise.app.item5">Application-level bottleneck identification</li>
+                        <li>JVM tuning (GC, heap, threads)</li>
+                        <li>Memory leak detection & analysis</li>
+                        <li>Thread dump & stack trace analysis</li>
+                        <li>Code profiling (JProfiler, YourKit, async-profiler)</li>
+                        <li>Application-level bottleneck identification</li>
                     </ul>
                 </div>
                 <div class="tech-card">
-                    <h4 data-i18n="expertise.infra.title">Infrastructure & Systems</h4>
+                    <h4>Infrastructure & Systems</h4>
                     <ul>
-                        <li data-i18n="expertise.infra.item1">CPU, memory, disk I/O analysis</li>
-                        <li data-i18n="expertise.infra.item2">Network latency & throughput optimization</li>
-                        <li data-i18n="expertise.infra.item3">Container orchestration (K8s) performance</li>
-                        <li data-i18n="expertise.infra.item4">Cloud infrastructure cost optimization</li>
-                        <li data-i18n="expertise.infra.item5">Autoscaling policy design & tuning</li>
+                        <li>CPU, memory, disk I/O analysis</li>
+                        <li>Network latency & throughput optimization</li>
+                        <li>Container orchestration (K8s) performance</li>
+                        <li>Cloud infrastructure cost optimization</li>
+                        <li>Autoscaling policy design & tuning</li>
                     </ul>
                 </div>
                 <div class="tech-card">
-                    <h4 data-i18n="expertise.load.title">Load Testing & Capacity</h4>
+                    <h4>Load Testing & Capacity</h4>
                     <ul>
-                        <li data-i18n="expertise.load.item1">Distributed load testing (JMeter, Gatling, k6)</li>
-                        <li data-i18n="expertise.load.item2">Traffic pattern analysis & modeling</li>
-                        <li data-i18n="expertise.load.item3">Saturation point identification</li>
-                        <li data-i18n="expertise.load.item4">Capacity planning & forecasting</li>
-                        <li data-i18n="expertise.load.item5">Chaos engineering & failure testing</li>
+                        <li>Distributed load testing (JMeter, Gatling, k6)</li>
+                        <li>Traffic pattern analysis & modeling</li>
+                        <li>Saturation point identification</li>
+                        <li>Capacity planning & forecasting</li>
+                        <li>Chaos engineering & failure testing</li>
                     </ul>
                 </div>
                 <div class="tech-card">
-                    <h4 data-i18n="expertise.obs.title">Observability & Monitoring</h4>
+                    <h4>Observability & Monitoring</h4>
                     <ul>
-                        <li data-i18n="expertise.obs.item1">APM tools (New Relic, Datadog, Dynatrace)</li>
-                        <li data-i18n="expertise.obs.item2">Metrics, logs, and traces analysis</li>
-                        <li data-i18n="expertise.obs.item3">Performance dashboard design</li>
-                        <li data-i18n="expertise.obs.item4">SLA/SLO definition & tracking</li>
-                        <li data-i18n="expertise.obs.item5">Alerting strategy & threshold tuning</li>
+                        <li>APM tools (New Relic, Datadog, Dynatrace)</li>
+                        <li>Metrics, logs, and traces analysis</li>
+                        <li>Performance dashboard design</li>
+                        <li>SLA/SLO definition & tracking</li>
+                        <li>Alerting strategy & threshold tuning</li>
                     </ul>
                 </div>
                 <div class="tech-card">
-                    <h4 data-i18n="expertise.dist.title">Distributed Systems</h4>
+                    <h4>Distributed Systems</h4>
                     <ul>
-                        <li data-i18n="expertise.dist.item1">Microservices performance optimization</li>
-                        <li data-i18n="expertise.dist.item2">Message queue tuning (Kafka, RabbitMQ)</li>
-                        <li data-i18n="expertise.dist.item3">Database query optimization</li>
-                        <li data-i18n="expertise.dist.item4">Cache strategy & implementation</li>
-                        <li data-i18n="expertise.dist.item5">Service mesh performance (Istio, Linkerd)</li>
+                        <li>Microservices performance optimization</li>
+                        <li>Message queue tuning (Kafka, RabbitMQ)</li>
+                        <li>Database query optimization</li>
+                        <li>Cache strategy & implementation</li>
+                        <li>Service mesh performance (Istio, Linkerd)</li>
                     </ul>
                 </div>
                 <div class="tech-card">
-                    <h4 data-i18n="expertise.cloud.title">Cloud Platforms</h4>
+                    <h4>Cloud Platforms</h4>
                     <ul>
-                        <li data-i18n="expertise.cloud.item1">AWS, GCP, Azure performance optimization</li>
-                        <li data-i18n="expertise.cloud.item2">Serverless function tuning (Lambda, Cloud Functions)</li>
-                        <li data-i18n="expertise.cloud.item3">CDN & edge computing optimization</li>
-                        <li data-i18n="expertise.cloud.item4">Multi-region latency optimization</li>
-                        <li data-i18n="expertise.cloud.item5">Cloud cost analysis & optimization</li>
+                        <li>AWS, GCP, Azure performance optimization</li>
+                        <li>Serverless function tuning (Lambda, Cloud Functions)</li>
+                        <li>CDN & edge computing optimization</li>
+                        <li>Multi-region latency optimization</li>
+                        <li>Cloud cost analysis & optimization</li>
                     </ul>
                 </div>
             </div>
@@ -2207,155 +2165,155 @@
     <section class="services-section">
         <div class="container">
             <div class="services-header">
-                <h2 data-i18n="services.packages">Service Packages</h2>
-                <a href="KPI99_Services.pdf" class="pdf-download-button" id="servicesPdfLink" download>
+                <h2>Service Packages</h2>
+                <a href="KPI99_Services.pdf" class="pdf-download-button" download>
                     <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
                         <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
                     </svg>
-                    <span data-i18n="services.pdf">Download Services PDF</span>
+                    Download Services PDF
                 </a>
             </div>
             
             <div class="services-grid">
                 <!-- Performance Health Audit -->
                 <div class="service-card health">
-                    <h3 data-i18n="service.audit.title">Performance Health Audit</h3>
-                    <span class="service-type" data-i18n="service.audit.type">Entry Engagement | Low Risk | High Insight</span>
-                    <div class="service-duration" data-i18n="service.audit.duration">Duration: 2–3 weeks</div>
-                    <div class="service-investment" data-i18n="service.audit.investment">Investment: $10,000</div>
+                    <h3>Performance Health Audit</h3>
+                    <span class="service-type">Entry Engagement | Low Risk | High Insight</span>
+                    <div class="service-duration">Duration: 2–3 weeks</div>
+                    <div class="service-investment">Investment: $10,000</div>
                     
-                    <h4 data-i18n="service.solves">What This Solves</h4>
+                    <h4>What This Solves</h4>
                     <ul>
-                        <li data-i18n="service.audit.solves1">Unexplained latency</li>
-                        <li data-i18n="service.audit.solves2">Capacity uncertainty</li>
-                        <li data-i18n="service.audit.solves3">Inefficient infrastructure usage</li>
-                        <li data-i18n="service.audit.solves4">Lack of performance visibility</li>
+                        <li>Unexplained latency</li>
+                        <li>Capacity uncertainty</li>
+                        <li>Inefficient infrastructure usage</li>
+                        <li>Lack of performance visibility</li>
                     </ul>
 
-                    <h4 data-i18n="service.scope">Scope</h4>
+                    <h4>Scope</h4>
                     <ul>
-                        <li data-i18n="service.audit.scope1">JVM GC, heap, thread, and memory analysis</li>
-                        <li data-i18n="service.audit.scope2">CPU, memory, disk, and network utilization review</li>
-                        <li data-i18n="service.audit.scope3">Load test & traffic profile evaluation</li>
-                        <li data-i18n="service.audit.scope4">Bottleneck identification (application + infrastructure)</li>
-                        <li data-i18n="service.audit.scope5">Cost inefficiency & waste analysis</li>
-                        <li data-i18n="service.audit.scope6">APM tool configuration review</li>
-                        <li data-i18n="service.audit.scope7">Performance baseline establishment</li>
+                        <li>JVM GC, heap, thread, and memory analysis</li>
+                        <li>CPU, memory, disk, and network utilization review</li>
+                        <li>Load test & traffic profile evaluation</li>
+                        <li>Bottleneck identification (application + infrastructure)</li>
+                        <li>Cost inefficiency & waste analysis</li>
+                        <li>APM tool configuration review</li>
+                        <li>Performance baseline establishment</li>
                     </ul>
 
-                    <h4 data-i18n="service.deliverables">Deliverables</h4>
+                    <h4>Deliverables</h4>
                     <ul>
-                        <li data-i18n="service.audit.deliver1">Executive summary (non-technical)</li>
-                        <li data-i18n="service.audit.deliver2">Detailed performance findings</li>
-                        <li data-i18n="service.audit.deliver3">Identified system limits</li>
-                        <li data-i18n="service.audit.deliver4">Prioritized remediation roadmap</li>
+                        <li>Executive summary (non-technical)</li>
+                        <li>Detailed performance findings</li>
+                        <li>Identified system limits</li>
+                        <li>Prioritized remediation roadmap</li>
                     </ul>
 
                     <div class="best-for">
-                        <strong data-i18n="service.bestfor">Best For:</strong> <span data-i18n="service.audit.bestfor">New platforms, Legacy systems, Pre-scale or pre-migration environments</span>
+                        <strong>Best For:</strong> New platforms, Legacy systems, Pre-scale or pre-migration environments
                     </div>
                 </div>
 
                 <!-- Scale & Latency Optimization -->
                 <div class="service-card optimization">
-                    <h3 data-i18n="service.optimization.title">Scale & Latency Optimization</h3>
-                    <span class="service-type" data-i18n="service.optimization.type">Primary Engagement | High Impact</span>
-                    <div class="service-duration" data-i18n="service.optimization.duration">Duration: 4–8 weeks</div>
-                    <div class="service-investment" data-i18n="service.optimization.investment">Investment: $30,000–$50,000</div>
+                    <h3>Scale & Latency Optimization</h3>
+                    <span class="service-type">Primary Engagement | High Impact</span>
+                    <div class="service-duration">Duration: 4–8 weeks</div>
+                    <div class="service-investment">Investment: $30,000–$50,000</div>
                     
-                    <h4 data-i18n="service.solves">What This Solves</h4>
+                    <h4>What This Solves</h4>
                     <ul>
-                        <li data-i18n="service.optimization.solves1">Systems failing under peak load</li>
-                        <li data-i18n="service.optimization.solves2">Latency impacting SLAs</li>
-                        <li data-i18n="service.optimization.solves3">Over-provisioned or under-scaled infrastructure</li>
-                        <li data-i18n="service.optimization.solves4">Performance risk during growth</li>
+                        <li>Systems failing under peak load</li>
+                        <li>Latency impacting SLAs</li>
+                        <li>Over-provisioned or under-scaled infrastructure</li>
+                        <li>Performance risk during growth</li>
                     </ul>
 
-                    <h4 data-i18n="service.scope">Scope</h4>
+                    <h4>Scope</h4>
                     <ul>
-                        <li data-i18n="service.optimization.scope1">Throughput & saturation modeling</li>
-                        <li data-i18n="service.optimization.scope2">Distributed system bottleneck analysis</li>
-                        <li data-i18n="service.optimization.scope3">JVM, messaging, and data pipeline optimization</li>
-                        <li data-i18n="service.optimization.scope4">Autoscaling & capacity tuning</li>
-                        <li data-i18n="service.optimization.scope5">SLA / SLO performance hardening</li>
-                        <li data-i18n="service.optimization.scope6">Code-level performance improvements</li>
-                        <li data-i18n="service.optimization.scope7">Database query & connection pool optimization</li>
-                        <li data-i18n="service.optimization.scope8">Load testing validation & regression prevention</li>
+                        <li>Throughput & saturation modeling</li>
+                        <li>Distributed system bottleneck analysis</li>
+                        <li>JVM, messaging, and data pipeline optimization</li>
+                        <li>Autoscaling & capacity tuning</li>
+                        <li>SLA / SLO performance hardening</li>
+                        <li>Code-level performance improvements</li>
+                        <li>Database query & connection pool optimization</li>
+                        <li>Load testing validation & regression prevention</li>
                     </ul>
 
-                    <h4 data-i18n="service.deliverables">Deliverables</h4>
+                    <h4>Deliverables</h4>
                     <ul>
-                        <li data-i18n="service.optimization.deliver1">Optimized system configuration</li>
-                        <li data-i18n="service.optimization.deliver2">Capacity models & scaling thresholds</li>
-                        <li data-i18n="service.optimization.deliver3">Performance risk mitigation plan</li>
-                        <li data-i18n="service.optimization.deliver4">Executive-level impact summary</li>
+                        <li>Optimized system configuration</li>
+                        <li>Capacity models & scaling thresholds</li>
+                        <li>Performance risk mitigation plan</li>
+                        <li>Executive-level impact summary</li>
                     </ul>
 
                     <div class="best-for">
-                        <strong data-i18n="service.bestfor">Best For:</strong> <span data-i18n="service.optimization.bestfor">High-growth systems, Regulated environments, Customer-facing platforms, Cloud cost control initiatives</span>
+                        <strong>Best For:</strong> High-growth systems, Regulated environments, Customer-facing platforms, Cloud cost control initiatives
                     </div>
                 </div>
 
                 <!-- Executive Performance Retainer -->
                 <div class="service-card retainer">
-                    <h3 data-i18n="service.retainer.title">Executive Performance Retainer</h3>
-                    <span class="service-type" data-i18n="service.retainer.type">Ongoing Advisory | Predictable Results</span>
-                    <div class="service-duration" data-i18n="service.retainer.duration">Duration: Monthly</div>
-                    <div class="service-investment" data-i18n="service.retainer.investment">Investment: $6,000–$12,000 per month</div>
+                    <h3>Executive Performance Retainer</h3>
+                    <span class="service-type">Ongoing Advisory | Predictable Results</span>
+                    <div class="service-duration">Duration: Monthly</div>
+                    <div class="service-investment">Investment: $6,000–$12,000 per month</div>
                     
-                    <h4 data-i18n="service.solves">What This Solves</h4>
+                    <h4>What This Solves</h4>
                     <ul>
-                        <li data-i18n="service.retainer.solves1">Recurring performance incidents</li>
-                        <li data-i18n="service.retainer.solves2">Lack of capacity forecasting</li>
-                        <li data-i18n="service.retainer.solves3">Reactive firefighting</li>
-                        <li data-i18n="service.retainer.solves4">No senior performance authority</li>
+                        <li>Recurring performance incidents</li>
+                        <li>Lack of capacity forecasting</li>
+                        <li>Reactive firefighting</li>
+                        <li>No senior performance authority</li>
                     </ul>
 
-                    <h4 data-i18n="service.scope">Scope</h4>
+                    <h4>Scope</h4>
                     <ul>
-                        <li data-i18n="service.retainer.scope1">Monthly performance & capacity reviews</li>
-                        <li data-i18n="service.retainer.scope2">Forecasting for growth and peak events</li>
-                        <li data-i18n="service.retainer.scope3">Cloud cost efficiency oversight</li>
-                        <li data-i18n="service.retainer.scope4">Incident escalation advisory</li>
-                        <li data-i18n="service.retainer.scope5">Architecture & scale-readiness guidance</li>
-                        <li data-i18n="service.retainer.scope6">Performance regression prevention</li>
-                        <li data-i18n="service.retainer.scope7">Team training & knowledge transfer</li>
-                        <li data-i18n="service.retainer.scope8">Strategic performance roadmap planning</li>
+                        <li>Monthly performance & capacity reviews</li>
+                        <li>Forecasting for growth and peak events</li>
+                        <li>Cloud cost efficiency oversight</li>
+                        <li>Incident escalation advisory</li>
+                        <li>Architecture & scale-readiness guidance</li>
+                        <li>Performance regression prevention</li>
+                        <li>Team training & knowledge transfer</li>
+                        <li>Strategic performance roadmap planning</li>
                     </ul>
 
-                    <h4 data-i18n="service.deliverables">Deliverables</h4>
+                    <h4>Deliverables</h4>
                     <ul>
-                        <li data-i18n="service.retainer.deliver1">Monthly performance report</li>
-                        <li data-i18n="service.retainer.deliver2">Risk & capacity outlook</li>
-                        <li data-i18n="service.retainer.deliver3">Executive recommendations</li>
-                        <li data-i18n="service.retainer.deliver4">Ongoing optimization guidance</li>
+                        <li>Monthly performance report</li>
+                        <li>Risk & capacity outlook</li>
+                        <li>Executive recommendations</li>
+                        <li>Ongoing optimization guidance</li>
                     </ul>
 
                     <div class="best-for">
-                        <strong data-i18n="service.bestfor">Best For:</strong> <span data-i18n="service.retainer.bestfor">Leadership teams, Platforms with strict SLAs, Systems scaling regionally or globally</span>
+                        <strong>Best For:</strong> Leadership teams, Platforms with strict SLAs, Systems scaling regionally or globally
                     </div>
                 </div>
 
                 <!-- Incident & Emergency Support -->
                 <div class="service-card incident">
-                    <h3 data-i18n="service.incident.title">Incident & Emergency Support</h3>
-                    <span class="service-type" data-i18n="service.incident.type">On-Demand | Time-Critical</span>
-                    <div class="service-duration" data-i18n="service.incident.investment">Investment: $350–$500 per hour</div>
+                    <h3>Incident & Emergency Support</h3>
+                    <span class="service-type">On-Demand | Time-Critical</span>
+                    <div class="service-duration">Investment: $350–$500 per hour</div>
                     
-                    <h4 data-i18n="service.usecases">Use Cases</h4>
+                    <h4>Use Cases</h4>
                     <ul>
-                        <li data-i18n="service.incident.use1">Production latency spikes</li>
-                        <li data-i18n="service.incident.use2">Capacity failures</li>
-                        <li data-i18n="service.incident.use3">Major performance regressions</li>
-                        <li data-i18n="service.incident.use4">High-risk launches or events</li>
+                        <li>Production latency spikes</li>
+                        <li>Capacity failures</li>
+                        <li>Major performance regressions</li>
+                        <li>High-risk launches or events</li>
                     </ul>
 
-                    <h4 data-i18n="service.engagement">Engagement Model</h4>
+                    <h4>Engagement Model</h4>
                     <ul>
-                        <li data-i18n="service.incident.engage1">Senior-level team execution</li>
-                        <li data-i18n="service.incident.engage2">Experienced consultants only</li>
-                        <li data-i18n="service.incident.engage3">Direct access throughout engagement</li>
-                        <li data-i18n="service.incident.engage4">Clear scope and outcomes</li>
+                        <li>Senior-level team execution</li>
+                        <li>Experienced consultants only</li>
+                        <li>Direct access throughout engagement</li>
+                        <li>Clear scope and outcomes</li>
                     </ul>
                 </div>
             </div>
@@ -2364,27 +2322,27 @@
 
     <section class="why-section">
         <div class="container">
-            <h2 data-i18n="why.title">Why Clients Engage</h2>
+            <h2>Why Clients Engage</h2>
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <div class="check"></div>
-                    <h4 data-i18n="why.benefit1">Reduced outage risk</h4>
+                    <h4>Reduced outage risk</h4>
                 </div>
                 <div class="benefit-item">
                     <div class="check"></div>
-                    <h4 data-i18n="why.benefit2">Predictable system scaling</h4>
+                    <h4>Predictable system scaling</h4>
                 </div>
                 <div class="benefit-item">
                     <div class="check"></div>
-                    <h4 data-i18n="why.benefit3">Lower cloud & infrastructure costs</h4>
+                    <h4>Lower cloud & infrastructure costs</h4>
                 </div>
                 <div class="benefit-item">
                     <div class="check"></div>
-                    <h4 data-i18n="why.benefit4">Executive-level clarity</h4>
+                    <h4>Executive-level clarity</h4>
                 </div>
                 <div class="benefit-item">
                     <div class="check"></div>
-                    <h4 data-i18n="why.benefit5">Faster, safer growth</h4>
+                    <h4>Faster, safer growth</h4>
                 </div>
             </div>
         </div>
@@ -2392,33 +2350,33 @@
 
     <section class="technical-section" id="outcomes">
         <div class="container">
-            <h2 data-i18n="outcomes.title">Representative Outcomes</h2>
-            <p class="intro-text" data-i18n="outcomes.text">
+            <h2>Representative Outcomes</h2>
+            <p class="intro-text">
                 Our team has delivered measurable improvements across enterprise environments.
             </p>
             <div class="tech-grid">
                 <div class="tech-card">
-                    <h4 data-i18n="outcomes.performance.title">Performance Improvements</h4>
+                    <h4>Performance Improvements</h4>
                     <ul>
-                        <li data-i18n="outcomes.performance.item1">Reduced peak-load latency by 40–70% in enterprise environments</li>
-                        <li data-i18n="outcomes.performance.item2">Improved throughput and stability without increasing infrastructure footprint</li>
-                        <li data-i18n="outcomes.performance.item3">Prevented scale-related incidents during high-risk growth and demand events</li>
+                        <li>Reduced peak-load latency by 40–70% in enterprise environments</li>
+                        <li>Improved throughput and stability without increasing infrastructure footprint</li>
+                        <li>Prevented scale-related incidents during high-risk growth and demand events</li>
                     </ul>
                 </div>
                 <div class="tech-card">
-                    <h4 data-i18n="outcomes.infrastructure.title">Infrastructure Efficiency</h4>
+                    <h4>Infrastructure Efficiency</h4>
                     <ul>
-                        <li data-i18n="outcomes.infrastructure.item1">Identified 30%+ infrastructure inefficiency in hybrid cloud systems</li>
-                        <li data-i18n="outcomes.infrastructure.item2">Right-sized capacity planning and resource allocation</li>
-                        <li data-i18n="outcomes.infrastructure.item3">Optimized autoscaling policies for predictable costs</li>
+                        <li>Identified 30%+ infrastructure inefficiency in hybrid cloud systems</li>
+                        <li>Right-sized capacity planning and resource allocation</li>
+                        <li>Optimized autoscaling policies for predictable costs</li>
                     </ul>
                 </div>
                 <div class="tech-card">
-                    <h4 data-i18n="outcomes.risk.title">Risk Mitigation</h4>
+                    <h4>Risk Mitigation</h4>
                     <ul>
-                        <li data-i18n="outcomes.risk.item1">Quantified capacity headroom for growth planning</li>
-                        <li data-i18n="outcomes.risk.item2">Predictable scaling thresholds and performance baselines</li>
-                        <li data-i18n="outcomes.risk.item3">Proactive bottleneck identification and resolution</li>
+                        <li>Quantified capacity headroom for growth planning</li>
+                        <li>Predictable scaling thresholds and performance baselines</li>
+                        <li>Proactive bottleneck identification and resolution</li>
                     </ul>
                 </div>
             </div>
@@ -2427,11 +2385,11 @@
 
     <section class="technical-section">
         <div class="container">
-            <h2 data-i18n="team.title">About the Team</h2>
-            <p class="intro-text" data-i18n="team.text1">
+            <h2>About the Team</h2>
+            <p class="intro-text">
                 KPI99 operates as a focused consulting practice delivering senior-level performance engineering expertise.
             </p>
-            <p class="intro-text" style="margin-top: 20px;" data-i18n="team.text2">
+            <p class="intro-text" style="margin-top: 20px;">
                 Engagements are led by experienced engineers with enterprise backgrounds, ensuring direct access to deep technical capability without the overhead of large consulting teams.
             </p>
         </div>
@@ -2439,11 +2397,11 @@
 
     <section class="different-section">
         <div class="container">
-            <h2 data-i18n="partner.title">Partner-Ready Delivery Model</h2>
-            <p class="intro-text" style="color: #334155;" data-i18n="partner.text1">
+            <h2>Partner-Ready Delivery Model</h2>
+            <p class="intro-text" style="color: #334155;">
                 KPI99 regularly supports delivery partners by providing specialized performance and capacity expertise during high-impact initiatives.
             </p>
-            <p class="intro-text" style="color: #334155; margin-top: 20px;" data-i18n="partner.text2">
+            <p class="intro-text" style="color: #334155; margin-top: 20px;">
                 Our role is to reduce delivery risk, strengthen outcomes, and increase confidence during migrations, scale events, and performance-sensitive programs.
             </p>
         </div>
@@ -2451,8 +2409,8 @@
 
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2 data-i18n="contact.title">Request an Assessment</h2>
-            <p class="intro-text" style="text-align: center; margin-bottom: 30px; color: #475569;" data-i18n="contact.text">
+            <h2>Request an Assessment</h2>
+            <p class="intro-text" style="text-align: center; margin-bottom: 30px; color: #475569;">
                 Get in touch to discuss your performance engineering needs. Our team will review your requirements and provide a tailored assessment of how we can help optimize your systems.
             </p>
             <div class="contact-form-container">
@@ -2462,36 +2420,36 @@
                     <input type="hidden" name="to_name" value="KPI99 Team">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name"><span data-i18n="form.name">Name</span> <span class="required">*</span></label>
-                            <input type="text" id="name" name="from_name" data-i18n-placeholder="form.name.placeholder" placeholder="Your full name" required>
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="from_name" placeholder="Your full name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email"><span data-i18n="form.email">Email</span> <span class="required">*</span></label>
-                            <input type="email" id="email" name="from_email" data-i18n-placeholder="form.email.placeholder" placeholder="your.email@example.com" required>
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="from_email" placeholder="your.email@example.com" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="company"><span data-i18n="form.company">Company</span></label>
-                            <input type="text" id="company" name="company" data-i18n-placeholder="form.company.placeholder" placeholder="Your company name">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your company name">
                         </div>
                         <div class="form-group">
-                            <label for="service"><span data-i18n="form.service">Service Interest</span></label>
+                            <label for="service">Service Interest</label>
                             <select id="service" name="service_interest">
-                                <option value="" data-i18n="form.service.select">Select a service...</option>
-                                <option value="audit" data-i18n="form.service.audit">Performance Health Audit</option>
-                                <option value="optimization" data-i18n="form.service.optimization">Scale & Latency Optimization</option>
-                                <option value="retainer" data-i18n="form.service.retainer">Executive Performance Retainer</option>
-                                <option value="incident" data-i18n="form.service.incident">Incident & Emergency Support</option>
-                                <option value="other" data-i18n="form.service.other">Other / General Inquiry</option>
+                                <option value="">Select a service...</option>
+                                <option value="audit">Performance Health Audit</option>
+                                <option value="optimization">Scale & Latency Optimization</option>
+                                <option value="retainer">Executive Performance Retainer</option>
+                                <option value="incident">Incident & Emergency Support</option>
+                                <option value="other">Other / General Inquiry</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="message"><span data-i18n="form.message">Message</span> <span class="required">*</span></label>
-                        <textarea id="message" name="message" data-i18n-placeholder="form.message.placeholder" placeholder="Tell us about your performance challenges, current system constraints, or specific areas where you'd like an assessment..." required></textarea>
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" placeholder="Tell us about your performance challenges, current system constraints, or specific areas where you'd like an assessment..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-button" data-i18n="contact.submit">Request Assessment</button>
+                    <button type="submit" class="submit-button">Request Assessment</button>
                     <div class="form-message" id="formMessage"></div>
                 </form>
             </div>
@@ -2572,7 +2530,7 @@
     <footer>
         <div class="container">
             <p style="margin-bottom: 15px; font-style: italic; opacity: 0.9;">Enterprise performance engineering delivered with rigor, discretion, and senior-level accountability.</p>
-            <p data-i18n="footer.copyright">&copy; 2026 Sisters Grove LLC. All rights reserved.</p>
+            <p>&copy; 2026 Sisters Grove LLC. All rights reserved.</p>
         </div>
     </footer>
 
@@ -2586,19 +2544,13 @@
                     <div class="logo">
                         <img src="menu_logo.png" alt="KPI99" />
                     </div>
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <div class="language-toggle">
-                            <button id="langEn" class="active" data-lang="en">EN</button>
-                            <button id="langEs" data-lang="es">ES</button>
-                        </div>
-                        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
-                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
                     <ul id="navMenu">
-                        <li><a href="#who" data-i18n="nav.who">Who</a></li>
-                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
-                        <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
-                        <li><a href="#outcomes" data-i18n="nav.outcomes">Outcomes</a></li>
-                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="#who">Who</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#outcomes">Outcomes</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             `;
@@ -3176,502 +3128,6 @@
                     aiChatSend.disabled = !this.value.trim();
                 });
             }
-        });
-
-        // Language Toggle System
-        const translations = {
-            en: {
-                'nav.who': 'Who',
-                'nav.services': 'Services',
-                'nav.expertise': 'Expertise',
-                'nav.outcomes': 'Outcomes',
-                'nav.contact': 'Contact',
-                'header.tagline': 'Performance. Scale. Reliability—Engineered.',
-                'header.consultation': 'Book a Free 30-minute Consultation',
-                'who.title': 'Enterprise-Grade Performance Engineering Team',
-                'who.text1': 'KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.',
-                'who.text2': 'Our team applies proven enterprise methodologies to identify performance limits, reduce latency, prevent outages, and improve infrastructure efficiency before issues impact customers or regulators.',
-                'who.revenue': 'Revenue',
-                'who.regulatory': 'Regulatory compliance',
-                'who.trust': 'Customer trust',
-                'who.spend': 'Cloud & infrastructure spend',
-                'experience.title': 'Our Experience',
-                'experience.text1': 'Our team brings deep experience supporting large-scale, regulated platforms where performance, reliability, and predictability are business-critical.',
-                'experience.text2': 'We have worked across environments including financial services, large data platforms, event-driven architectures, and cloud-based enterprise systems operating under strict SLA requirements.',
-                'approach.title': 'Our Approach',
-                'approach.text1': 'KPI99 follows a structured, evidence-driven performance engineering methodology refined in large enterprise environments.',
-                'approach.text2': 'Each engagement combines application-level analysis, infrastructure saturation modeling, and capacity forecasting to provide clear, actionable insight for technical and executive stakeholders.',
-                'services.title': 'Services',
-                'services.packages': 'Service Packages',
-                'services.pdf': 'Download Services PDF',
-                'methodology.title': 'Methodology & Process',
-                'methodology.text': 'A systematic, data-driven approach to performance engineering that delivers measurable results.',
-                'expertise.title': 'Technical Expertise & Tools',
-                'expertise.text': 'Deep expertise across the full performance engineering stack, from application code to infrastructure.',
-                'why.title': 'Why Clients Engage',
-                'why.benefit1': 'Reduced outage risk',
-                'why.benefit2': 'Predictable system scaling',
-                'why.benefit3': 'Lower cloud & infrastructure costs',
-                'why.benefit4': 'Executive-level clarity',
-                'why.benefit5': 'Faster, safer growth',
-                'outcomes.title': 'Representative Outcomes',
-                'outcomes.text': 'Our team has delivered measurable improvements across enterprise environments.',
-                'team.title': 'About the Team',
-                'team.text1': 'KPI99 operates as a focused consulting practice delivering senior-level performance engineering expertise.',
-                'team.text2': 'Engagements are led by experienced engineers with enterprise backgrounds, ensuring direct access to deep technical capability without the overhead of large consulting teams.',
-                'partner.title': 'Partner-Ready Delivery Model',
-                'partner.text1': 'KPI99 regularly supports delivery partners by providing specialized performance and capacity expertise during high-impact initiatives.',
-                'partner.text2': 'Our role is to reduce delivery risk, strengthen outcomes, and increase confidence during migrations, scale events, and performance-sensitive programs.',
-                'contact.title': 'Request an Assessment',
-                'contact.text': 'Get in touch to discuss your performance engineering needs. Our team will review your requirements and provide a tailored assessment of how we can help optimize your systems.',
-                'contact.submit': 'Request Assessment',
-                'service.solves': 'What This Solves',
-                'service.scope': 'Scope',
-                'service.deliverables': 'Deliverables',
-                'service.bestfor': 'Best For:',
-                'service.usecases': 'Use Cases',
-                'service.engagement': 'Engagement Model',
-                'service.audit.title': 'Performance Health Audit',
-                'service.audit.type': 'Entry Engagement | Low Risk | High Insight',
-                'service.audit.duration': 'Duration: 2–3 weeks',
-                'service.audit.investment': 'Investment: $10,000',
-                'service.audit.solves1': 'Unexplained latency',
-                'service.audit.solves2': 'Capacity uncertainty',
-                'service.audit.solves3': 'Inefficient infrastructure usage',
-                'service.audit.solves4': 'Lack of performance visibility',
-                'service.audit.scope1': 'JVM GC, heap, thread, and memory analysis',
-                'service.audit.scope2': 'CPU, memory, disk, and network utilization review',
-                'service.audit.scope3': 'Load test & traffic profile evaluation',
-                'service.audit.scope4': 'Bottleneck identification (application + infrastructure)',
-                'service.audit.scope5': 'Cost inefficiency & waste analysis',
-                'service.audit.scope6': 'APM tool configuration review',
-                'service.audit.scope7': 'Performance baseline establishment',
-                'service.audit.deliver1': 'Executive summary (non-technical)',
-                'service.audit.deliver2': 'Detailed performance findings',
-                'service.audit.deliver3': 'Identified system limits',
-                'service.audit.deliver4': 'Prioritized remediation roadmap',
-                'service.audit.bestfor': 'New platforms, Legacy systems, Pre-scale or pre-migration environments',
-                'service.optimization.title': 'Scale & Latency Optimization',
-                'service.optimization.type': 'Primary Engagement | High Impact',
-                'service.optimization.duration': 'Duration: 4–8 weeks',
-                'service.optimization.investment': 'Investment: $30,000–$50,000',
-                'service.optimization.solves1': 'Systems failing under peak load',
-                'service.optimization.solves2': 'Latency impacting SLAs',
-                'service.optimization.solves3': 'Over-provisioned or under-scaled infrastructure',
-                'service.optimization.solves4': 'Performance risk during growth',
-                'service.optimization.scope1': 'Throughput & saturation modeling',
-                'service.optimization.scope2': 'Distributed system bottleneck analysis',
-                'service.optimization.scope3': 'JVM, messaging, and data pipeline optimization',
-                'service.optimization.scope4': 'Autoscaling & capacity tuning',
-                'service.optimization.scope5': 'SLA / SLO performance hardening',
-                'service.optimization.scope6': 'Code-level performance improvements',
-                'service.optimization.scope7': 'Database query & connection pool optimization',
-                'service.optimization.scope8': 'Load testing validation & regression prevention',
-                'service.optimization.deliver1': 'Optimized system configuration',
-                'service.optimization.deliver2': 'Capacity models & scaling thresholds',
-                'service.optimization.deliver3': 'Performance risk mitigation plan',
-                'service.optimization.deliver4': 'Executive-level impact summary',
-                'service.optimization.bestfor': 'High-growth systems, Regulated environments, Customer-facing platforms, Cloud cost control initiatives',
-                'service.retainer.title': 'Executive Performance Retainer',
-                'service.retainer.type': 'Ongoing Advisory | Predictable Results',
-                'service.retainer.duration': 'Duration: Monthly',
-                'service.retainer.investment': 'Investment: $6,000–$12,000 per month',
-                'service.retainer.solves1': 'Recurring performance incidents',
-                'service.retainer.solves2': 'Lack of capacity forecasting',
-                'service.retainer.solves3': 'Reactive firefighting',
-                'service.retainer.solves4': 'No senior performance authority',
-                'service.retainer.scope1': 'Monthly performance & capacity reviews',
-                'service.retainer.scope2': 'Forecasting for growth and peak events',
-                'service.retainer.scope3': 'Cloud cost efficiency oversight',
-                'service.retainer.scope4': 'Incident escalation advisory',
-                'service.retainer.scope5': 'Architecture & scale-readiness guidance',
-                'service.retainer.scope6': 'Performance regression prevention',
-                'service.retainer.scope7': 'Team training & knowledge transfer',
-                'service.retainer.scope8': 'Strategic performance roadmap planning',
-                'service.retainer.deliver1': 'Monthly performance report',
-                'service.retainer.deliver2': 'Risk & capacity outlook',
-                'service.retainer.deliver3': 'Executive recommendations',
-                'service.retainer.deliver4': 'Ongoing optimization guidance',
-                'service.retainer.bestfor': 'Leadership teams, Platforms with strict SLAs, Systems scaling regionally or globally',
-                'service.incident.title': 'Incident & Emergency Support',
-                'service.incident.type': 'On-Demand | Time-Critical',
-                'service.incident.investment': 'Investment: $350–$500 per hour',
-                'service.incident.use1': 'Production latency spikes',
-                'service.incident.use2': 'Capacity failures',
-                'service.incident.use3': 'Major performance regressions',
-                'service.incident.use4': 'High-risk launches or events',
-                'service.incident.engage1': 'Senior-level team execution',
-                'service.incident.engage2': 'Experienced consultants only',
-                'service.incident.engage3': 'Direct access throughout engagement',
-                'service.incident.engage4': 'Clear scope and outcomes',
-                'process.step1.title': 'Discovery & Assessment',
-                'process.step1.text': 'Comprehensive system analysis using APM tools, profiling, and load testing to establish baseline performance metrics and identify constraints.',
-                'process.step2.title': 'Bottleneck Analysis',
-                'process.step2.text': 'Deep-dive investigation into application code, JVM tuning, database queries, network I/O, and infrastructure configuration to pinpoint root causes.',
-                'process.step3.title': 'Capacity Modeling',
-                'process.step3.text': 'Mathematical modeling of system capacity under various load scenarios, including peak traffic, growth projections, and failure modes.',
-                'process.step4.title': 'Optimization & Tuning',
-                'process.step4.text': 'Targeted improvements to code, configuration, and architecture with validation through controlled load testing and performance regression analysis.',
-                'process.step5.title': 'Validation & Monitoring',
-                'process.step5.text': 'Production validation, establishment of performance SLAs/SLOs, and implementation of monitoring dashboards for ongoing visibility.',
-                'outcomes.performance.title': 'Performance Improvements',
-                'outcomes.performance.item1': 'Reduced peak-load latency by 40–70% in enterprise environments',
-                'outcomes.performance.item2': 'Improved throughput and stability without increasing infrastructure footprint',
-                'outcomes.performance.item3': 'Prevented scale-related incidents during high-risk growth and demand events',
-                'outcomes.infrastructure.title': 'Infrastructure Efficiency',
-                'outcomes.infrastructure.item1': 'Identified 30%+ infrastructure inefficiency in hybrid cloud systems',
-                'outcomes.infrastructure.item2': 'Right-sized capacity planning and resource allocation',
-                'outcomes.infrastructure.item3': 'Optimized autoscaling policies for predictable costs',
-                'outcomes.risk.title': 'Risk Mitigation',
-                'outcomes.risk.item1': 'Quantified capacity headroom for growth planning',
-                'outcomes.risk.item2': 'Predictable scaling thresholds and performance baselines',
-                'outcomes.risk.item3': 'Proactive bottleneck identification and resolution',
-                'form.name': 'Name',
-                'form.name.placeholder': 'Your full name',
-                'form.email': 'Email',
-                'form.email.placeholder': 'your.email@example.com',
-                'form.company': 'Company',
-                'form.company.placeholder': 'Your company name',
-                'form.service': 'Service Interest',
-                'form.service.select': 'Select a service...',
-                'form.service.audit': 'Performance Health Audit',
-                'form.service.optimization': 'Scale & Latency Optimization',
-                'form.service.retainer': 'Executive Performance Retainer',
-                'form.service.incident': 'Incident & Emergency Support',
-                'form.service.other': 'Other / General Inquiry',
-                'form.message': 'Message',
-                'form.message.placeholder': 'Tell us about your performance challenges, current system constraints, or specific areas where you\'d like an assessment...',
-                'expertise.app.title': 'Application Performance',
-                'expertise.app.item1': 'JVM tuning (GC, heap, threads)',
-                'expertise.app.item2': 'Memory leak detection & analysis',
-                'expertise.app.item3': 'Thread dump & stack trace analysis',
-                'expertise.app.item4': 'Code profiling (JProfiler, YourKit, async-profiler)',
-                'expertise.app.item5': 'Application-level bottleneck identification',
-                'expertise.infra.title': 'Infrastructure & Systems',
-                'expertise.infra.item1': 'CPU, memory, disk I/O analysis',
-                'expertise.infra.item2': 'Network latency & throughput optimization',
-                'expertise.infra.item3': 'Container orchestration (K8s) performance',
-                'expertise.infra.item4': 'Cloud infrastructure cost optimization',
-                'expertise.infra.item5': 'Autoscaling policy design & tuning',
-                'expertise.load.title': 'Load Testing & Capacity',
-                'expertise.load.item1': 'Distributed load testing (JMeter, Gatling, k6)',
-                'expertise.load.item2': 'Traffic pattern analysis & modeling',
-                'expertise.load.item3': 'Saturation point identification',
-                'expertise.load.item4': 'Capacity planning & forecasting',
-                'expertise.load.item5': 'Chaos engineering & failure testing',
-                'expertise.obs.title': 'Observability & Monitoring',
-                'expertise.obs.item1': 'APM tools (New Relic, Datadog, Dynatrace)',
-                'expertise.obs.item2': 'Metrics, logs, and traces analysis',
-                'expertise.obs.item3': 'Performance dashboard design',
-                'expertise.obs.item4': 'SLA/SLO definition & tracking',
-                'expertise.obs.item5': 'Alerting strategy & threshold tuning',
-                'expertise.dist.title': 'Distributed Systems',
-                'expertise.dist.item1': 'Microservices performance optimization',
-                'expertise.dist.item2': 'Message queue tuning (Kafka, RabbitMQ)',
-                'expertise.dist.item3': 'Database query optimization',
-                'expertise.dist.item4': 'Cache strategy & implementation',
-                'expertise.dist.item5': 'Service mesh performance (Istio, Linkerd)',
-                'expertise.cloud.title': 'Cloud Platforms',
-                'expertise.cloud.item1': 'AWS, GCP, Azure performance optimization',
-                'expertise.cloud.item2': 'Serverless function tuning (Lambda, Cloud Functions)',
-                'expertise.cloud.item3': 'CDN & edge computing optimization',
-                'expertise.cloud.item4': 'Multi-region latency optimization',
-                'expertise.cloud.item5': 'Cloud cost analysis & optimization',
-                'industry.title': 'Industry Expertise',
-                'industry.text': 'Proven experience across industries where performance directly impacts business outcomes.',
-                'footer.copyright': '© 2026 Sisters Grove LLC. All rights reserved.'
-            },
-            es: {
-                'nav.who': 'Quiénes Somos',
-                'nav.services': 'Servicios',
-                'nav.expertise': 'Experiencia',
-                'nav.outcomes': 'Resultados',
-                'nav.contact': 'Contacto',
-                'header.tagline': 'Rendimiento. Escala. Confiabilidad — Diseñado.',
-                'header.consultation': 'Reserve una Consulta Gratuita de 30 Minutos',
-                'who.title': 'Equipo de Ingeniería de Rendimiento de Nivel Empresarial',
-                'who.text1': 'KPI99 es una consultoría de ingeniería de rendimiento y capacidad que apoya sistemas críticos en entornos críticos de escala.',
-                'who.text2': 'Nuestro equipo aplica metodologías empresariales probadas para identificar límites de rendimiento, reducir la latencia, prevenir interrupciones y mejorar la eficiencia de la infraestructura antes de que los problemas afecten a los clientes o reguladores.',
-                'who.revenue': 'Ingresos',
-                'who.regulatory': 'Cumplimiento regulatorio',
-                'who.trust': 'Confianza del cliente',
-                'who.spend': 'Gasto en nube e infraestructura',
-                'experience.title': 'Nuestra Experiencia',
-                'experience.text1': 'Nuestro equipo aporta una amplia experiencia apoyando plataformas reguladas a gran escala donde el rendimiento, la confiabilidad y la previsibilidad son críticos para el negocio.',
-                'experience.text2': 'Hemos trabajado en entornos que incluyen servicios financieros, plataformas de datos grandes, arquitecturas orientadas a eventos y sistemas empresariales basados en la nube que operan bajo requisitos estrictos de SLA.',
-                'approach.title': 'Nuestro Enfoque',
-                'approach.text1': 'KPI99 sigue una metodología estructurada y basada en evidencia de ingeniería de rendimiento refinada en entornos empresariales grandes.',
-                'approach.text2': 'Cada compromiso combina análisis a nivel de aplicación, modelado de saturación de infraestructura y pronóstico de capacidad para proporcionar información clara y accionable para las partes interesadas técnicas y ejecutivas.',
-                'services.title': 'Servicios',
-                'services.packages': 'Paquetes de Servicios',
-                'services.pdf': 'Descargar PDF de Servicios',
-                'methodology.title': 'Metodología y Proceso',
-                'methodology.text': 'Un enfoque sistemático y basado en datos de la ingeniería de rendimiento que produce resultados medibles.',
-                'expertise.title': 'Experiencia Técnica y Herramientas',
-                'expertise.text': 'Amplia experiencia en toda la pila de ingeniería de rendimiento, desde el código de la aplicación hasta la infraestructura.',
-                'why.title': 'Por Qué los Clientes Contratan',
-                'why.benefit1': 'Reducción del riesgo de interrupciones',
-                'why.benefit2': 'Escalado predecible del sistema',
-                'why.benefit3': 'Menores costos de nube e infraestructura',
-                'why.benefit4': 'Claridad a nivel ejecutivo',
-                'why.benefit5': 'Crecimiento más rápido y seguro',
-                'outcomes.title': 'Resultados Representativos',
-                'outcomes.text': 'Nuestro equipo ha entregado mejoras medibles en entornos empresariales.',
-                'team.title': 'Acerca del Equipo',
-                'team.text1': 'KPI99 opera como una práctica de consultoría enfocada que entrega experiencia de ingeniería de rendimiento de nivel senior.',
-                'team.text2': 'Los compromisos son dirigidos por ingenieros experimentados con antecedentes empresariales, asegurando acceso directo a capacidad técnica profunda sin la sobrecarga de grandes equipos de consultoría.',
-                'partner.title': 'Modelo de Entrega Listo para Socios',
-                'partner.text1': 'KPI99 regularmente apoya a socios de entrega proporcionando experiencia especializada en rendimiento y capacidad durante iniciativas de alto impacto.',
-                'partner.text2': 'Nuestro papel es reducir el riesgo de entrega, fortalecer los resultados y aumentar la confianza durante migraciones, eventos de escala y programas sensibles al rendimiento.',
-                'contact.title': 'Solicitar una Evaluación',
-                'contact.text': 'Póngase en contacto para discutir sus necesidades de ingeniería de rendimiento. Nuestro equipo revisará sus requisitos y proporcionará una evaluación personalizada de cómo podemos ayudar a optimizar sus sistemas.',
-                'contact.submit': 'Solicitar Evaluación',
-                'service.solves': 'Qué Resuelve Esto',
-                'service.scope': 'Alcance',
-                'service.deliverables': 'Entregables',
-                'service.bestfor': 'Mejor Para:',
-                'service.usecases': 'Casos de Uso',
-                'service.engagement': 'Modelo de Compromiso',
-                'service.audit.title': 'Auditoría de Salud de Rendimiento',
-                'service.audit.type': 'Compromiso de Entrada | Bajo Riesgo | Alta Visibilidad',
-                'service.audit.duration': 'Duración: 2–3 semanas',
-                'service.audit.investment': 'Inversión: $10,000',
-                'service.audit.solves1': 'Latencia inexplicable',
-                'service.audit.solves2': 'Incertidumbre de capacidad',
-                'service.audit.solves3': 'Uso ineficiente de infraestructura',
-                'service.audit.solves4': 'Falta de visibilidad de rendimiento',
-                'service.audit.scope1': 'Análisis de GC, heap, hilos y memoria de JVM',
-                'service.audit.scope2': 'Revisión de utilización de CPU, memoria, disco y red',
-                'service.audit.scope3': 'Evaluación de pruebas de carga y perfil de tráfico',
-                'service.audit.scope4': 'Identificación de cuellos de botella (aplicación + infraestructura)',
-                'service.audit.scope5': 'Análisis de ineficiencia de costos y desperdicio',
-                'service.audit.scope6': 'Revisión de configuración de herramientas APM',
-                'service.audit.scope7': 'Establecimiento de línea base de rendimiento',
-                'service.audit.deliver1': 'Resumen ejecutivo (no técnico)',
-                'service.audit.deliver2': 'Hallazgos detallados de rendimiento',
-                'service.audit.deliver3': 'Límites del sistema identificados',
-                'service.audit.deliver4': 'Hoja de ruta de remediación priorizada',
-                'service.audit.bestfor': 'Plataformas nuevas, Sistemas heredados, Entornos pre-escala o pre-migración',
-                'service.optimization.title': 'Optimización de Escala y Latencia',
-                'service.optimization.type': 'Compromiso Principal | Alto Impacto',
-                'service.optimization.duration': 'Duración: 4–8 semanas',
-                'service.optimization.investment': 'Inversión: $30,000–$50,000',
-                'service.optimization.solves1': 'Sistemas que fallan bajo carga máxima',
-                'service.optimization.solves2': 'Latencia que impacta los SLA',
-                'service.optimization.solves3': 'Infraestructura sobre-provisionada o sub-escalada',
-                'service.optimization.solves4': 'Riesgo de rendimiento durante el crecimiento',
-                'service.optimization.scope1': 'Modelado de rendimiento y saturación',
-                'service.optimization.scope2': 'Análisis de cuellos de botella de sistemas distribuidos',
-                'service.optimization.scope3': 'Optimización de JVM, mensajería y pipeline de datos',
-                'service.optimization.scope4': 'Ajuste de autoescalado y capacidad',
-                'service.optimization.scope5': 'Endurecimiento de rendimiento SLA / SLO',
-                'service.optimization.scope6': 'Mejoras de rendimiento a nivel de código',
-                'service.optimization.scope7': 'Optimización de consultas de base de datos y pool de conexiones',
-                'service.optimization.scope8': 'Validación de pruebas de carga y prevención de regresión',
-                'service.optimization.deliver1': 'Configuración optimizada del sistema',
-                'service.optimization.deliver2': 'Modelos de capacidad y umbrales de escalado',
-                'service.optimization.deliver3': 'Plan de mitigación de riesgos de rendimiento',
-                'service.optimization.deliver4': 'Resumen de impacto a nivel ejecutivo',
-                'service.optimization.bestfor': 'Sistemas de alto crecimiento, Entornos regulados, Plataformas orientadas al cliente, Iniciativas de control de costos en la nube',
-                'service.retainer.title': 'Retenedor de Rendimiento Ejecutivo',
-                'service.retainer.type': 'Asesoría Continua | Resultados Predecibles',
-                'service.retainer.duration': 'Duración: Mensual',
-                'service.retainer.investment': 'Inversión: $6,000–$12,000 por mes',
-                'service.retainer.solves1': 'Incidentes de rendimiento recurrentes',
-                'service.retainer.solves2': 'Falta de pronóstico de capacidad',
-                'service.retainer.solves3': 'Lucha contra incendios reactiva',
-                'service.retainer.solves4': 'Sin autoridad senior de rendimiento',
-                'service.retainer.scope1': 'Revisiones mensuales de rendimiento y capacidad',
-                'service.retainer.scope2': 'Pronóstico para crecimiento y eventos pico',
-                'service.retainer.scope3': 'Supervisión de eficiencia de costos en la nube',
-                'service.retainer.scope4': 'Asesoría de escalación de incidentes',
-                'service.retainer.scope5': 'Orientación de arquitectura y preparación para escala',
-                'service.retainer.scope6': 'Prevención de regresión de rendimiento',
-                'service.retainer.scope7': 'Capacitación del equipo y transferencia de conocimiento',
-                'service.retainer.scope8': 'Planificación estratégica de hoja de ruta de rendimiento',
-                'service.retainer.deliver1': 'Informe mensual de rendimiento',
-                'service.retainer.deliver2': 'Perspectiva de riesgo y capacidad',
-                'service.retainer.deliver3': 'Recomendaciones ejecutivas',
-                'service.retainer.deliver4': 'Orientación continua de optimización',
-                'service.retainer.bestfor': 'Equipos de liderazgo, Plataformas con SLA estrictos, Sistemas escalando regional o globalmente',
-                'service.incident.title': 'Soporte de Incidentes y Emergencias',
-                'service.incident.type': 'Bajo Demanda | Crítico en Tiempo',
-                'service.incident.investment': 'Inversión: $350–$500 por hora',
-                'service.incident.use1': 'Picos de latencia en producción',
-                'service.incident.use2': 'Fallos de capacidad',
-                'service.incident.use3': 'Regresiones importantes de rendimiento',
-                'service.incident.use4': 'Lanzamientos o eventos de alto riesgo',
-                'service.incident.engage1': 'Ejecución de equipo de nivel senior',
-                'service.incident.engage2': 'Solo consultores experimentados',
-                'service.incident.engage3': 'Acceso directo durante todo el compromiso',
-                'service.incident.engage4': 'Alcance y resultados claros',
-                'process.step1.title': 'Descubrimiento y Evaluación',
-                'process.step1.text': 'Análisis integral del sistema utilizando herramientas APM, perfilado y pruebas de carga para establecer métricas de rendimiento de línea base e identificar restricciones.',
-                'process.step2.title': 'Análisis de Cuellos de Botella',
-                'process.step2.text': 'Investigación profunda del código de la aplicación, ajuste de JVM, consultas de base de datos, E/S de red y configuración de infraestructura para identificar causas raíz.',
-                'process.step3.title': 'Modelado de Capacidad',
-                'process.step3.text': 'Modelado matemático de la capacidad del sistema bajo varios escenarios de carga, incluyendo tráfico pico, proyecciones de crecimiento y modos de falla.',
-                'process.step4.title': 'Optimización y Ajuste',
-                'process.step4.text': 'Mejoras dirigidas al código, configuración y arquitectura con validación a través de pruebas de carga controladas y análisis de regresión de rendimiento.',
-                'process.step5.title': 'Validación y Monitoreo',
-                'process.step5.text': 'Validación en producción, establecimiento de SLA/SLO de rendimiento e implementación de paneles de monitoreo para visibilidad continua.',
-                'outcomes.performance.title': 'Mejoras de Rendimiento',
-                'outcomes.performance.item1': 'Reducción de latencia de carga pico del 40–70% en entornos empresariales',
-                'outcomes.performance.item2': 'Mejora del rendimiento y estabilidad sin aumentar la huella de infraestructura',
-                'outcomes.performance.item3': 'Prevención de incidentes relacionados con escala durante eventos de crecimiento y demanda de alto riesgo',
-                'outcomes.infrastructure.title': 'Eficiencia de Infraestructura',
-                'outcomes.infrastructure.item1': 'Identificación de ineficiencia de infraestructura del 30%+ en sistemas de nube híbrida',
-                'outcomes.infrastructure.item2': 'Planificación de capacidad y asignación de recursos de tamaño adecuado',
-                'outcomes.infrastructure.item3': 'Políticas de autoescalado optimizadas para costos predecibles',
-                'outcomes.risk.title': 'Mitigación de Riesgos',
-                'outcomes.risk.item1': 'Margen de capacidad cuantificado para planificación de crecimiento',
-                'outcomes.risk.item2': 'Umbrales de escalado predecibles y líneas base de rendimiento',
-                'outcomes.risk.item3': 'Identificación y resolución proactiva de cuellos de botella',
-                'form.name': 'Nombre',
-                'form.name.placeholder': 'Su nombre completo',
-                'form.email': 'Correo Electrónico',
-                'form.email.placeholder': 'su.correo@ejemplo.com',
-                'form.company': 'Empresa',
-                'form.company.placeholder': 'Nombre de su empresa',
-                'form.service': 'Interés en Servicio',
-                'form.service.select': 'Seleccione un servicio...',
-                'form.service.audit': 'Auditoría de Salud de Rendimiento',
-                'form.service.optimization': 'Optimización de Escala y Latencia',
-                'form.service.retainer': 'Retenedor de Rendimiento Ejecutivo',
-                'form.service.incident': 'Soporte de Incidentes y Emergencias',
-                'form.service.other': 'Otro / Consulta General',
-                'form.message': 'Mensaje',
-                'form.message.placeholder': 'Cuéntenos sobre sus desafíos de rendimiento, restricciones del sistema actual o áreas específicas donde le gustaría una evaluación...',
-                'expertise.app.title': 'Rendimiento de Aplicaciones',
-                'expertise.app.item1': 'Ajuste de JVM (GC, heap, hilos)',
-                'expertise.app.item2': 'Detección y análisis de fugas de memoria',
-                'expertise.app.item3': 'Análisis de volcado de hilos y seguimiento de pila',
-                'expertise.app.item4': 'Perfilado de código (JProfiler, YourKit, async-profiler)',
-                'expertise.app.item5': 'Identificación de cuellos de botella a nivel de aplicación',
-                'expertise.infra.title': 'Infraestructura y Sistemas',
-                'expertise.infra.item1': 'Análisis de CPU, memoria, E/S de disco',
-                'expertise.infra.item2': 'Optimización de latencia de red y rendimiento',
-                'expertise.infra.item3': 'Rendimiento de orquestación de contenedores (K8s)',
-                'expertise.infra.item4': 'Optimización de costos de infraestructura en la nube',
-                'expertise.infra.item5': 'Diseño y ajuste de políticas de autoescalado',
-                'expertise.load.title': 'Pruebas de Carga y Capacidad',
-                'expertise.load.item1': 'Pruebas de carga distribuidas (JMeter, Gatling, k6)',
-                'expertise.load.item2': 'Análisis y modelado de patrones de tráfico',
-                'expertise.load.item3': 'Identificación de punto de saturación',
-                'expertise.load.item4': 'Planificación y pronóstico de capacidad',
-                'expertise.load.item5': 'Ingeniería del caos y pruebas de falla',
-                'expertise.obs.title': 'Observabilidad y Monitoreo',
-                'expertise.obs.item1': 'Herramientas APM (New Relic, Datadog, Dynatrace)',
-                'expertise.obs.item2': 'Análisis de métricas, registros y trazas',
-                'expertise.obs.item3': 'Diseño de panel de rendimiento',
-                'expertise.obs.item4': 'Definición y seguimiento de SLA/SLO',
-                'expertise.obs.item5': 'Estrategia de alertas y ajuste de umbrales',
-                'expertise.dist.title': 'Sistemas Distribuidos',
-                'expertise.dist.item1': 'Optimización de rendimiento de microservicios',
-                'expertise.dist.item2': 'Ajuste de cola de mensajes (Kafka, RabbitMQ)',
-                'expertise.dist.item3': 'Optimización de consultas de base de datos',
-                'expertise.dist.item4': 'Estrategia e implementación de caché',
-                'expertise.dist.item5': 'Rendimiento de malla de servicios (Istio, Linkerd)',
-                'expertise.cloud.title': 'Plataformas en la Nube',
-                'expertise.cloud.item1': 'Optimización de rendimiento AWS, GCP, Azure',
-                'expertise.cloud.item2': 'Ajuste de funciones sin servidor (Lambda, Cloud Functions)',
-                'expertise.cloud.item3': 'Optimización de CDN y computación perimetral',
-                'expertise.cloud.item4': 'Optimización de latencia multi-región',
-                'expertise.cloud.item5': 'Análisis y optimización de costos en la nube',
-                'industry.title': 'Experiencia de la Industria',
-                'industry.text': 'Experiencia probada en industrias donde el rendimiento impacta directamente los resultados comerciales.',
-                'footer.copyright': '© 2026 Sisters Grove LLC. Todos los derechos reservados.'
-            }
-        };
-
-        // Language toggle functionality
-        function initLanguageToggle() {
-            const langEn = document.getElementById('langEn');
-            const langEs = document.getElementById('langEs');
-            
-            // Get saved language preference or default to English
-            let currentLang = localStorage.getItem('kpi99_lang') || 'en';
-            
-            // Set initial language
-            setLanguage(currentLang);
-            
-            if (langEn && langEs) {
-                langEn.addEventListener('click', () => setLanguage('en'));
-                langEs.addEventListener('click', () => setLanguage('es'));
-            }
-        }
-
-        function setLanguage(lang) {
-            // Update active button
-            const langEn = document.getElementById('langEn');
-            const langEs = document.getElementById('langEs');
-            
-            if (langEn && langEs) {
-                if (lang === 'en') {
-                    langEn.classList.add('active');
-                    langEs.classList.remove('active');
-                } else {
-                    langEs.classList.add('active');
-                    langEn.classList.remove('active');
-                }
-            }
-            
-            // Update PDF download link based on language
-            const pdfLink = document.getElementById('servicesPdfLink');
-            if (pdfLink) {
-                if (lang === 'es') {
-                    pdfLink.href = 'KPI99_Services_ES.pdf';
-                } else {
-                    pdfLink.href = 'KPI99_Services.pdf';
-                }
-            }
-            
-            // Update all elements with data-i18n attribute
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    // Handle different element types
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        // For inputs, update placeholder if it has data-i18n-placeholder
-                        const placeholderKey = element.getAttribute('data-i18n-placeholder');
-                        if (placeholderKey && translations[lang][placeholderKey]) {
-                            element.placeholder = translations[lang][placeholderKey];
-                        }
-                    } else if (element.tagName === 'OPTION') {
-                        // Options need text content updated
-                        element.textContent = translations[lang][key];
-                    } else {
-                        element.textContent = translations[lang][key];
-                    }
-                }
-            });
-            
-            // Update placeholders separately
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-                const key = element.getAttribute('data-i18n-placeholder');
-                if (translations[lang] && translations[lang][key]) {
-                    element.placeholder = translations[lang][key];
-                }
-            });
-            
-            // Update select options
-            document.querySelectorAll('select option[data-i18n]').forEach(option => {
-                const key = option.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    option.textContent = translations[lang][key];
-                }
-            });
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-            
-            // Save preference
-            localStorage.setItem('kpi99_lang', lang);
-        }
-
-        // Initialize language toggle when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            initLanguageToggle();
         });
     </script>
 </body>
