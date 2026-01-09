@@ -2755,6 +2755,23 @@
                         document.body.style.overflow = '';
                     }
                 });
+                
+                // Listen for Calendly events to track conversions
+                window.addEventListener('message', function(e) {
+                    if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+                        // Track Google Ads conversion when appointment is scheduled
+                        if (e.data.event === 'calendly.event_scheduled') {
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'conversion', {
+                                    'send_to': 'AW-17859706167/8EKICMyD694bELf6lcRC',
+                                    'value': 1.0,
+                                    'currency': 'USD'
+                                });
+                                console.log('Google Ads conversion tracked: Book appointment');
+                            }
+                        }
+                    }
+                });
             }
 
             // Contact form handling with EmailJS
