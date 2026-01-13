@@ -148,6 +148,18 @@
             display: block;
         }
 
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav .nav-menu {
             display: flex;
             align-items: center;
@@ -723,6 +735,10 @@
                 height: 32px;
             }
 
+            nav .nav-right {
+                gap: 15px;
+            }
+
             nav .nav-menu {
                 display: none;
                 position: absolute;
@@ -749,14 +765,6 @@
 
             nav .nav-menu-item:last-child {
                 border-bottom: none;
-            }
-
-            nav .nav-divider {
-                width: 100%;
-                height: 1px;
-                background: #e2e8f0;
-                margin: 10px 0;
-                padding: 0;
             }
 
             nav .nav-menu-item a {
@@ -997,14 +1005,13 @@
             <div class="logo">
                 <a href="/es/"><img src="../menu_logo.png" alt="KPI99" /></a>
             </div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Alternar menú">☰</button>
+            <div class="nav-right">
+                <a href="/en/performance-health-audit.html" class="language-toggle">English</a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Alternar menú">☰</button>
+            </div>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-menu-item">
                     <a href="/es/" class="back-link">← Volver al Sitio Principal</a>
-                </li>
-                <li class="nav-menu-item nav-divider"></li>
-                <li class="nav-menu-item">
-                    <a href="/en/performance-health-audit.html" class="language-toggle">English</a>
                 </li>
             </ul>
         </div>
