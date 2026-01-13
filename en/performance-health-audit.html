@@ -221,6 +221,16 @@
             width: 100%;
         }
 
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #334155;
+            cursor: pointer;
+            padding: 5px;
+        }
+
         /* Header */
         header {
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.6) 100%),
@@ -705,19 +715,53 @@
                 padding: 12px 15px;
             }
 
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             nav .logo img {
                 height: 32px;
             }
 
             nav .nav-menu {
-                gap: 15px;
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                gap: 0;
+                margin: 0;
+            }
+
+            nav .nav-menu.active {
+                display: flex;
+            }
+
+            nav .nav-menu-item {
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            nav .nav-menu-item:last-child {
+                border-bottom: none;
             }
 
             nav .nav-divider {
                 width: 100%;
                 height: 1px;
                 background: #e2e8f0;
-                margin: 8px 0;
+                margin: 10px 0;
+                padding: 0;
+            }
+
+            nav .nav-menu-item a {
+                display: block;
+                width: 100%;
             }
 
             nav .back-link {
@@ -954,7 +998,8 @@
             <div class="logo">
                 <a href="/en/"><img src="../menu_logo.png" alt="KPI99" /></a>
             </div>
-            <ul class="nav-menu">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
                 <li class="nav-menu-item">
                     <a href="/en/" class="back-link">← Back to Main Site</a>
                 </li>
@@ -1205,6 +1250,42 @@
                     // Save preference to localStorage
                     localStorage.setItem('preferredLanguage', 'es');
                 });
+            }
+
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (mobileMenuToggle && navMenu) {
+                // Set initial aria-expanded state
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                
+                mobileMenuToggle.addEventListener('click', function() {
+                    const isActive = navMenu.classList.toggle('active');
+                    this.textContent = isActive ? '✕' : '☰';
+                    this.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                });
+
+                // Close menu when clicking on a link
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.textContent = '☰';
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                // Close menu when clicking outside
+                const nav = document.querySelector('nav');
+                if (nav) {
+                    document.addEventListener('click', function(e) {
+                        if (!nav.contains(e.target) && navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            mobileMenuToggle.textContent = '☰';
+                            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
             }
 
             const intakeForm = document.getElementById('intakeForm');

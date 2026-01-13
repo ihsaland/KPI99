@@ -2651,9 +2651,13 @@
             const navMenu = document.getElementById('navMenu');
             
             if (mobileMenuToggle && navMenu) {
+                // Set initial aria-expanded state
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                
                 mobileMenuToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+                    const isActive = navMenu.classList.toggle('active');
+                    this.textContent = isActive ? '✕' : '☰';
+                    this.setAttribute('aria-expanded', isActive ? 'true' : 'false');
                 });
 
                 // Close menu when clicking on a link
@@ -2661,6 +2665,7 @@
                     link.addEventListener('click', function() {
                         navMenu.classList.remove('active');
                         mobileMenuToggle.textContent = '☰';
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
                     });
                 });
 
@@ -2669,6 +2674,7 @@
                     if (!nav.contains(e.target) && navMenu.classList.contains('active')) {
                         navMenu.classList.remove('active');
                         mobileMenuToggle.textContent = '☰';
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
                     }
                 });
             }
