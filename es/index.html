@@ -148,20 +148,17 @@
             display: block;
         }
 
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 30px;
             align-items: center;
-        }
-        
-        nav ul li.nav-divider {
-            width: 1px;
-            height: 30px;
-            background: #e2e8f0;
-            margin: 0 15px;
-            padding: 0;
-            list-style: none;
         }
 
         .language-toggle {
@@ -206,6 +203,10 @@
                 display: block;
             }
 
+            nav .nav-right {
+                gap: 15px;
+            }
+
             nav ul {
                 display: none;
                 position: absolute;
@@ -222,15 +223,6 @@
             nav ul.active {
                 display: flex;
             }
-            
-            nav ul li.nav-divider {
-                width: 100%;
-                height: 1px;
-                background: #e2e8f0;
-                margin: 10px 0;
-                padding: 0;
-                list-style: none;
-            }
 
             nav ul li {
                 width: 100%;
@@ -240,12 +232,6 @@
 
             nav ul li:last-child {
                 border-bottom: none;
-            }
-            
-            nav ul li.nav-divider {
-                padding: 0;
-                border-bottom: none;
-                height: 1px;
             }
 
             nav ul li a {
@@ -2596,15 +2582,16 @@
                     <div class="logo">
                         <a href="/es/"><img src="../menu_logo.png" alt="KPI99" /></a>
                     </div>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Alternar menú">☰</button>
+                    <div class="nav-right">
+                        <a href="/en/" class="language-toggle">English</a>
+                        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Alternar menú">☰</button>
+                    </div>
                     <ul id="navMenu">
                         <li><a href="#who">Quiénes</a></li>
                         <li><a href="#services">Servicios</a></li>
                         <li><a href="#expertise">Experiencia</a></li>
                         <li><a href="#outcomes">Resultados</a></li>
                         <li><a href="#contact">Contacto</a></li>
-                        <li class="nav-divider"></li>
-                        <li><a href="/en/" class="language-toggle">English</a></li>
                     </ul>
                 </div>
             `;
