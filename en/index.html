@@ -2630,13 +2630,13 @@
             document.body.insertBefore(nav, document.body.firstChild);
 
             // Save language preference when language toggle is clicked
-            const languageToggle = nav.querySelector('.language-toggle');
-            if (languageToggle) {
-                languageToggle.addEventListener('click', function(e) {
+            const languageToggles = nav.querySelectorAll('.language-toggle');
+            languageToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
                     // Save preference to localStorage
                     localStorage.setItem('preferredLanguage', 'es');
                 });
-            }
+            });
 
             // Add IDs to sections for navigation (if not already set in HTML)
             const whoSection = document.querySelector('.who-section');
