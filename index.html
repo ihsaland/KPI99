@@ -154,6 +154,24 @@
             gap: 30px;
         }
 
+        .language-toggle {
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Bodoni Moda', serif;
+        }
+
+        .language-toggle:hover {
+            background: #e2e8f0;
+            border-color: #cbd5e1;
+        }
+
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -1960,37 +1978,37 @@
 <body>
     <header>
         <div class="container">
-            <p class="tagline">Performance. Scale. Reliability—Engineered.</p>
+            <p class="tagline" data-i18n="header.tagline">Performance. Scale. Reliability—Engineered.</p>
             <a href="#" class="consultation-button-header" id="consultationButtonHeader">
                 <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
                     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/>
                 </svg>
-                Book a Free 30-minute Consultation
+                <span data-i18n="header.consultationButton">Book a Free 30-minute Consultation</span>
             </a>
         </div>
     </header>
 
     <section class="who-section">
         <div class="container">
-            <h2>Enterprise-Grade Performance Engineering Team</h2>
-            <p class="intro-text">
+            <h2 data-i18n="who.title">Enterprise-Grade Performance Engineering Team</h2>
+            <p class="intro-text" data-i18n="who.description1">
                 KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.
             </p>
-            <p class="intro-text" style="margin-top: 20px;">
+            <p class="intro-text" style="margin-top: 20px;" data-i18n="who.description2">
                 Our team applies proven enterprise methodologies to identify performance limits, reduce latency, prevent outages, and improve infrastructure efficiency before issues impact customers or regulators.
             </p>
             <div class="impact-grid" style="margin-top: 40px;">
                 <div class="impact-item">
-                    <h4>Revenue</h4>
+                    <h4 data-i18n="who.revenue">Revenue</h4>
                 </div>
                 <div class="impact-item">
-                    <h4>Regulatory compliance</h4>
+                    <h4 data-i18n="who.compliance">Regulatory compliance</h4>
                 </div>
                 <div class="impact-item">
-                    <h4>Customer trust</h4>
+                    <h4 data-i18n="who.trust">Customer trust</h4>
                 </div>
                 <div class="impact-item">
-                    <h4>Cloud & infrastructure spend</h4>
+                    <h4 data-i18n="who.spend">Cloud & infrastructure spend</h4>
                 </div>
             </div>
         </div>
@@ -1998,11 +2016,11 @@
 
     <section class="different-section">
         <div class="container">
-            <h2>Our Experience</h2>
-            <p class="intro-text" style="color: #334155;">
+            <h2 data-i18n="experience.title">Our Experience</h2>
+            <p class="intro-text" style="color: #334155;" data-i18n="experience.description1">
                 Our team brings deep experience supporting large-scale, regulated platforms where performance, reliability, and predictability are business-critical.
             </p>
-            <p class="intro-text" style="color: #334155; margin-top: 20px;">
+            <p class="intro-text" style="color: #334155; margin-top: 20px;" data-i18n="experience.description2">
                 We have worked across environments including financial services, large data platforms, event-driven architectures, and cloud-based enterprise systems operating under strict SLA requirements.
             </p>
         </div>
@@ -2409,8 +2427,8 @@
 
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2>Request an Assessment</h2>
-            <p class="intro-text" style="text-align: center; margin-bottom: 30px; color: #475569;">
+            <h2 data-i18n="contact.title">Request an Assessment</h2>
+            <p class="intro-text" style="text-align: center; margin-bottom: 30px; color: #475569;" data-i18n="contact.description">
                 Get in touch to discuss your performance engineering needs. Our team will review your requirements and provide a tailored assessment of how we can help optimize your systems.
             </p>
             <div class="contact-form-container">
@@ -2420,21 +2438,21 @@
                     <input type="hidden" name="to_name" value="KPI99 Team">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Name <span class="required">*</span></label>
-                            <input type="text" id="name" name="from_name" placeholder="Your full name" required>
+                            <label for="name" data-i18n="contact.name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="from_name" data-i18n-placeholder="contact.namePlaceholder" placeholder="Your full name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="from_email" placeholder="your.email@example.com" required>
+                            <label for="email" data-i18n="contact.email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="from_email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="your.email@example.com" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="company">Company</label>
-                            <input type="text" id="company" name="company" placeholder="Your company name">
+                            <label for="company" data-i18n="contact.company">Company</label>
+                            <input type="text" id="company" name="company" data-i18n-placeholder="contact.companyPlaceholder" placeholder="Your company name">
                         </div>
                         <div class="form-group">
-                            <label for="service">Service Interest</label>
+                            <label for="service" data-i18n="contact.serviceInterest">Service Interest</label>
                             <select id="service" name="service_interest">
                                 <option value="">Select a service...</option>
                                 <option value="audit">Performance Health Audit</option>
@@ -2446,16 +2464,16 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message <span class="required">*</span></label>
-                        <textarea id="message" name="message" placeholder="Tell us about your performance challenges, current system constraints, or specific areas where you'd like an assessment..." required></textarea>
+                        <label for="message" data-i18n="contact.message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tell us about your performance challenges, current system constraints, or specific areas where you'd like an assessment..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Request Assessment</button>
+                    <button type="submit" class="submit-button" data-i18n="contact.submit">Request Assessment</button>
                     <div class="form-message" id="formMessage"></div>
                 </form>
             </div>
             
             <div class="whatsapp-divider">
-                <span>Or contact us directly</span>
+                <span data-i18n="contact.orContact">Or contact us directly</span>
             </div>
             
             <div style="text-align: center;">
@@ -2463,7 +2481,7 @@
                     <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                     </svg>
-                    Chat on WhatsApp
+                    <span data-i18n="contact.whatsapp">Chat on WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -2529,8 +2547,8 @@
 
     <footer>
         <div class="container">
-            <p style="margin-bottom: 15px; font-style: italic; opacity: 0.9;">Enterprise performance engineering delivered with rigor, discretion, and senior-level accountability.</p>
-            <p>&copy; 2026 KPI99 LLC. All rights reserved.</p>
+            <p style="margin-bottom: 15px; font-style: italic; opacity: 0.9;" data-i18n="footer.trust">Performance failures are business risks — until they are engineered.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 KPI99 LLC. All rights reserved.</p>
         </div>
     </footer>
 
@@ -2544,13 +2562,18 @@
                     <div class="logo">
                         <img src="menu_logo.png" alt="KPI99" />
                     </div>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <button class="language-toggle" id="languageToggle" aria-label="Toggle language">
+                            <span id="currentLang">EN</span>
+                        </button>
+                        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+                    </div>
                     <ul id="navMenu">
-                        <li><a href="#who">Who</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#expertise">Expertise</a></li>
-                        <li><a href="#outcomes">Outcomes</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#who" data-i18n="nav.who">Who</a></li>
+                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+                        <li><a href="#outcomes" data-i18n="nav.outcomes">Outcomes</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
             `;
@@ -2771,7 +2794,7 @@
                         setTimeout(function() {
                             if (typeof emailjs === 'undefined') {
                                 submitButton.disabled = false;
-                                submitButton.textContent = 'Request Assessment';
+                                submitButton.textContent = translate('contact.submit');
                                 if (formMessage) {
                                     formMessage.textContent = 'Email service is not available. Please refresh the page and try again.';
                                     formMessage.className = 'form-message error';
@@ -2809,7 +2832,7 @@
                     
                     // Disable submit button
                     submitButton.disabled = true;
-                    submitButton.textContent = 'Sending...';
+                    submitButton.textContent = translate('contact.sending');
                     
                     // Clear any previous messages
                     if (formMessage) {
@@ -2875,7 +2898,7 @@
                             contactForm.reset();
                             
                             if (formMessage) {
-                                formMessage.textContent = 'Thank you! Your assessment request has been received. Our team will review your information and get back to you soon.';
+                                formMessage.textContent = translate('contact.success');
                                 formMessage.className = 'form-message success';
                                 
                                 setTimeout(() => {
@@ -2897,7 +2920,7 @@
                             console.error('Full error object:', JSON.stringify(error, null, 2));
                             
                             // Error
-                            let errorMessage = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+                            let errorMessage = translate('contact.error');
                             
                             if (error?.text) {
                                 errorMessage += ' Error: ' + error.text;
@@ -3127,6 +3150,242 @@
                 aiChatInput.addEventListener('input', function() {
                     aiChatSend.disabled = !this.value.trim();
                 });
+            }
+
+            // Language Toggle System
+            const translations = {
+                en: {
+                    nav: {
+                        who: "Who",
+                        services: "Services",
+                        expertise: "Expertise",
+                        outcomes: "Outcomes",
+                        contact: "Contact"
+                    },
+                    header: {
+                        tagline: "Performance. Scale. Reliability—Engineered.",
+                        consultationButton: "Book a Free 30-minute Consultation"
+                    },
+                    who: {
+                        title: "Enterprise-Grade Performance Engineering Team",
+                        description1: "KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.",
+                        description2: "Our team applies proven enterprise methodologies to identify performance limits, reduce latency, prevent outages, and improve infrastructure efficiency before issues impact customers or regulators.",
+                        revenue: "Revenue",
+                        compliance: "Regulatory compliance",
+                        trust: "Customer trust",
+                        spend: "Cloud & infrastructure spend"
+                    },
+                    experience: {
+                        title: "Our Experience",
+                        description1: "Our team brings deep experience supporting large-scale, regulated platforms where performance, reliability, and predictability are business-critical.",
+                        description2: "We have worked across environments including financial services, large data platforms, event-driven architectures, and cloud-based enterprise systems operating under strict SLA requirements."
+                    },
+                    services: {
+                        title: "Services",
+                        subtitle: "Performance. Scale. Reliability — Engineered.",
+                        description: "KPI99 helps organizations operating mission-critical systems identify and eliminate performance and capacity limits before they impact customers, service levels, or budgets.",
+                        audit: {
+                            title: "Performance Health Audit",
+                            description: "Comprehensive assessment of current performance and capacity posture.",
+                            duration: "Duration: 2–3 weeks",
+                            investment: "Investment: $10,000"
+                        },
+                        optimization: {
+                            title: "Scale & Latency Optimization",
+                            description: "Tactical and strategic performance engineering to ensure systems scale reliably under growth and peak demand.",
+                            duration: "Duration: 4–8 weeks",
+                            investment: "Investment: $30,000–$50,000"
+                        },
+                        retainer: {
+                            title: "Executive Performance Retainer",
+                            description: "Ongoing expert oversight to ensure performance, capacity, and scale risk remain managed as platforms evolve.",
+                            duration: "Duration: Monthly",
+                            investment: "Investment: $6,000–$12,000 per month"
+                        },
+                        incident: {
+                            title: "Incident & Emergency Support",
+                            description: "Rapid, on-demand performance diagnostics and escalation support.",
+                            investment: "Investment: $350–$500 per hour"
+                        },
+                        downloadPDF: "Download Services PDF"
+                    },
+                    contact: {
+                        title: "Request an Assessment",
+                        description: "Get in touch to discuss your performance engineering needs. Our team will review your requirements and provide a tailored assessment of how we can help optimize your systems.",
+                        name: "Name",
+                        namePlaceholder: "Your full name",
+                        email: "Email",
+                        emailPlaceholder: "your.email@example.com",
+                        company: "Company",
+                        companyPlaceholder: "Your company name",
+                        serviceInterest: "Service Interest",
+                        message: "Message",
+                        messagePlaceholder: "Tell us about your performance challenges, current system constraints, or specific areas where you'd like an assessment...",
+                        submit: "Request Assessment",
+                        sending: "Sending...",
+                        success: "Thank you! Your assessment request has been received. Our team will review your information and get back to you soon.",
+                        error: "Sorry, there was an error sending your message. Please try again or contact us directly.",
+                        whatsapp: "Chat on WhatsApp",
+                        orContact: "Or contact us directly"
+                    },
+                    footer: {
+                        copyright: "© 2026 KPI99 LLC. All rights reserved.",
+                        trust: "Performance failures are business risks — until they are engineered."
+                    }
+                },
+                es: {
+                    nav: {
+                        who: "Quiénes",
+                        services: "Servicios",
+                        expertise: "Experiencia",
+                        outcomes: "Resultados",
+                        contact: "Contacto"
+                    },
+                    header: {
+                        tagline: "Rendimiento. Escala. Confiabilidad — Diseñado.",
+                        consultationButton: "Reservar Consulta Gratuita de 30 Minutos"
+                    },
+                    who: {
+                        title: "Equipo de Ingeniería de Rendimiento de Grado Empresarial",
+                        description1: "KPI99 es una consultoría de ingeniería de rendimiento y capacidad que apoya sistemas de misión crítica en entornos críticos de escala.",
+                        description2: "Nuestro equipo aplica metodologías empresariales probadas para identificar límites de rendimiento, reducir la latencia, prevenir interrupciones y mejorar la eficiencia de la infraestructura antes de que los problemas afecten a los clientes o reguladores.",
+                        revenue: "Ingresos",
+                        compliance: "Cumplimiento regulatorio",
+                        trust: "Confianza del cliente",
+                        spend: "Gasto en nube e infraestructura"
+                    },
+                    experience: {
+                        title: "Nuestra Experiencia",
+                        description1: "Nuestro equipo aporta una experiencia profunda apoyando plataformas reguladas a gran escala donde el rendimiento, la confiabilidad y la predictibilidad son críticos para el negocio.",
+                        description2: "Hemos trabajado en entornos que incluyen servicios financieros, plataformas de datos grandes, arquitecturas orientadas a eventos y sistemas empresariales basados en la nube que operan bajo requisitos estrictos de SLA."
+                    },
+                    services: {
+                        title: "Servicios",
+                        subtitle: "Rendimiento. Escala. Confiabilidad — Diseñado.",
+                        description: "KPI99 ayuda a las organizaciones que operan sistemas de misión crítica a identificar y eliminar los límites de rendimiento y capacidad antes de que afecten a los clientes, los niveles de servicio o los presupuestos.",
+                        audit: {
+                            title: "Auditoría de Salud de Rendimiento",
+                            description: "Evaluación integral de la postura actual de rendimiento y capacidad.",
+                            duration: "Duración: 2–3 semanas",
+                            investment: "Inversión: $10,000"
+                        },
+                        optimization: {
+                            title: "Optimización de Escala y Latencia",
+                            description: "Ingeniería de rendimiento táctica y estratégica para garantizar que los sistemas escalen de manera confiable bajo crecimiento y demanda máxima.",
+                            duration: "Duración: 4–8 semanas",
+                            investment: "Inversión: $30,000–$50,000"
+                        },
+                        retainer: {
+                            title: "Retención de Rendimiento Ejecutivo",
+                            description: "Supervisión experta continua para garantizar que el rendimiento, la capacidad y el riesgo de escala sigan gestionados a medida que las plataformas evolucionan.",
+                            duration: "Duración: Mensual",
+                            investment: "Inversión: $6,000–$12,000 por mes"
+                        },
+                        incident: {
+                            title: "Soporte de Incidentes y Emergencias",
+                            description: "Diagnósticos de rendimiento rápidos bajo demanda y soporte de escalamiento.",
+                            investment: "Inversión: $350–$500 por hora"
+                        },
+                        downloadPDF: "Descargar PDF de Servicios"
+                    },
+                    contact: {
+                        title: "Solicitar una Evaluación",
+                        description: "Póngase en contacto para discutir sus necesidades de ingeniería de rendimiento. Nuestro equipo revisará sus requisitos y proporcionará una evaluación personalizada de cómo podemos ayudar a optimizar sus sistemas.",
+                        name: "Nombre",
+                        namePlaceholder: "Su nombre completo",
+                        email: "Correo electrónico",
+                        emailPlaceholder: "su.correo@ejemplo.com",
+                        company: "Empresa",
+                        companyPlaceholder: "Nombre de su empresa",
+                        serviceInterest: "Interés en Servicio",
+                        message: "Mensaje",
+                        messagePlaceholder: "Cuéntenos sobre sus desafíos de rendimiento, limitaciones actuales del sistema o áreas específicas donde le gustaría una evaluación...",
+                        submit: "Solicitar Evaluación",
+                        sending: "Enviando...",
+                        success: "¡Gracias! Su solicitud de evaluación ha sido recibida. Nuestro equipo revisará su información y se pondrá en contacto pronto.",
+                        error: "Lo sentimos, hubo un error al enviar su mensaje. Por favor, intente nuevamente o contáctenos directamente.",
+                        whatsapp: "Chatear en WhatsApp",
+                        orContact: "O contáctenos directamente"
+                    },
+                    footer: {
+                        copyright: "© 2026 KPI99 LLC. Todos los derechos reservados.",
+                        trust: "Las fallas de rendimiento son riesgos comerciales — hasta que se diseñan."
+                    }
+                }
+            };
+
+            // Get current language from localStorage or browser preference
+            function getCurrentLanguage() {
+                const saved = localStorage.getItem('kpi99_language');
+                if (saved) return saved;
+                const browserLang = navigator.language || navigator.userLanguage;
+                return browserLang.startsWith('es') ? 'es' : 'en';
+            }
+
+            // Set current language
+            let currentLang = getCurrentLanguage();
+
+            // Translate function
+            function translate(key, lang = currentLang) {
+                const keys = key.split('.');
+                let value = translations[lang];
+                for (const k of keys) {
+                    value = value?.[k];
+                }
+                return value || key;
+            }
+
+            // Apply translations to all elements with data-i18n attribute
+            function applyTranslations() {
+                // Translate text content
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    const translation = translate(key);
+                    
+                    // Handle different element types
+                    if (element.tagName === 'INPUT') {
+                        if (element.type === 'submit' || element.type === 'button') {
+                            element.value = translation;
+                        }
+                    } else if (element.tagName === 'LABEL') {
+                        const required = element.querySelector('.required');
+                        element.innerHTML = translation + (required ? ' <span class="required">*</span>' : '');
+                    } else {
+                        element.textContent = translation;
+                    }
+                });
+
+                // Translate placeholders
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                    const key = element.getAttribute('data-i18n-placeholder');
+                    const translation = translate(key);
+                    element.placeholder = translation;
+                });
+
+                // Update language toggle button
+                const langToggle = document.getElementById('currentLang');
+                if (langToggle) {
+                    langToggle.textContent = currentLang.toUpperCase();
+                }
+
+                // Update document language
+                document.documentElement.lang = currentLang;
+            }
+
+            // Toggle language
+            function toggleLanguage() {
+                currentLang = currentLang === 'en' ? 'es' : 'en';
+                localStorage.setItem('kpi99_language', currentLang);
+                applyTranslations();
+            }
+
+            // Initialize language on page load
+            applyTranslations();
+
+            // Add language toggle event listener
+            const languageToggle = document.getElementById('languageToggle');
+            if (languageToggle) {
+                languageToggle.addEventListener('click', toggleLanguage);
             }
         });
     </script>

@@ -141,10 +141,32 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.6) 100%),
+                        url('panAbstract.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
             color: white;
-            padding: 80px 0 60px;
+            padding: 100px 0 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
         }
 
         header h1 {
@@ -167,6 +189,165 @@
             margin: 0 auto;
             line-height: 1.8;
             opacity: 0.9;
+        }
+
+        .cta-buttons-header {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button-primary {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid #3b82f6;
+        }
+
+        .cta-button-primary:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 16px 32px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-button-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .trust-line {
+            text-align: center;
+        }
+
+        /* Proof Grid */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .proof-item {
+            text-align: center;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .proof-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Problems Grid */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .problem-item {
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #ef4444;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .problem-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Outcomes Grid */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .outcome-item {
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+            text-align: center;
+        }
+
+        .outcome-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .process-step h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0;
         }
 
         /* Main Content */
@@ -438,12 +619,24 @@
                 font-size: 1.5rem;
             }
 
-            .cta-buttons {
+            .cta-buttons-header {
                 flex-direction: column;
             }
 
-            .cta-button {
+            .cta-button-primary,
+            .cta-button-secondary {
                 width: 100%;
+            }
+
+            .proof-grid,
+            .problems-grid,
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -460,138 +653,131 @@
 
     <header>
         <div class="container">
-            <h1>Performance Health Audit for Mission-Critical Systems</h1>
-            <p class="tagline">Performance. Scale. Reliability — Engineered.</p>
-            <p class="subtitle">
-                Enterprise systems rarely fail because of missing features. They fail because <strong>performance limits, capacity constraints, and cost inefficiencies</strong> go undiscovered until peak load exposes them.
-            </p>
-            <p class="subtitle">
-                <strong>KPI99 helps organizations identify and eliminate these risks early</strong> through a focused, evidence-driven Performance Health Audit.
+            <h1>Cut Cloud Costs 20–40% Without Sacrificing Performance</h1>
+            <p class="tagline">Performance & capacity optimization for high-scale platform and data teams</p>
+            <div class="cta-buttons-header" style="margin-top: 40px;">
+                <a href="#form" class="cta-button-primary">Get a Free Performance Review</a>
+                <a href="#proof" class="cta-button-secondary">View Sample Optimization Report</a>
+            </div>
+            <p class="trust-line" style="margin-top: 30px; font-size: 0.95rem; opacity: 0.9;">
+                Proven results across JVM, data, and cloud-native platforms
             </p>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <section>
-                <h2>Who This Is For</h2>
-                <p>
-                    This service is designed for organizations operating <strong>mission-critical systems</strong> where performance directly impacts:
-                </p>
-                <ul>
-                    <li>Customer experience and revenue</li>
-                    <li>Regulatory and SLA compliance</li>
-                    <li>Operational stability</li>
-                    <li>Cloud and infrastructure costs</li>
-                </ul>
-                <p>
-                    Typical environments include financial services, energy and utilities, telecom, government platforms, logistics, and enterprise SaaS.
-                </p>
-            </section>
-
-            <hr>
-
-            <section>
-                <h2>What the Performance Health Audit Delivers</h2>
-                <p>
-                    The Performance Health Audit provides <strong>clear visibility into how your systems behave under real-world load</strong> — not assumptions.
-                </p>
-                
-                <div class="highlight-box">
-                    <h3>Key Areas of Analysis</h3>
-                    <ul>
-                        <li>Application-level performance (latency, throughput, contention)</li>
-                        <li>JVM, memory, garbage collection, and thread behavior</li>
-                        <li>Infrastructure utilization (CPU, memory, disk, network)</li>
-                        <li>Load patterns, peak demand behavior, and saturation points</li>
-                        <li>Capacity limits and scale risk</li>
-                        <li>Cloud and infrastructure inefficiencies</li>
-                    </ul>
+            <!-- Immediate Proof Section -->
+            <section id="proof" style="padding: 80px 0 60px;">
+                <div class="proof-grid">
+                    <div class="proof-item">
+                        <h3>Reduced infrastructure spend by millions annually</h3>
+                    </div>
+                    <div class="proof-item">
+                        <h3>Optimized JVM, Spark, and distributed systems at 10k+ node scale</h3>
+                    </div>
+                    <div class="proof-item">
+                        <h3>Deep expertise in latency, throughput, and cost efficiency</h3>
+                    </div>
+                    <div class="proof-item">
+                        <h3>Enterprise experience across cloud-native and hybrid platforms</h3>
+                    </div>
                 </div>
             </section>
 
-            <hr>
-
-            <section>
-                <h2>What You Receive</h2>
-                <p>At the end of the engagement, you receive:</p>
-                <ul>
-                    <li><strong>Executive Summary</strong> – clear, non-technical overview of findings and risk</li>
-                    <li><strong>Performance Findings Report</strong> – detailed technical analysis</li>
-                    <li><strong>Identified System Limits</strong> – where and why performance degrades</li>
-                    <li><strong>Risk Prioritization</strong> – what will fail first under growth or peak load</li>
-                    <li><strong>Actionable Remediation Roadmap</strong> – concrete next steps</li>
-                </ul>
-                <p>
-                    No generic recommendations. No vendor bias. Only evidence-based conclusions.
-                </p>
+            <!-- Problems We Fix Section -->
+            <section style="background: #f8fafc; padding: 60px 0; margin: 60px -20px; padding-left: 20px; padding-right: 20px;">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 40px;">Problems We Fix</h2>
+                    <div class="problems-grid">
+                        <div class="problem-item">
+                            <h4>High GC pressure and JVM memory churn</h4>
+                        </div>
+                        <div class="problem-item">
+                            <h4>Spark / Trino jobs that fail to scale under load</h4>
+                        </div>
+                        <div class="problem-item">
+                            <h4>Kafka ingestion and back-pressure issues</h4>
+                        </div>
+                        <div class="problem-item">
+                            <h4>Kubernetes over-provisioning and wasted cloud spend</h4>
+                        </div>
+                        <div class="problem-item">
+                            <h4>Latency spikes during peak traffic</h4>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <hr>
-
-            <section>
-                <h2>Engagement Details</h2>
-                <ul>
-                    <li><strong>Duration:</strong> 2–3 weeks</li>
-                    <li><strong>Delivery:</strong> Remote</li>
-                    <li><strong>Investment:</strong> $10,000</li>
-                </ul>
-                <p>
-                    This engagement is intentionally scoped to provide <strong>maximum clarity with minimal disruption</strong>.
-                </p>
+            <!-- What You Get Section -->
+            <section style="padding: 60px 0;">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 40px;">What You Get</h2>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <h4>Clear performance bottleneck analysis</h4>
+                        </div>
+                        <div class="outcome-item">
+                            <h4>Capacity and scale forecasting model</h4>
+                        </div>
+                        <div class="outcome-item">
+                            <h4>Prioritized optimization roadmap</h4>
+                        </div>
+                        <div class="outcome-item">
+                            <h4>Executive-ready summary for stakeholders</h4>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <hr>
-
-            <section>
-                <h2>Why Organizations Engage KPI99</h2>
-                <ul>
-                    <li>To prevent outages before they occur</li>
-                    <li>To understand true capacity limits</li>
-                    <li>To reduce unnecessary cloud spend</li>
-                    <li>To support upcoming growth, migrations, or peak events</li>
-                    <li>To gain executive-level confidence in system readiness</li>
-                </ul>
-                <p>
-                    Our work applies <strong>enterprise-grade performance engineering methodologies</strong> refined in large-scale, regulated environments.
-                </p>
+            <!-- How It Works Section -->
+            <section style="background: #f8fafc; padding: 60px 0; margin: 60px -20px; padding-left: 20px; padding-right: 20px;">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 40px;">How It Works</h2>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>30-minute technical intake</h4>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>Deep-dive analysis of workloads and infrastructure</h4>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Actionable findings with cost and performance impact</h4>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <hr>
-
-            <section>
-                <h2>How This Is Typically Used</h2>
-                <p>The Performance Health Audit is often used as:</p>
-                <ul>
-                    <li>A pre-scale or pre-migration validation</li>
-                    <li>An independent performance risk assessment</li>
-                    <li>A precursor to targeted optimization or advisory support</li>
-                    <li>An executive-level decision aid for infrastructure investment</li>
-                </ul>
+            <!-- CTA Repeat Section -->
+            <section style="padding: 80px 0; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white;">
+                <div class="container">
+                    <h2 style="color: white; border-bottom: 3px solid #3b82f6; display: inline-block; padding-bottom: 15px; margin-bottom: 30px;">
+                        Get a Free Performance Review
+                    </h2>
+                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; margin-bottom: 30px;">
+                        No obligation · Confidential · 30 minutes
+                    </p>
+                    <a href="#form" class="cta-button-primary" style="margin-top: 20px;">Get Started</a>
+                </div>
             </section>
 
-            <hr>
-
-            <section>
-                <h2>About KPI99</h2>
-                <p>
-                    KPI99 is a performance and capacity engineering consultancy supporting mission-critical systems in scale-critical environments.
-                </p>
-                <p>
-                    Our engagements are delivered with senior-level accountability, clear scope, and a focus on measurable outcomes.
+            <!-- Optional Credibility Section -->
+            <section style="padding: 40px 0; text-align: center; max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6;">
+                    Principal-level performance engineering experience across global enterprise platforms, specializing in JVM tuning, distributed data systems, and cost-efficient cloud scaling.
                 </p>
             </section>
         </div>
     </main>
 
-    <section class="form-section">
+    <section class="form-section" id="form">
         <div class="container">
-            <h2>Request an Assessment</h2>
+            <h2>Get a Free Performance Review</h2>
             <p>
-                If performance, scale, or reliability is a concern, the next step is a short introductory discussion to confirm scope and fit.
-            </p>
-            <p>
-                To get started, please complete the short intake form below. This helps us ensure the conversation is focused and productive.
+                Complete the form below to get started. No obligation · Confidential · 30 minutes
             </p>
             
             <div class="form-container">
@@ -672,7 +858,7 @@
                         <input type="email" id="contactEmail" name="from_email" required>
                     </div>
                     
-                    <button type="submit" class="submit-button">Submit Intake Form</button>
+                    <button type="submit" class="submit-button">Get a Free Performance Review</button>
                     <div class="form-message" id="formMessage"></div>
                 </form>
                 
@@ -761,7 +947,7 @@
                     
                     const timeoutId = setTimeout(function() {
                         submitButton.disabled = false;
-                        submitButton.textContent = 'Submit Intake Form';
+                        submitButton.textContent = 'Get a Free Performance Review';
                         if (formMessage) {
                             formMessage.textContent = 'Request timed out. Please check your connection and try again.';
                             formMessage.className = 'form-message error';
@@ -780,7 +966,7 @@
                             }
                             
                             submitButton.disabled = false;
-                            submitButton.textContent = 'Submit Intake Form';
+                            submitButton.textContent = 'Get a Free Performance Review';
                             
                             // Scroll to message
                             formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -800,7 +986,7 @@
                             }
                             
                             submitButton.disabled = false;
-                            submitButton.textContent = 'Submit Intake Form';
+                            submitButton.textContent = 'Get a Free Performance Review';
                             
                             console.error('EmailJS error:', error);
                         });
