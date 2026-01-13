@@ -6,15 +6,15 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com https://calendly.com https://api.emailjs.com https://cdn.jsdelivr.net; frame-src https://assets.calendly.com https://calendly.com;">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <link rel="canonical" href="https://kpi99.co/performance-health-audit.html">
+    <link rel="canonical" href="https://kpi99.co/en/performance-health-audit.html">
     <title>Performance Health Audit - KPI99</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png?v=2">
-    <link rel="shortcut icon" type="image/png" href="favicon.png?v=2">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=2">
-    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png?v=2">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.png?v=2">
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
     <link rel="icon" type="image/png" href="https://kpi99.co/favicon.png?v=2">
     
     <!-- Google Fonts - Bodoni Moda -->
@@ -113,49 +113,123 @@
 
         /* Navigation */
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
         }
 
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            height: 40px;
         }
 
         nav .logo img {
             height: 40px;
             width: auto;
-            max-width: 100%;
+            max-width: 150px;
+            object-fit: contain;
+            display: block;
+        }
+
+        nav .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav .nav-menu-item {
+            display: flex;
+            align-items: center;
         }
 
         nav .back-link {
-            color: #0f172a;
+            color: #334155;
             text-decoration: none;
             font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: background-color 0.3s;
+            transition: color 0.3s;
+            position: relative;
         }
 
         nav .back-link:hover {
-            background-color: #f1f5f9;
+            color: #3b82f6;
+        }
+
+        nav .back-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+
+        nav .back-link:hover::after {
+            width: 100%;
+        }
+
+        nav .nav-divider {
+            width: 1px;
+            height: 30px;
+            background: #e2e8f0;
+            margin: 0 15px;
+        }
+
+        nav .language-toggle {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav .language-toggle:hover {
+            color: #3b82f6;
+        }
+
+        nav .language-toggle::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+
+        nav .language-toggle:hover::after {
+            width: 100%;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.6) 100%),
-                        url('panAbstract.png');
+                        url('../panAbstract.png');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll;
+            background-attachment: fixed;
             color: white;
-            padding: 100px 0 80px;
+            padding: 120px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -635,6 +709,17 @@
                 height: 32px;
             }
 
+            nav .nav-menu {
+                gap: 15px;
+            }
+
+            nav .nav-divider {
+                width: 100%;
+                height: 1px;
+                background: #e2e8f0;
+                margin: 8px 0;
+            }
+
             nav .back-link {
                 font-size: 0.9rem;
                 padding: 6px 12px;
@@ -642,7 +727,7 @@
 
             /* Header */
             header {
-                padding: 80px 0 60px;
+                padding: 100px 0 60px;
                 background-attachment: scroll;
             }
 
@@ -807,7 +892,7 @@
         @media (max-width: 480px) {
             /* Extra small devices */
             header {
-                padding: 60px 0 40px;
+                padding: 80px 0 50px;
             }
 
             header h1 {
@@ -867,9 +952,17 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="menu_logo.png" alt="KPI99" /></a>
+                <a href="/en/"><img src="../menu_logo.png" alt="KPI99" /></a>
             </div>
-            <a href="index.html" class="back-link">← Back to Main Site</a>
+            <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a href="/en/" class="back-link">← Back to Main Site</a>
+                </li>
+                <li class="nav-menu-item nav-divider"></li>
+                <li class="nav-menu-item">
+                    <a href="/es/performance-health-audit.html" class="language-toggle">Español</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -1105,6 +1198,15 @@
     <script>
         // Handle intake form submission
         document.addEventListener('DOMContentLoaded', function() {
+            // Save language preference when language toggle is clicked
+            const languageToggle = document.querySelector('.language-toggle');
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function(e) {
+                    // Save preference to localStorage
+                    localStorage.setItem('preferredLanguage', 'es');
+                });
+            }
+
             const intakeForm = document.getElementById('intakeForm');
             const formMessage = document.getElementById('formMessage');
 

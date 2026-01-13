@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com https://calendly.com https://api.emailjs.com https://cdn.jsdelivr.net; frame-src https://assets.calendly.com https://calendly.com;">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <link rel="canonical" href="https://kpi99.co/performance-health-audit.html">
+    <link rel="canonical" href="https://kpi99.co/es/performance-health-audit.html">
     <title>Performance Health Audit - KPI99</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png?v=2">
-    <link rel="shortcut icon" type="image/png" href="favicon.png?v=2">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=2">
-    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png?v=2">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.png?v=2">
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
     <link rel="icon" type="image/png" href="https://kpi99.co/favicon.png?v=2">
     
     <!-- Google Fonts - Bodoni Moda -->
@@ -113,49 +113,123 @@
 
         /* Navigation */
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
         }
 
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            height: 40px;
         }
 
         nav .logo img {
             height: 40px;
             width: auto;
-            max-width: 100%;
+            max-width: 150px;
+            object-fit: contain;
+            display: block;
+        }
+
+        nav .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav .nav-menu-item {
+            display: flex;
+            align-items: center;
         }
 
         nav .back-link {
-            color: #0f172a;
+            color: #334155;
             text-decoration: none;
             font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: background-color 0.3s;
+            transition: color 0.3s;
+            position: relative;
         }
 
         nav .back-link:hover {
-            background-color: #f1f5f9;
+            color: #3b82f6;
+        }
+
+        nav .back-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+
+        nav .back-link:hover::after {
+            width: 100%;
+        }
+
+        nav .nav-divider {
+            width: 1px;
+            height: 30px;
+            background: #e2e8f0;
+            margin: 0 15px;
+        }
+
+        nav .language-toggle {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav .language-toggle:hover {
+            color: #3b82f6;
+        }
+
+        nav .language-toggle::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+
+        nav .language-toggle:hover::after {
+            width: 100%;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.6) 100%),
-                        url('panAbstract.png');
+                        url('../panAbstract.png');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll;
+            background-attachment: fixed;
             color: white;
-            padding: 100px 0 80px;
+            padding: 120px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -635,14 +709,24 @@
                 height: 32px;
             }
 
+            nav .nav-menu {
+                gap: 15px;
+            }
+
+            nav .nav-divider {
+                width: 100%;
+                height: 1px;
+                background: #e2e8f0;
+                margin: 8px 0;
+            }
+
             nav .back-link {
                 font-size: 0.9rem;
-                padding: 6px 12px;
             }
 
             /* Header */
             header {
-                padding: 80px 0 60px;
+                padding: 100px 0 60px;
                 background-attachment: scroll;
             }
 
@@ -807,7 +891,7 @@
         @media (max-width: 480px) {
             /* Extra small devices */
             header {
-                padding: 60px 0 40px;
+                padding: 80px 0 50px;
             }
 
             header h1 {
@@ -867,22 +951,30 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="menu_logo.png" alt="KPI99" /></a>
+                <a href="/es/"><img src="../menu_logo.png" alt="KPI99" /></a>
             </div>
-            <a href="index.html" class="back-link">← Back to Main Site</a>
+            <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a href="/es/" class="back-link">← Volver al Sitio Principal</a>
+                </li>
+                <li class="nav-menu-item nav-divider"></li>
+                <li class="nav-menu-item">
+                    <a href="/en/performance-health-audit.html" class="language-toggle">English</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
     <header>
         <div class="container">
-            <h1>Cut Cloud Costs 20–40% Without Sacrificing Performance</h1>
-            <p class="tagline">Performance & capacity optimization for high-scale platform and data teams</p>
+            <h1>Reduzca los Costos en la Nube 20–40% Sin Sacrificar el Rendimiento</h1>
+            <p class="tagline">Optimización de rendimiento y capacidad para equipos de plataforma y datos de gran escala</p>
             <div class="cta-buttons-header" style="margin-top: 40px;">
-                <a href="#form" class="cta-button-primary">Get a Free Performance Review</a>
-                <a href="#proof" class="cta-button-secondary">View Sample Optimization Report</a>
+                <a href="#form" class="cta-button-primary">Obtenga una Revisión de Rendimiento Gratuita</a>
+                <a href="#proof" class="cta-button-secondary">Ver Informe de Optimización de Ejemplo</a>
             </div>
             <p class="trust-line" style="margin-top: 30px; font-size: 0.95rem; opacity: 0.9;">
-                Proven results across JVM, data, and cloud-native platforms
+                Resultados probados en plataformas JVM, datos y nativas de la nube
             </p>
         </div>
     </header>
@@ -893,81 +985,81 @@
             <section id="proof" style="padding: 80px 0 60px;">
                 <div class="proof-grid">
                     <div class="proof-item">
-                        <h3>Reduced infrastructure spend by millions annually</h3>
+                        <h3>Gasto en infraestructura reducido en millones anualmente</h3>
                     </div>
                     <div class="proof-item">
-                        <h3>Optimized JVM, Spark, and distributed systems at 10k+ node scale</h3>
+                        <h3>Sistemas JVM, Spark y distribuidos optimizados a escala de 10k+ nodos</h3>
                     </div>
                     <div class="proof-item">
-                        <h3>Deep expertise in latency, throughput, and cost efficiency</h3>
+                        <h3>Experiencia profunda en latencia, rendimiento y eficiencia de costos</h3>
                     </div>
                     <div class="proof-item">
-                        <h3>Enterprise experience across cloud-native and hybrid platforms</h3>
+                        <h3>Experiencia empresarial en plataformas nativas de la nube e híbridas</h3>
                     </div>
                 </div>
             </section>
 
-            <!-- Problems We Fix Section -->
+            <!-- Problemas que Resolvemos Section -->
             <section class="section-bg" style="background: #f8fafc; padding: 60px 0;">
                 <div class="container">
-                    <h2 style="text-align: center; margin-bottom: 40px;">Problems We Fix</h2>
+                    <h2 style="text-align: center; margin-bottom: 40px;">Problemas que Resolvemos</h2>
                     <div class="problems-grid">
                         <div class="problem-item">
-                            <h4>High GC pressure and JVM memory churn</h4>
+                            <h4>Alta presión de GC y rotación de memoria JVM</h4>
                         </div>
                         <div class="problem-item">
-                            <h4>Spark / Trino jobs that fail to scale under load</h4>
+                            <h4>Trabajos Spark / Trino que fallan al escalar bajo carga</h4>
                         </div>
                         <div class="problem-item">
-                            <h4>Kafka ingestion and back-pressure issues</h4>
+                            <h4>Problemas de ingesta de Kafka y contrapresión</h4>
                         </div>
                         <div class="problem-item">
-                            <h4>Kubernetes over-provisioning and wasted cloud spend</h4>
+                            <h4>Sobredimensionamiento de Kubernetes y gasto en la nube desperdiciado</h4>
                         </div>
                         <div class="problem-item">
-                            <h4>Latency spikes during peak traffic</h4>
+                            <h4>Picos de latencia durante el tráfico máximo</h4>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- What You Get Section -->
+            <!-- Lo Que Obtiene Section -->
             <section style="padding: 60px 0;">
                 <div class="container">
-                    <h2 style="text-align: center; margin-bottom: 40px;">What You Get</h2>
+                    <h2 style="text-align: center; margin-bottom: 40px;">Lo Que Obtiene</h2>
                     <div class="outcomes-grid">
                         <div class="outcome-item">
-                            <h4>Clear performance bottleneck analysis</h4>
+                            <h4>Análisis claro de cuellos de botella de rendimiento</h4>
                         </div>
                         <div class="outcome-item">
-                            <h4>Capacity and scale forecasting model</h4>
+                            <h4>Modelo de pronóstico de capacidad y escala</h4>
                         </div>
                         <div class="outcome-item">
-                            <h4>Prioritized optimization roadmap</h4>
+                            <h4>Hoja de ruta de optimización priorizada</h4>
                         </div>
                         <div class="outcome-item">
-                            <h4>Executive-ready summary for stakeholders</h4>
+                            <h4>Resumen listo para ejecutivos para las partes interesadas</h4>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- How It Works Section -->
+            <!-- Cómo Funciona Section -->
             <section class="section-bg" style="background: #f8fafc; padding: 60px 0;">
                 <div class="container">
-                    <h2 style="text-align: center; margin-bottom: 40px;">How It Works</h2>
+                    <h2 style="text-align: center; margin-bottom: 40px;">Cómo Funciona</h2>
                     <div class="process-steps">
                         <div class="process-step">
                             <div class="step-number">1</div>
-                            <h4>30-minute technical intake</h4>
+                            <h4>Entrada técnica de 30 minutos</h4>
                         </div>
                         <div class="process-step">
                             <div class="step-number">2</div>
-                            <h4>Deep-dive analysis of workloads and infrastructure</h4>
+                            <h4>Análisis profundo de cargas de trabajo e infraestructura</h4>
                         </div>
                         <div class="process-step">
                             <div class="step-number">3</div>
-                            <h4>Actionable findings with cost and performance impact</h4>
+                            <h4>Hallazgos accionables con impacto en costos y rendimiento</h4>
                         </div>
                     </div>
                 </div>
@@ -977,19 +1069,19 @@
             <section style="padding: 80px 0; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white;">
                 <div class="container">
                     <h2 style="color: white; border-bottom: 3px solid #3b82f6; display: inline-block; padding-bottom: 15px; margin-bottom: 30px;">
-                        Get a Free Performance Review
+                        Obtenga una Revisión de Rendimiento Gratuita
                     </h2>
                     <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; margin-bottom: 30px;">
-                        No obligation · Confidential · 30 minutes
+                        Sin obligación · Confidencial · 30 minutos
                     </p>
-                    <a href="#form" class="cta-button-primary" style="margin-top: 20px;">Get Started</a>
+                    <a href="#form" class="cta-button-primary" style="margin-top: 20px;">Comenzar</a>
                 </div>
             </section>
 
             <!-- Optional Credibility Section -->
             <section style="padding: 40px 0; text-align: center; max-width: 900px; margin: 0 auto;">
                 <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6;">
-                    Principal-level performance engineering experience across global enterprise platforms, specializing in JVM tuning, distributed data systems, and cost-efficient cloud scaling.
+                    Experiencia en ingeniería de rendimiento a nivel principal en plataformas empresariales globales, especializándose en ajuste de JVM, sistemas de datos distribuidos y escalado eficiente en la nube.
                 </p>
             </section>
         </div>
@@ -997,30 +1089,30 @@
 
     <section class="form-section" id="form">
         <div class="container">
-            <h2>Get a Free Performance Review</h2>
+            <h2>Obtenga una Revisión de Rendimiento Gratuita</h2>
             <p>
-                Complete the form below to get started. No obligation · Confidential · 30 minutes
+                Complete the form below to get started. Sin obligación · Confidencial · 30 minutos
             </p>
             
             <div class="form-container">
-                <h3 style="margin-bottom: 30px; color: #0f172a;">Short Intake Form</h3>
+                <h3 style="margin-bottom: 30px; color: #0f172a;">Formulario de Entrada Breve</h3>
                 <form id="intakeForm">
                     <input type="hidden" name="to_email" value="admin@kpi99.co">
                     <input type="hidden" name="to_name" value="KPI99 Team">
                     <input type="hidden" name="service_interest" value="Performance Health Audit">
                     
                     <div class="form-group">
-                        <label for="orgName">1. Organization Name <span style="color: #ef4444;">*</span></label>
+                        <label for="orgName">1. Nombre de la Organización <span style="color: #ef4444;">*</span></label>
                         <input type="text" id="orgName" name="organization_name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="role">2. Your Role <span style="color: #ef4444;">*</span></label>
-                        <input type="text" id="role" name="role" placeholder="e.g., CTO, CIO, Head of Infrastructure, Engineering Lead" required>
+                        <label for="role">2. Su Rol <span style="color: #ef4444;">*</span></label>
+                        <input type="text" id="role" name="role" placeholder="p. ej., CTO, CIO, Jefe de Infraestructura, Líder de Ingeniería" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="industry">3. Industry <span style="color: #ef4444;">*</span></label>
+                        <label for="industry">3. Industria <span style="color: #ef4444;">*</span></label>
                         <select id="industry" name="industry" required>
                             <option value="">Select an industry...</option>
                             <option value="Financial Services">Financial Services</option>
@@ -1034,38 +1126,38 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="systemScope">4. System or Platform in Scope <span style="color: #ef4444;">*</span></label>
-                        <textarea id="systemScope" name="system_scope" placeholder="Brief description of the application, platform, or environment" required></textarea>
+                        <label for="systemScope">4. Sistema o Plataforma en Alcance <span style="color: #ef4444;">*</span></label>
+                        <textarea id="systemScope" name="system_scope" placeholder="Breve descripción de la aplicación, plataforma o entorno" required></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label>5. Primary Concern <span style="color: #ef4444;">*</span> (Select all that apply)</label>
+                        <label>5. Preocupación Principal <span style="color: #ef4444;">*</span> (Seleccione todas las que correspondan)</label>
                         <div class="checkbox-group">
                             <div class="checkbox-item">
-                                <input type="checkbox" id="concern1" name="primary_concern" value="Performance / latency issues">
-                                <label for="concern1">Performance / latency issues</label>
+                                <input type="checkbox" id="concern1" name="primary_concern" value="Problemas de rendimiento / latencia">
+                                <label for="concern1">Problemas de rendimiento / latencia</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="concern2" name="primary_concern" value="Capacity or scale uncertainty">
-                                <label for="concern2">Capacity or scale uncertainty</label>
+                                <input type="checkbox" id="concern2" name="primary_concern" value="Incertidumbre de capacidad o escala">
+                                <label for="concern2">Incertidumbre de capacidad o escala</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="concern3" name="primary_concern" value="Rising cloud or infrastructure costs">
-                                <label for="concern3">Rising cloud or infrastructure costs</label>
+                                <input type="checkbox" id="concern3" name="primary_concern" value="Costos crecientes de nube o infraestructura">
+                                <label for="concern3">Costos crecientes de nube o infraestructura</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="concern4" name="primary_concern" value="Upcoming growth, migration, or peak event">
-                                <label for="concern4">Upcoming growth, migration, or peak event</label>
+                                <input type="checkbox" id="concern4" name="primary_concern" value="Crecimiento próximo, migración o evento máximo">
+                                <label for="concern4">Crecimiento próximo, migración o evento máximo</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="concern5" name="primary_concern" value="Incident or reliability concerns">
-                                <label for="concern5">Incident or reliability concerns</label>
+                                <input type="checkbox" id="concern5" name="primary_concern" value="Preocupaciones de incidentes o confiabilidad">
+                                <label for="concern5">Preocupaciones de incidentes o confiabilidad</label>
                             </div>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="timeline">6. Timeline / Urgency <span style="color: #ef4444;">*</span></label>
+                        <label for="timeline">6. Cronograma / Urgencia <span style="color: #ef4444;">*</span></label>
                         <select id="timeline" name="timeline" required>
                             <option value="">Select timeline...</option>
                             <option value="Immediate">Immediate</option>
@@ -1076,16 +1168,16 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="contactEmail">7. Contact Email <span style="color: #ef4444;">*</span></label>
+                        <label for="contactEmail">7. Correo Electrónico de Contacto <span style="color: #ef4444;">*</span></label>
                         <input type="email" id="contactEmail" name="from_email" required>
                     </div>
                     
-                    <button type="submit" class="submit-button">Get a Free Performance Review</button>
+                    <button type="submit" class="submit-button">Obtenga una Revisión de Rendimiento Gratuita</button>
                     <div class="form-message" id="formMessage"></div>
                 </form>
                 
                 <div class="contact-info">
-                    <p><strong>After submission, a member of the KPI99 team will review the information and follow up to coordinate next steps.</strong></p>
+                    <p><strong>Después del envío, un miembro del equipo de KPI99 revisará la información y hará seguimiento para coordinar los próximos pasos.</strong></p>
                     <p>
                         <a href="mailto:contact@kpi99.co">📧 contact@kpi99.co</a>
                         <a href="https://kpi99.co">🌐 https://kpi99.co</a>
@@ -1105,6 +1197,15 @@
     <script>
         // Handle intake form submission
         document.addEventListener('DOMContentLoaded', function() {
+            // Save language preference when language toggle is clicked
+            const languageToggle = document.querySelector('.language-toggle');
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function(e) {
+                    // Save preference to localStorage
+                    localStorage.setItem('preferredLanguage', 'en');
+                });
+            }
+
             const intakeForm = document.getElementById('intakeForm');
             const formMessage = document.getElementById('formMessage');
 
@@ -1164,12 +1265,12 @@
                         service_interest: 'Performance Health Audit',
                         to_name: 'KPI99 Team',
                         to_email: 'admin@kpi99.co',
-                        message: `Performance Health Audit Intake Form Submission:\n\nOrganization: ${formData.get('organization_name')}\nRole: ${formData.get('role')}\nIndustry: ${formData.get('industry')}\nSystem Scope: ${formData.get('system_scope')}\nPrimary Concerns: ${concerns}\nTimeline: ${formData.get('timeline')}`
+                        message: `Performance Health Audit Intake Form Submission:\n\nOrganization: ${formData.get('organization_name')}\nRole: ${formData.get('role')}\nIndustria: ${formData.get('industry')}\nSystem Scope: ${formData.get('system_scope')}\nPreocupación Principals: ${concerns}\nTimeline: ${formData.get('timeline')}`
                     };
                     
                     const timeoutId = setTimeout(function() {
                         submitButton.disabled = false;
-                        submitButton.textContent = 'Get a Free Performance Review';
+                        submitButton.textContent = 'Obtenga una Revisión de Rendimiento Gratuita';
                         if (formMessage) {
                             formMessage.textContent = 'Request timed out. Please check your connection and try again.';
                             formMessage.className = 'form-message error';
@@ -1188,7 +1289,7 @@
                             }
                             
                             submitButton.disabled = false;
-                            submitButton.textContent = 'Get a Free Performance Review';
+                            submitButton.textContent = 'Obtenga una Revisión de Rendimiento Gratuita';
                             
                             // Scroll to message
                             formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1208,7 +1309,7 @@
                             }
                             
                             submitButton.disabled = false;
-                            submitButton.textContent = 'Get a Free Performance Review';
+                            submitButton.textContent = 'Obtenga una Revisión de Rendimiento Gratuita';
                             
                             console.error('EmailJS error:', error);
                         });
