@@ -2024,6 +2024,191 @@
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
+
+        /* Case Studies Section */
+        .case-studies-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-studies-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .case-studies-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-studies-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .case-studies-section .intro-text {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .case-study-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .case-study-card:hover::before {
+            left: 100%;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .case-study-industry {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .case-study-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .case-study-metric {
+            text-align: center;
+        }
+
+        .case-study-metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .case-study-metric-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-highlights {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .case-study-highlights h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .case-study-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .case-study-highlights ul li {
+            color: rgba(255, 255, 255, 0.9);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .case-study-highlights ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .case-studies-section h2 {
+                font-size: 2rem;
+            }
+
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
     </style>
 </head>
 <body>
@@ -2417,6 +2602,133 @@
         </div>
     </section>
 
+    <section class="case-studies-section" id="case-studies">
+        <div class="container">
+            <h2>Case Studies: Real Value Delivered</h2>
+            <p class="intro-text">
+                The following case studies reflect real enterprise performance engagements conducted under NDA. 
+                Metrics are anonymized but technically representative.
+            </p>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <span class="case-study-industry">Enterprise SaaS / Billing</span>
+                    <h3>Scaling a Multi-Tenant Billing Platform from 500K → 20M+ Daily Events</h3>
+                    <p>
+                        The platform experienced hyper-growth in billing and usage events, scaling from ~475K events/day (2023) 
+                        to 20M+ max daily events (Oct 2025). Growth introduced highly variable tenant usage patterns 
+                        and risk of saturation at ingestion, entitlement, and query layers.
+                    </p>
+                    <div class="case-study-metrics">
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">20M+</span>
+                            <span class="case-study-metric-label">Daily Events</span>
+                        </div>
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">200M</span>
+                            <span class="case-study-metric-label">Growth Path</span>
+                        </div>
+                    </div>
+                    <div class="case-study-highlights">
+                        <h4>Quantified Outcomes:</h4>
+                        <ul>
+                            <li>Successfully validated scale to 20M+ daily events without architectural redesign</li>
+                            <li>Established a validated growth path to 200M events/day</li>
+                            <li>Identified peak-hour targets of ~800K → 1.6M events/hour</li>
+                            <li>Enabled proactive scaling rather than reactive firefighting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <span class="case-study-industry">Global Data Platform</span>
+                    <h3>Peak-Hour Modeling Prevents Latency Collapse During High-Variance Traffic</h3>
+                    <p>
+                        Throughput was concentrated into 12-14 hour active windows and 3-5 hour peak periods. 
+                        Without explicit peak modeling, the system risked latency spikes, downstream backpressure 
+                        and missed SLAs during regional demand surges.
+                    </p>
+                    <div class="case-study-metrics">
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">790K</span>
+                            <span class="case-study-metric-label">Events/Hour Baseline</span>
+                        </div>
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">1.6M</span>
+                            <span class="case-study-metric-label">Events/Hour Certified</span>
+                        </div>
+                    </div>
+                    <div class="case-study-highlights">
+                        <h4>Quantified Outcomes:</h4>
+                        <ul>
+                            <li>Defined a defensible peak-hour baseline: ~790K events/hour</li>
+                            <li>Certified scalability to ~1.6M events/hour</li>
+                            <li>Eliminated blind spots caused by "daily average" planning</li>
+                            <li>Provided concrete thresholds for autoscaling and alerting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <span class="case-study-industry">Enterprise Data Platform</span>
+                    <h3>Eliminating Ingestion Bottlenecks by Isolating Job Queue Saturation</h3>
+                    <p>
+                        As daily and hourly usage volumes increased, ingestion throughput appeared capped at ~2.5M events per hour. 
+                        Detailed analysis revealed Spark execution performance remained stable; 
+                        the dominant source of delay was job queue wait time, not processing time.
+                    </p>
+                    <div class="case-study-metrics">
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">7×</span>
+                            <span class="case-study-metric-label">Improvement</span>
+                        </div>
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">11-12M</span>
+                            <span class="case-study-metric-label">Events/Hour</span>
+                        </div>
+                    </div>
+                    <div class="case-study-highlights">
+                        <h4>Quantified Results:</h4>
+                        <ul>
+                            <li>Prior maximum throughput: ~2.5M events/hour</li>
+                            <li>Post-optimization sustained throughput: 11-12M events/hour</li>
+                            <li>Eliminated hour-long queue delays</li>
+                            <li>Achieved 7× headroom over production requirements</li>
+                            <li>Avoided unnecessary Spark scaling and associated cost increases</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <span class="case-study-industry">Consumer-Facing Enterprise Platform</span>
+                    <h3>Stabilizing Entitlement & UI Performance at Scale</h3>
+                    <p>
+                        As usage scaled, entitlement processing and UI performance faced long-tail latency growth, 
+                        increased Spark cluster costs and risk to customer-facing response times.
+                    </p>
+                    <div class="case-study-metrics">
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">644s</span>
+                            <span class="case-study-metric-label">P95 Identified</span>
+                        </div>
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">&lt;1.25s</span>
+                            <span class="case-study-metric-label">UI Baseline</span>
+                        </div>
+                    </div>
+                    <div class="case-study-highlights">
+                        <h4>Measured Results:</h4>
+                        <ul>
+                            <li>Entitlement service P95 identified at ~644s under peak load</li>
+                            <li>UI experience processing time maintained below 1.25s baseline</li>
+                            <li>Variable workloads isolated and evaluated separately</li>
+                            <li>Enabled targeted optimization instead of blanket over-provisioning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="technical-section" id="outcomes">
         <div class="container">
             <h2>Representative Outcomes</h2>
@@ -2621,6 +2933,7 @@
                         <li><a href="#who">Who</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#case-studies">Case Studies</a></li>
                         <li><a href="#outcomes">Outcomes</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li class="nav-divider"></li>

@@ -2024,6 +2024,191 @@
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
+
+        /* Case Studies Section */
+        .case-studies-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-studies-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .case-studies-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-studies-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .case-studies-section .intro-text {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .case-study-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .case-study-card:hover::before {
+            left: 100%;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .case-study-industry {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .case-study-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .case-study-metric {
+            text-align: center;
+        }
+
+        .case-study-metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .case-study-metric-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-highlights {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .case-study-highlights h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .case-study-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .case-study-highlights ul li {
+            color: rgba(255, 255, 255, 0.9);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .case-study-highlights ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .case-studies-section h2 {
+                font-size: 2rem;
+            }
+
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
     </style>
 </head>
 <body>
@@ -2417,6 +2602,133 @@
         </div>
     </section>
 
+    <section class="case-studies-section" id="case-studies">
+        <div class="container">
+            <h2>Casos de Estudio: Valor Real Entregado</h2>
+            <p class="intro-text">
+                Los siguientes casos de estudio reflejan compromisos reales de rendimiento empresarial realizados bajo NDA. 
+                Las métricas están anonimizadas pero son técnicamente representativas.
+            </p>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <span class="case-study-industry">SaaS Empresarial / Facturación</span>
+                    <h3>Escalado de Plataforma de Facturación Multi-Tenant de 500K → 20M+ Eventos Diarios</h3>
+                    <p>
+                        La plataforma experimentó hipercrecimiento en eventos de facturación y uso, escalando desde ~475K eventos/día (2023) 
+                        hasta 20M+ eventos diarios máximos (Oct 2025). El crecimiento introdujo patrones de uso de inquilinos altamente variables 
+                        y riesgo de saturación en las capas de ingesta, derechos y consultas.
+                    </p>
+                    <div class="case-study-metrics">
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">20M+</span>
+                            <span class="case-study-metric-label">Eventos Diarios</span>
+                        </div>
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">200M</span>
+                            <span class="case-study-metric-label">Ruta de Crecimiento</span>
+                        </div>
+                    </div>
+                    <div class="case-study-highlights">
+                        <h4>Resultados Cuantificados:</h4>
+                        <ul>
+                            <li>Validación exitosa de escala a 20M+ eventos diarios sin rediseño arquitectónico</li>
+                            <li>Establecimiento de ruta de crecimiento validada a 200M eventos/día</li>
+                            <li>Identificación de objetivos de hora pico de ~800K → 1.6M eventos/hora</li>
+                            <li>Habilitación de escalado proactivo en lugar de lucha contra incendios reactiva</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <span class="case-study-industry">Plataforma de Datos Global</span>
+                    <h3>Modelado de Hora Pico Previene Colapso de Latencia Durante Tráfico de Alta Variabilidad</h3>
+                    <p>
+                        El rendimiento se concentró en ventanas activas de 12-14 horas y períodos pico de 3-5 horas. 
+                        Sin modelado explícito de picos, el sistema arriesgaba picos de latencia, contrapresión aguas abajo 
+                        y SLAs perdidos durante aumentos de demanda regional.
+                    </p>
+                    <div class="case-study-metrics">
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">790K</span>
+                            <span class="case-study-metric-label">Eventos/Hora Base</span>
+                        </div>
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">1.6M</span>
+                            <span class="case-study-metric-label">Eventos/Hora Certificado</span>
+                        </div>
+                    </div>
+                    <div class="case-study-highlights">
+                        <h4>Resultados Cuantificados:</h4>
+                        <ul>
+                            <li>Definición de línea base de hora pico defendible: ~790K eventos/hora</li>
+                            <li>Certificación de escalabilidad a ~1.6M eventos/hora</li>
+                            <li>Eliminación de puntos ciegos causados por planificación de "promedio diario"</li>
+                            <li>Provisión de umbrales concretos para autoescalado y alertas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <span class="case-study-industry">Plataforma de Datos Empresarial</span>
+                    <h3>Eliminación de Cuellos de Botella de Ingesta Aislando Saturación de Cola de Trabajos</h3>
+                    <p>
+                        A medida que aumentaron los volúmenes de uso diarios y por hora, el rendimiento de ingesta parecía limitado a ~2.5M eventos por hora. 
+                        El análisis detallado reveló que el rendimiento de ejecución de Spark permaneció estable; 
+                        la fuente dominante de retraso fue el tiempo de espera de la cola de trabajos, no el tiempo de procesamiento.
+                    </p>
+                    <div class="case-study-metrics">
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">7×</span>
+                            <span class="case-study-metric-label">Mejora</span>
+                        </div>
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">11-12M</span>
+                            <span class="case-study-metric-label">Eventos/Hora</span>
+                        </div>
+                    </div>
+                    <div class="case-study-highlights">
+                        <h4>Resultados Cuantificados:</h4>
+                        <ul>
+                            <li>Rendimiento máximo previo: ~2.5M eventos/hora</li>
+                            <li>Rendimiento sostenido post-optimización: 11-12M eventos/hora</li>
+                            <li>Eliminación de retrasos de cola de una hora</li>
+                            <li>Logro de margen de seguridad de 7× sobre requisitos de producción</li>
+                            <li>Evitación de escalado innecesario de Spark y aumentos de costos asociados</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <span class="case-study-industry">Plataforma Empresarial Orientada al Consumidor</span>
+                    <h3>Estabilización de Rendimiento de Derechos y UI a Escala</h3>
+                    <p>
+                        A medida que el uso escaló, el procesamiento de derechos y el rendimiento de la UI enfrentaron crecimiento de latencia de cola larga, 
+                        costos aumentados del clúster Spark y riesgo a tiempos de respuesta orientados al cliente.
+                    </p>
+                    <div class="case-study-metrics">
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">644s</span>
+                            <span class="case-study-metric-label">P95 Identificado</span>
+                        </div>
+                        <div class="case-study-metric">
+                            <span class="case-study-metric-value">&lt;1.25s</span>
+                            <span class="case-study-metric-label">UI Baseline</span>
+                        </div>
+                    </div>
+                    <div class="case-study-highlights">
+                        <h4>Resultados Medidos:</h4>
+                        <ul>
+                            <li>P95 del servicio de derechos identificado en ~644s bajo carga pico</li>
+                            <li>Tiempo de procesamiento de experiencia UI mantenido por debajo de línea base de 1.25s</li>
+                            <li>Cargas de trabajo variables aisladas y evaluadas por separado</li>
+                            <li>Habilitación de optimización dirigida en lugar de sobreaprovisionamiento general</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="technical-section" id="outcomes">
         <div class="container">
             <h2>Resultados Representativos</h2>
@@ -2621,6 +2933,7 @@
                         <li><a href="#who">Quiénes</a></li>
                         <li><a href="#services">Servicios</a></li>
                         <li><a href="#expertise">Experiencia</a></li>
+                        <li><a href="#case-studies">Casos de Estudio</a></li>
                         <li><a href="#outcomes">Resultados</a></li>
                         <li><a href="#contact">Contacto</a></li>
                         <li class="nav-divider"></li>
