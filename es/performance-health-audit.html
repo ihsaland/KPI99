@@ -704,6 +704,74 @@
             text-decoration: underline;
         }
 
+        /* Video Explainer Section */
+        .video-explainer-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            margin-top: 0;
+        }
+
+        .video-explainer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-explainer-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 15px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .video-explainer-section p {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            background: #000;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .video-explainer-section {
+                padding: 40px 0;
+            }
+
+            .video-explainer-section h2 {
+                font-size: 1.75rem;
+                padding: 0 15px;
+            }
+
+            .video-explainer-section p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .video-wrapper {
+                border-radius: 8px;
+            }
+        }
+
         /* Footer */
         footer {
             background: #0f172a;
@@ -1047,6 +1115,22 @@
             </p>
         </div>
     </header>
+
+    <!-- Video Explainer Section -->
+    <section class="video-explainer-section">
+        <div class="container">
+            <div class="video-explainer-container">
+                <h2>Más Allá de los Cuellos de Botella: Eliminando Restricciones</h2>
+                <p>Aprenda cómo KPI99 ayuda a las organizaciones a eliminar restricciones de rendimiento y escalar de manera eficiente.</p>
+                <div class="video-wrapper">
+                    <video controls autoplay muted loop preload="metadata" poster="">
+                        <source src="../KPI99_Beyond_Bottlenecks_ Removing_Constraints_ES.mp4" type="video/mp4">
+                        Su navegador no admite la etiqueta de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <main>
         <div class="container">
