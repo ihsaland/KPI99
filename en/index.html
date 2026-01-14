@@ -19,10 +19,10 @@
     <link rel="icon" type="image/png" href="../KPI_Favicon.png?v=2">
     <link rel="icon" type="image/png" href="https://kpi99.co/favicon.png?v=2">
     
-    <!-- Google Fonts - Bodoni Moda -->
+    <!-- Google Fonts - Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" onload="window.emailjsScriptLoaded = true;" onerror="console.error('Failed to load EmailJS script'); window.emailjsScriptLoaded = false;"></script>
@@ -98,7 +98,7 @@
         }
 
         body {
-            font-family: 'Bodoni Moda', serif;
+            font-family: 'Manrope', sans-serif;
             line-height: 1.6;
             color: #333;
             background: #fafafa;
@@ -337,11 +337,14 @@
         }
 
         header .tagline {
-            font-size: 1.5rem;
-            font-weight: 300;
-            opacity: 0.95;
-            margin-top: 10px;
+            font-size: 2.2rem;
+            font-weight: 600;
+            opacity: 1;
+            margin-top: 20px;
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 0.8s ease 0.2s both;
+            line-height: 1.4;
         }
 
         .consultation-button-header {
@@ -1393,8 +1396,9 @@
             }
 
             header .tagline {
-                font-size: 1.1rem;
+                font-size: 1.6rem;
                 padding: 0 20px;
+                font-weight: 600;
             }
 
             .consultation-button-header {
@@ -1554,7 +1558,8 @@
             }
 
             header .tagline {
-                font-size: 1rem;
+                font-size: 1.4rem;
+                font-weight: 600;
             }
 
             .consultation-button-header {
@@ -1615,8 +1620,9 @@
             }
 
             header .tagline {
-                font-size: 1.1rem;
+                font-size: 1.6rem;
                 padding: 0 20px;
+                font-weight: 600;
             }
 
             .consultation-button-header {
@@ -1776,7 +1782,8 @@
             }
 
             header .tagline {
-                font-size: 1rem;
+                font-size: 1.4rem;
+                font-weight: 600;
             }
 
             .consultation-button-header {
@@ -2081,10 +2088,11 @@
             border-radius: 16px;
             padding: 40px;
             border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            will-change: transform;
         }
 
         .case-study-card::before {
@@ -2095,7 +2103,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s;
+            transition: left 0.4s ease;
         }
 
         .case-study-card:hover::before {
@@ -2107,6 +2115,17 @@
             background: rgba(255, 255, 255, 0.15);
             border-color: rgba(255, 255, 255, 0.4);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .case-study-card,
+            .case-study-card::before {
+                transition: none;
+                animation: none;
+            }
+            .case-study-card:hover {
+                transform: none;
+            }
         }
 
         .case-study-industry {
@@ -2138,8 +2157,8 @@
 
         .case-study-metrics {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 25px;
             margin-top: 25px;
             padding-top: 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -2147,21 +2166,223 @@
 
         .case-study-metric {
             text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .case-study-metric:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
         }
 
         .case-study-metric-value {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             display: block;
+            line-height: 1.2;
         }
 
         .case-study-metric-label {
             font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        /* Progress Bars and Comparisons */
+        .metric-comparison {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .comparison-item {
+            margin-bottom: 20px;
+        }
+
+        .comparison-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .comparison-label .before {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .comparison-label .after {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .progress-bar-container {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+            border-radius: 4px;
+            transition: width 0.6s ease-out;
+            position: relative;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+            will-change: width;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .progress-bar {
+                transition: none;
+            }
+            .progress-bar::after {
+                animation: none;
+            }
+        }
+
+        /* Growth Chart */
+        .growth-chart {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 120px;
+            gap: 10px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(180deg, rgba(59, 130, 246, 0.8) 0%, rgba(59, 130, 246, 0.4) 100%);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: background 0.2s ease, transform 0.2s ease;
+            min-width: 30px;
+        }
+
+        .chart-bar:hover {
+            background: linear-gradient(180deg, rgba(59, 130, 246, 1) 0%, rgba(59, 130, 246, 0.6) 100%);
+            transform: scaleY(1.05);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .chart-bar {
+                transition: none;
+            }
+            .chart-bar:hover {
+                transform: none;
+            }
+        }
+
+        .chart-bar::after {
+            content: attr(data-value);
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .chart-label {
+            text-align: center;
+            flex: 1;
+        }
+
+        /* Before/After Comparison */
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .before-after-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .before-after-item.before {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .before-after-item.after {
+            border: 1px solid #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .before-after-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .before-after-label {
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.8);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .improvement-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
         }
 
         .case-study-highlights {
@@ -2208,6 +2429,114 @@
                 grid-template-columns: 1fr;
             }
 
+            .case-study-metrics {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .chart-bars {
+                height: 100px;
+                gap: 5px;
+            }
+
+            .chart-bar::after {
+                font-size: 0.65rem;
+                top: -20px;
+            }
+
+            .chart-labels {
+                font-size: 0.7rem;
+            }
+
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-label {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .case-studies-section {
+                padding: 60px 0;
+            }
+
+            .case-study-card {
+                padding: 25px;
+                backdrop-filter: blur(5px);
+            }
+
+            .case-study-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .case-study-metric {
+                padding: 15px;
+            }
+
+            .case-study-metric-value {
+                font-size: 1.8rem;
+            }
+
+            .chart-container {
+                padding: 15px;
+            }
+
+            .chart-bar {
+                min-width: 25px;
+            }
+
+            .before-after {
+                gap: 10px;
+            }
+
+            .before-after-item {
+                padding: 12px;
+            }
+
+            .before-after-value {
+                font-size: 1.5rem;
+            }
+
+            .comparison-label {
+                font-size: 0.85rem;
+            }
+
+            .progress-bar-container {
+                height: 6px;
+            }
+
+            .progress-bar::after {
+                animation: none;
+            }
+
+            .case-study-highlights {
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+
+            .growth-chart,
+            .metric-comparison {
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .case-studies-section {
+                padding: 40px 0;
+            }
+
+            .case-study-card {
+                padding: 20px;
+            }
+
+            .case-study-metric-value {
+                font-size: 1.5rem;
+            }
+
+            .chart-bars {
+                height: 80px;
+            }
         }
     </style>
 </head>
@@ -2628,6 +2957,35 @@
                             <span class="case-study-metric-label">Growth Path</span>
                         </div>
                     </div>
+                    <div class="growth-chart">
+                        <h4 style="color: white; font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;">Daily Events Growth</h4>
+                        <div class="chart-container">
+                            <div class="chart-bars">
+                                <div class="chart-bar" style="height: 15%;" data-value="475K"></div>
+                                <div class="chart-bar" style="height: 35%;" data-value="4.9M"></div>
+                                <div class="chart-bar" style="height: 60%;" data-value="8.5M"></div>
+                                <div class="chart-bar" style="height: 100%;" data-value="20M+"></div>
+                            </div>
+                            <div class="chart-labels">
+                                <div class="chart-label">2023</div>
+                                <div class="chart-label">2024</div>
+                                <div class="chart-label">May 2025</div>
+                                <div class="chart-label">Oct 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-comparison">
+                        <h4 style="color: white; font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;">Peak-Hour Targets</h4>
+                        <div class="comparison-item">
+                            <div class="comparison-label">
+                                <span class="before">Before: ~800K events/hour</span>
+                                <span class="after">After: 1.6M events/hour</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="case-study-highlights">
                         <h4>Quantified Outcomes:</h4>
                         <ul>
@@ -2655,6 +3013,29 @@
                         <div class="case-study-metric">
                             <span class="case-study-metric-value">1.6M</span>
                             <span class="case-study-metric-label">Events/Hour Certified</span>
+                        </div>
+                    </div>
+                    <div class="metric-comparison">
+                        <h4 style="color: white; font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;">Certified Capacity</h4>
+                        <div class="comparison-item">
+                            <div class="comparison-label">
+                                <span class="before">Baseline: 790K events/hour</span>
+                                <span class="after">Certified: 1.6M events/hour</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="before-after">
+                            <div class="before-after-item before">
+                                <div class="before-after-value">790K</div>
+                                <div class="before-after-label">Events/Hour Baseline</div>
+                            </div>
+                            <div class="before-after-item after">
+                                <div class="before-after-value">1.6M</div>
+                                <div class="before-after-label">Events/Hour Certified</div>
+                                <div class="improvement-badge">+102%</div>
+                            </div>
                         </div>
                     </div>
                     <div class="case-study-highlights">
@@ -2686,6 +3067,30 @@
                             <span class="case-study-metric-label">Events/Hour</span>
                         </div>
                     </div>
+                    <div class="metric-comparison">
+                        <h4 style="color: white; font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;">Performance Improvement</h4>
+                        <div class="comparison-item">
+                            <div class="comparison-label">
+                                <span class="before">Before: 2.5M events/hour</span>
+                                <span class="after">After: 11-12M events/hour</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 21%; background: rgba(255, 255, 255, 0.3);"></div>
+                                <div class="progress-bar" style="width: 79%; margin-left: -21%;"></div>
+                            </div>
+                        </div>
+                        <div class="before-after">
+                            <div class="before-after-item before">
+                                <div class="before-after-value">2.5M</div>
+                                <div class="before-after-label">Events/Hour (Before)</div>
+                            </div>
+                            <div class="before-after-item after">
+                                <div class="before-after-value">11-12M</div>
+                                <div class="before-after-label">Events/Hour (After)</div>
+                                <div class="improvement-badge">+440%</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="case-study-highlights">
                         <h4>Quantified Results:</h4>
                         <ul>
@@ -2713,6 +3118,30 @@
                         <div class="case-study-metric">
                             <span class="case-study-metric-value">&lt;1.25s</span>
                             <span class="case-study-metric-label">UI Baseline</span>
+                        </div>
+                    </div>
+                    <div class="metric-comparison">
+                        <h4 style="color: white; font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;">Latency Performance</h4>
+                        <div class="comparison-item">
+                            <div class="comparison-label">
+                                <span class="before">Entitlement P95: 644s (peak load)</span>
+                                <span class="after">UI Baseline: &lt;1.25s (maintained)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 0.2%; background: rgba(239, 68, 68, 0.8);"></div>
+                                <div class="progress-bar" style="width: 99.8%; margin-left: -0.2%; background: linear-gradient(90deg, #10b981 0%, #34d399 100%);"></div>
+                            </div>
+                        </div>
+                        <div class="before-after">
+                            <div class="before-after-item before" style="border-color: rgba(239, 68, 68, 0.5);">
+                                <div class="before-after-value">644s</div>
+                                <div class="before-after-label">Entitlement P95</div>
+                            </div>
+                            <div class="before-after-item after">
+                                <div class="before-after-value">&lt;1.25s</div>
+                                <div class="before-after-label">UI Baseline</div>
+                                <div class="improvement-badge">Maintained</div>
+                            </div>
                         </div>
                     </div>
                     <div class="case-study-highlights">
