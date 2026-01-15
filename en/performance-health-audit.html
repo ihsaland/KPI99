@@ -417,8 +417,41 @@
             font-size: 1.2rem;
             font-weight: 600;
             color: #0f172a;
-            margin: 0;
+            margin: 0 0 15px 0;
             line-height: 1.5;
+        }
+
+        .proof-metric {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .proof-metric-label {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .proof-comparison {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .proof-comparison .before {
+            color: #64748b;
+            text-decoration: line-through;
+        }
+
+        .proof-comparison .after {
+            color: #10b981;
+            font-weight: 600;
         }
 
         /* Problems Grid */
@@ -1175,16 +1208,63 @@
             <section id="proof" style="padding: 80px 0 60px;">
                 <div class="proof-grid">
                     <div class="proof-item">
-                        <h3>Reduced infrastructure spend by millions annually</h3>
+                        <h3>7× Throughput Improvement</h3>
+                        <div class="proof-metric">7×</div>
+                        <div class="proof-metric-label">Performance Headroom</div>
+                        <div class="proof-comparison">
+                            <div><span class="before">2.5M events/hour</span> → <span class="after">11-12M events/hour</span></div>
+                            <div style="margin-top: 8px; font-size: 0.85rem;">+440% improvement</div>
+                        </div>
                     </div>
                     <div class="proof-item">
-                        <h3>Optimized JVM, Spark, and distributed systems at 10k+ node scale</h3>
+                        <h3>Eliminated Queue Delays</h3>
+                        <div class="proof-metric">0</div>
+                        <div class="proof-metric-label">Hour-Long Delays</div>
+                        <div class="proof-comparison">
+                            <div>Eliminated hour-long queue wait times</div>
+                            <div style="margin-top: 8px; font-size: 0.85rem;">Sustained throughput achieved</div>
+                        </div>
                     </div>
                     <div class="proof-item">
-                        <h3>Deep expertise in latency, throughput, and cost efficiency</h3>
+                        <h3>Cost Optimization</h3>
+                        <div class="proof-metric">Avoided</div>
+                        <div class="proof-metric-label">Unnecessary Scaling</div>
+                        <div class="proof-comparison">
+                            <div>Prevented unnecessary Spark cluster scaling</div>
+                            <div style="margin-top: 8px; font-size: 0.85rem;">Reduced infrastructure costs</div>
+                        </div>
                     </div>
                     <div class="proof-item">
-                        <h3>Enterprise experience across cloud-native and hybrid platforms</h3>
+                        <h3>Root Cause Identified</h3>
+                        <div class="proof-metric">100%</div>
+                        <div class="proof-metric-label">Bottleneck Clarity</div>
+                        <div class="proof-comparison">
+                            <div>Isolated job queue saturation</div>
+                            <div style="margin-top: 8px; font-size: 0.85rem;">Not processing time</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h3 style="color: #0f172a; margin-bottom: 15px; font-size: 1.3rem;">Real Results from Enterprise Data Platform Engagement</h3>
+                    <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+                        Through detailed analysis, we identified that Spark execution performance was stable. 
+                        The bottleneck was job queue wait time, not processing time. 
+                        By optimizing the queue configuration, we achieved <strong style="color: #3b82f6;">7× headroom over production requirements</strong> 
+                        and eliminated hour-long delays.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 25px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #3b82f6;">2.5M → 11-12M</div>
+                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">Events/Hour</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #10b981;">+440%</div>
+                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">Improvement</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #3b82f6;">7×</div>
+                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">Headroom</div>
+                        </div>
                     </div>
                 </div>
             </section>

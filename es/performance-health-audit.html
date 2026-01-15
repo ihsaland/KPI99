@@ -381,8 +381,41 @@
             font-size: 1.2rem;
             font-weight: 600;
             color: #0f172a;
-            margin: 0;
+            margin: 0 0 15px 0;
             line-height: 1.5;
+        }
+
+        .proof-metric {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .proof-metric-label {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .proof-comparison {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .proof-comparison .before {
+            color: #64748b;
+            text-decoration: line-through;
+        }
+
+        .proof-comparison .after {
+            color: #10b981;
+            font-weight: 600;
         }
 
         /* Problems Grid */
@@ -1138,16 +1171,63 @@
             <section id="proof" style="padding: 80px 0 60px;">
                 <div class="proof-grid">
                     <div class="proof-item">
-                        <h3>Gasto en infraestructura reducido en millones anualmente</h3>
+                        <h3>Mejora de Rendimiento de 7×</h3>
+                        <div class="proof-metric">7×</div>
+                        <div class="proof-metric-label">Margen de Rendimiento</div>
+                        <div class="proof-comparison">
+                            <div><span class="before">2.5M eventos/hora</span> → <span class="after">11-12M eventos/hora</span></div>
+                            <div style="margin-top: 8px; font-size: 0.85rem;">+440% de mejora</div>
+                        </div>
                     </div>
                     <div class="proof-item">
-                        <h3>Sistemas JVM, Spark y distribuidos optimizados a escala de 10k+ nodos</h3>
+                        <h3>Retrasos en Cola Eliminados</h3>
+                        <div class="proof-metric">0</div>
+                        <div class="proof-metric-label">Retrasos de Una Hora</div>
+                        <div class="proof-comparison">
+                            <div>Eliminados tiempos de espera en cola de una hora</div>
+                            <div style="margin-top: 8px; font-size: 0.85rem;">Rendimiento sostenido logrado</div>
+                        </div>
                     </div>
                     <div class="proof-item">
-                        <h3>Experiencia profunda en latencia, rendimiento y eficiencia de costos</h3>
+                        <h3>Optimización de Costos</h3>
+                        <div class="proof-metric">Evitado</div>
+                        <div class="proof-metric-label">Escalado Innecesario</div>
+                        <div class="proof-comparison">
+                            <div>Prevenido escalado innecesario del clúster Spark</div>
+                            <div style="margin-top: 8px; font-size: 0.85rem;">Costos de infraestructura reducidos</div>
+                        </div>
                     </div>
                     <div class="proof-item">
-                        <h3>Experiencia empresarial en plataformas nativas de la nube e híbridas</h3>
+                        <h3>Causa Raíz Identificada</h3>
+                        <div class="proof-metric">100%</div>
+                        <div class="proof-metric-label">Claridad del Cuello de Botella</div>
+                        <div class="proof-comparison">
+                            <div>Saturación de cola de trabajos aislada</div>
+                            <div style="margin-top: 8px; font-size: 0.85rem;">No tiempo de procesamiento</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h3 style="color: #0f172a; margin-bottom: 15px; font-size: 1.3rem;">Resultados Reales de Compromiso con Plataforma de Datos Empresarial</h3>
+                    <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+                        A través de un análisis detallado, identificamos que el rendimiento de ejecución de Spark era estable. 
+                        El cuello de botella era el tiempo de espera en la cola de trabajos, no el tiempo de procesamiento. 
+                        Al optimizar la configuración de la cola, logramos <strong style="color: #3b82f6;">7× de margen sobre los requisitos de producción</strong> 
+                        y eliminamos retrasos de una hora.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 25px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #3b82f6;">2.5M → 11-12M</div>
+                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">Eventos/Hora</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #10b981;">+440%</div>
+                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">Mejora</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #3b82f6;">7×</div>
+                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">Margen</div>
+                        </div>
                     </div>
                 </div>
             </section>
