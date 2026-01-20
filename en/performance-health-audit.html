@@ -1696,6 +1696,11 @@
                                 formMessage.className = 'form-message success';
                             }
                             
+                            // Event snippet for Book appointment conversion page
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'conversion', {'send_to': 'AW-17859706167/8EKICMyD694bELf6lcRC'});
+                            }
+                            
                             submitButton.disabled = false;
                             submitButton.textContent = 'Get a Free Performance Review';
                             
