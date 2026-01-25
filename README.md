@@ -3,6 +3,7 @@
 Enterprise Performance & Capacity Engineering Services website.
 
 ## About
+KPI99 is a performance and capacity engineering consultancy specializing in JVM optimization, distributed systems, cloud scalability, and high-throughput platforms.
 
 KPI99 provides enterprise performance and capacity engineering services, focusing on predictive and preventative approaches to system optimization.
 
