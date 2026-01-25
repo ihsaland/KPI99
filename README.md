@@ -5,6 +5,8 @@ Enterprise Performance & Capacity Engineering Services website.
 ## About
 KPI99 is a performance and capacity engineering consultancy focused on helping mission-critical platforms scale reliably, operate efficiently, and maintain consistent performance under peak demand.
 
+Maintained by KPI99, a performance and capacity engineering consultancy.
+
 ## GitHub Pages Deployment
 
 This site is configured to deploy automatically to GitHub Pages when changes are pushed to the `main` branch.
